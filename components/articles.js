@@ -2,14 +2,17 @@ import React from 'react';
 import Card from './card.js'
 import styles from '../styles/Home.module.css'
 
-const Article = () => {
+const Articles = ({ articles }) => {
+  console.log(articles);
   return (
     <div className={styles.grid}>
-      <Card />
-      <Card />
-      <Card />
+      {articles.map(article => {
+        return (
+          <Card article={article} key={article.slug}/>
+        );
+      })}
     </div>
   )
 }
 
-export default Article;
+export default Articles;
