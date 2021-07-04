@@ -8,7 +8,7 @@ export default function Home({ answers }) {
     <div>
       <Layout>
         <main className={styles.main}>
-          <h1 className={styles.card}>Hello!</h1>
+          <h1>Welcome to Our Website!</h1>
           <Articles articles={ answers }/> 
         </main>
       </Layout>
@@ -17,7 +17,7 @@ export default function Home({ answers }) {
 }
 
 export async function getStaticProps() {
-  const answers = await fetchAPI("/answers");
+  const answers = await fetchAPI("/articles");
 
   return {
     props: {answers},

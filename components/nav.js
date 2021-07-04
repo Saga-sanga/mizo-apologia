@@ -12,13 +12,19 @@ const Nav = () => {
         </div>
         <div className="nav-style">
           <div className="wrapper-nav nav-link">
-            Blog
+            <Link href="/category">
+              <a>Blog</a>
+            </Link>  
           </div>
           <div className="wrapper-nav nav-link">
-            Answers
+            <Link href="/topic">
+              <a>Answers</a>
+            </Link>
           </div>
           <div className="wrapper-nav nav-link">
-            About Us
+            <Link href="/aboutus">
+              <a>About Us</a>
+            </Link>
           </div>
           <div className="wrapper-nav nav-link">
             Ask

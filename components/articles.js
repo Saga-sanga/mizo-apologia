@@ -1,14 +1,13 @@
 import React from 'react';
-import Card from './card.js'
+import ArticleCard from './articleCard.js'
 import styles from '../styles/Home.module.css'
 
 const Articles = ({ articles }) => {
-  console.log(articles);
   return (
     <div className={styles.grid}>
       {articles.map(article => {
         return (
-          <Card article={article} key={article.slug}/>
+          <ArticleCard contentType="article" article={article} key={article.slug}/>
         );
       })}
     </div>

@@ -1,4 +1,4 @@
-import Articles from "../../components/articles";
+import Answers from "../../components/answers";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
@@ -6,7 +6,7 @@ import Seo from "../../components/seo";
 const Topic = ({ topic, topics, global }) => {
   const seo = {
     metaTitle: topic.name,
-    metaDescription: `All ${topic.name} articles`,
+    metaDescription: `All ${topic.name} answers`,
   };
 
   return (
@@ -15,7 +15,7 @@ const Topic = ({ topic, topics, global }) => {
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{topic.name}</h1>
-          <Articles articles={topic.articles} />
+          <Answers answers={topic.answers} />
         </div>
       </div>
     </Layout>
