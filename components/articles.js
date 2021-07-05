@@ -3,7 +3,6 @@ import ArticleCard from './articleCard.js'
 import styles from '../styles/Home.module.css'
 
 const Articles = ({ articles }) => {
-  // console.log(articles)
   return (
     <div className={styles.grid}>
       {articles.map(article => {
