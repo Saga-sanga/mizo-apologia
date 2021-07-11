@@ -7,7 +7,7 @@ body {
 }
 
 a {
-  color: inherit;
+  /* color: inherit; */
   text-decoration: none;
 }
 
@@ -32,6 +32,10 @@ a:active { text-decoration: none; }
   transition: blue .3s;
 }
 
+.nav-link a{
+  color: inherit;
+}
+
 .wrapper-nav {
   display: inline-block;
   padding-left: 16px;
@@ -44,4 +48,26 @@ a:active { text-decoration: none; }
   margin-left: auto;
   padding-right: 16px;
   padding-left: 16px;
+}
+
+.nav-shadow {
+  box-shadow: 0 5px 10px rgb(0 0 0 / 0.2);
+}
+
+.banner {
+  height: 560px;
+  width: auto;
+}
+.banner h1 {
+  font-size: 60px;
+}
+
+.logo {
+  margin: 10px 0 15px 0;
+}
+
+.topic-body {
+  height: 100%;
+  margin: 0 15% 0 15%;
+  padding-top: 2em;
 }

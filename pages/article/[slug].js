@@ -22,7 +22,7 @@ const Article = ({ article, categories }) => {
       <Seo seo={seo} />
       <div
         id="banner"
-        className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
+        className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin banner"
         data-src={imageUrl}
         data-srcset={imageUrl}
         data-uk-img

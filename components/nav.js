@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 const Nav = () => {
   return (
-    <div>
+    <div className="nav-shadow">
       <nav className="nav-style _1200px-nav-container">
         <div>
           <Link href="/">
-            <a><h1>Mizo Apologia</h1></a>
+            <a><h1 className="logo">Mizo Apologia</h1></a>
           </Link>
         </div>
         <div className="nav-style">

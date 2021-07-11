@@ -6,19 +6,22 @@ import Layout from '../../components/layout';
 function Home({categories}) {
   return (
     <Layout categories={categories}>
-      <ul>
-        {
-          categories.map(category => {
-            return (
-              <li key={category.id}>
-                <Link as={`/category/${category.slug}`} href="/category/[id]">
-                  <a>{category.name}</a>
-                </Link>
-              </li>
-            )
-          })
-        }
-      </ul>
+      <div className="topic-body">
+        <h2>Categories</h2>
+        <ul>
+          {
+            categories.map(category => {
+              return (
+                <li key={category.id}>
+                  <Link as={`/category/${category.slug}`} href="/category/[id]">
+                    <a>{category.name}</a>
+                  </Link>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
     </Layout>
   )
 }

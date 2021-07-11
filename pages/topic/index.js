@@ -6,19 +6,22 @@ import Layout from '../../components/layout';
 function Home({topics}) {
   return (
     <Layout topics={topics}>
-      <ul>
-        {
-          topics.map(topic => {
-            return (
-              <li key={topic.id}>
-                <Link as={`/topic/${topic.slug}`} href="/topic/[id]">
-                  <a>{topic.name}</a>
-                </Link>
-              </li>
-            )
-          })
-        }
-      </ul>
+      <div className="topic-body">
+        <h2>Topics</h2>
+        <ul>
+          {
+            topics.map(topic => {
+              return (
+                <li key={topic.id}>
+                  <Link as={`/topic/${topic.slug}`} href="/topic/[id]">
+                    <a>{topic.name}</a>
+                  </Link>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
     </Layout>
   )
 }
