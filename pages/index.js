@@ -21,8 +21,11 @@ export default function Home({ answers, articles }) {
 }
 
 export async function getStaticProps() {
-  const answers = await fetchAPI("/answers");
-  const articles = await fetchAPI("/articles")
+  let answers = await fetchAPI("/answers?_sort=id:DESC");
+  let articles = await fetchAPI("/articles?_sort=id:DESC");
+
+  answers = answers.slice(0,5);
+  articles = articles.slice(0,5);
 
   return {
     props: {answers, articles},

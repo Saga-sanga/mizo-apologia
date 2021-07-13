@@ -7,7 +7,12 @@ const Nav = () => {
       <nav className="nav-style _1200px-nav-container">
         <div>
           <Link href="/">
-            <a><h1 className="logo">Mizo Apologia</h1></a>
+            <a className="logo-container">
+              <h1 className="logo">
+                Mizo Apologia
+              </h1>
+              <span className="logo-sub-text">I Zawhna te. Bible Atanga Chhanna.</span>
+            </a>
           </Link>
         </div>
         <div className="nav-style">

@@ -7,7 +7,7 @@ const ArticleCard = ({ article }) => {
     <div className={styles.card}>
       <Link as={`/article/${article.slug}`} href="/article/[id]">
         <a>
-          <h2>{article.title}</h2>
+          <p>{article.title}</p>
         </a>
       </Link>
     </div>

@@ -7,7 +7,7 @@ const AnswerCard = ({ answer }) => {
     <div className={styles.card}>
       <Link as={`/answer/${answer.slug}`} href="/answer/[id]">
         <a>
-          <h2>{answer.title}</h2>
+          <p>{answer.title}</p>
         </a>
       </Link>
     </div>

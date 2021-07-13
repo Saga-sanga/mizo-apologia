@@ -6,6 +6,12 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+h1, h2, h3 {
+  font-family: -apple-system, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 500;
+}
+
 a {
   /* color: inherit; */
   text-decoration: none;
@@ -59,15 +65,40 @@ a:active { text-decoration: none; }
   width: auto;
 }
 .banner h1 {
-  font-size: 60px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.logo-container:hover {
+  color: black;
 }
 
 .logo {
-  margin: 10px 0 15px 0;
+  font-family: 'Abril Fatface', cursive;
+  margin: 10px 0 0 0;
+}
+
+.logo-sub-text {
+  font-style: italic;
+  font-size: 14px;
+  padding-bottom: 10px;
 }
 
 .topic-body {
   height: 100%;
   margin: 0 15% 0 15%;
   padding-top: 2em;
+}
+
+.ul-list-style {
+  list-style-type: none;
 }
