@@ -8,7 +8,7 @@ function Home({topics}) {
     <Layout topics={topics}>
       <div className="topic-body">
         <h2>Topics</h2>
-        <ul>
+        <ul className="ul-list-style">
           {
             topics.map(topic => {
               return (

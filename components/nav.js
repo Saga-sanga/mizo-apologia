@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Nav = () => {
   return (
-    <div className="nav-shadow">
+    <div className="nav-shadow nav-sticky">
       <nav className="nav-style _1200px-nav-container">
         <div>
           <Link href="/">
