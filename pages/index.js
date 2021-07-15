@@ -4,6 +4,8 @@ import Articles from '../components/articles.js'
 import Answers from '../components/answers'
 import { fetchAPI } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
+import CustomButton from '../components/customButton'
+import Link from 'next/link'
 
 export default function Home({ answers, articles, hero }) {
   const imageUrl = getStrapiMedia(hero.heroImage);
@@ -22,18 +24,21 @@ export default function Home({ answers, articles, hero }) {
               <h2 className='hero-subtext'>{hero.subText}</h2>
           </div>
           <section className='answerSection'>
-            <div>
+            <div className='answerContentFlex'>
               <h1 
-                style={{paddingLeft: '1.5rem', textAlign:'center'}}>
+                style={{textAlign:'center'}}>
                   Chhanna Tharte
               </h1>
               <Answers answers={ answers} />
+              <Link href='' passHref>
+                <CustomButton>Chhiar Belh Rawh</CustomButton>              
+              </Link>
             </div>
           </section>
           <section className='articleSection'>
             <div>
               <h1 
-                style={{paddingLeft: '1.5rem', textAlign:'center'}}>
+                style={{textAlign:'center'}}>
                   Thuziak Tharte
               </h1>
               <Articles articles={ articles }/> 

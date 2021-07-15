@@ -26,7 +26,7 @@ const Answer = ({ answer, topics }) => {
         data-srcset={imageUrl}
         data-uk-img
       >
-        <h1>{answer.title}</h1>
+        <h1 className='contentTitleBlur'>{answer.title}</h1>
       </div>
       <div className="uk-section">
         <div className="uk-container uk-container-small">

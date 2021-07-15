@@ -98,12 +98,14 @@ a:active { text-decoration: none; }
 
 .hero-title {
   font-size: 4.3rem !important;
+  text-shadow: 3px 4px 3px #272626;
 }
 
 .hero-subtext {
   margin-top: 0;
   font-size: 1.4rem;
   margin-right: 50%;
+  text-shadow: 3px 4px 3px #272626;
 }
 
 .logo-container {
@@ -139,6 +141,14 @@ a:active { text-decoration: none; }
   list-style-type: none;
 }
 
+.contentTitleBlur {
+  -webkit-backdrop-filter: saturate(175%) blur(8px);
+  backdrop-filter: saturate(175%) blur(10px);
+  text-shadow: 3px 4px 3px #272626;
+  padding: 0.5rem 1.3rem;
+  border-radius: 15px;
+}
+
 .articleSection {
   width: 100%;
   padding: 6.25rem 0px;
@@ -157,4 +167,11 @@ a:active { text-decoration: none; }
   justify-content: center;
   align-items: center;
   background-color: rgb(250, 250, 250);
+}
+
+.answerContentFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -7,8 +7,8 @@ import { getStrapiURL } from '../lib/api';
 const AnswerCard = ({ answer }) => {
   return (
     <Link as={`/answer/${answer.slug}`} href="/answer/[id]">
-      <a className={`${styles.articleCard} nav-shadow`}>
-        <div>
+      <a >
+        <div className={`${styles.articleCard} nav-shadow`}>
           <div>
             <img 
               className={styles.answerCardImage}
@@ -18,7 +18,7 @@ const AnswerCard = ({ answer }) => {
           </div>
           <div className={styles.answerCardText}>
             {/* <span>{answer.topic.name}</span> */}
-            <h4 style={{color: 'black'}}>{answer.title}</h4>
+            <p style={{color: 'black'}}>{answer.title}</p>
             <div 
               className="uk-grid-small uk-flex-left"  
               style={{marginTop: '0.8rem'}} 

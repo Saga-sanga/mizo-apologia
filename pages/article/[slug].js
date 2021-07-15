@@ -27,7 +27,7 @@ const Article = ({ article, categories }) => {
         data-srcset={imageUrl}
         data-uk-img
       >
-        <h1>{article.title}</h1>
+        <h1 className='contentTitleBlur'>{article.title}</h1>
       </div>
       <div className="uk-section">
         <div className="uk-container uk-container-small">
