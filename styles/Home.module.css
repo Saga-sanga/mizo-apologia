@@ -120,3 +120,46 @@
     flex-direction: column;
   }
 }
+
+.articleCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: .5rem;
+  transition: transform .2s ease-out;
+}
+
+.articleCard:hover,
+.articleCard:focus,
+.articleCard:target {
+  transform: scale(1.02);
+}
+
+.articleCardText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.5rem;
+}
+
+.articleCardText h3 {
+  margin: 0.5rem 0 0 0;
+}
+
+.articleCardText p {
+  margin: 0.75rem 0 0 0;
+}
+
+.articleCardImage {
+  width: 100%;
+}
+
+.articleGrid {
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1.5em;
+    grid-row-gap: 1.5em;
+    padding: 1.5em;
+    max-width: 1000px;
+}

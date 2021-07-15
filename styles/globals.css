@@ -38,6 +38,7 @@ a:active { text-decoration: none; }
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 5;
 }
 
 .nav-link {
@@ -93,7 +94,7 @@ a:active { text-decoration: none; }
 
 .hero-subtext {
   margin-top: 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-right: 50%;
 }
 
