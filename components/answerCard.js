@@ -17,7 +17,7 @@ const AnswerCard = ({ answer }) => {
             />
           </div>
           <div className={styles.articleCardText}>
-            <span>{answer.topic.name}</span>
+            {/* <span>{answer.topic.name}</span> */}
             <p style={{color: 'black'}}>{answer.title}</p>
             <div className="uk-grid-small uk-flex-left"  style={{marginTop: '1.5rem'}} data-uk-grid="true">
               <div className="uk-width-expand">
