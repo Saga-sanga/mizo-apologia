@@ -38,7 +38,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const category = (await fetchAPI(`/categories?slug=${params.slug}`))[0];
   const categories = await fetchAPI("/categories");
-  const articles = await fetchAPI(`/articles?category.name=${params.slug}`)
+  const articles = await fetchAPI(`/articles?category.slug=${params.slug}`)
   const global = await fetchAPI("/global");
 
   return {
