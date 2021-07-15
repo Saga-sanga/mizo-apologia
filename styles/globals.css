@@ -8,13 +8,13 @@ body {
   background-color: rgb(250, 250, 250);
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: -apple-system, Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 500;
 }
 
-p {
+.uk-container p {
   text-align: justify;
 }
 
