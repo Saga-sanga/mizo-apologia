@@ -21,10 +21,24 @@ export default function Home({ answers, articles, hero }) {
               <h1 className='hero-title'>{hero.title}</h1>
               <h2 className='hero-subtext'>{hero.subText}</h2>
           </div>
-          <h1>Chhanna Thar Te</h1>
-          <Answers answers={ answers} />
-          <h1>Latest Articles</h1>
-          <Articles articles={ articles }/> 
+          <section className='answerSection'>
+            <div>
+              <h1 
+                style={{paddingLeft: '1.5rem', textAlign:'center'}}>
+                  Chhanna Tharte
+              </h1>
+              <Answers answers={ answers} />
+            </div>
+          </section>
+          <section className='articleSection'>
+            <div>
+              <h1 
+                style={{paddingLeft: '1.5rem', textAlign:'center'}}>
+                  Thuziak Tharte
+              </h1>
+              <Articles articles={ articles }/> 
+            </div>
+          </section>
         </main>
       </Layout>
     </div>

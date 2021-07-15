@@ -16,12 +16,18 @@ const AnswerCard = ({ answer }) => {
               alt={answer.image.alternativeText}
             />
           </div>
-          <div className={styles.articleCardText}>
+          <div className={styles.answerCardText}>
             {/* <span>{answer.topic.name}</span> */}
             <p style={{color: 'black'}}>{answer.title}</p>
-            <div className="uk-grid-small uk-flex-left"  style={{marginTop: '1.5rem'}} data-uk-grid="true">
+            <div 
+              className="uk-grid-small uk-flex-left"  
+              style={{marginTop: '0.8rem'}} 
+              data-uk-grid="true"
+            >
               <div className="uk-width-expand">
-                <p className="uk-text-meta uk-margin-remove-top">
+                <p 
+                  className="uk-text-meta uk-margin-remove-top"
+                >
                   <Moment format="MMM Do YYYY">{answer.published_at}</Moment>
                 </p>
               </div>

@@ -18,12 +18,12 @@ const Nav = () => {
         <div className="nav-style">
           <div className="wrapper-nav nav-link">
             <Link href="/category">
-              <a>Blog</a>
+              <a>Thuziak</a>
             </Link>  
           </div>
           <div className="wrapper-nav nav-link">
             <Link href="/topic">
-              <a>Answers</a>
+              <a>Chhanna</a>
             </Link>
           </div>
           <div className="wrapper-nav nav-link">

@@ -4,7 +4,8 @@ body {
   margin: 0;
   font-family: -apple-system, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: azure;
+  /* background-color: azure; */
+  background-color: rgb(250, 250, 250);
 }
 
 h1, h2, h3 {
@@ -38,6 +39,8 @@ a:active { text-decoration: none; }
   background-color: rgba(255, 255, 255, 0.9);
   position: -webkit-sticky;
   position: sticky;
+  -webkit-backdrop-filter: saturate(175%) blur(8px);
+  backdrop-filter: saturate(175%) blur(8px);
   top: 0;
   z-index: 5;
 }
@@ -130,4 +133,24 @@ a:active { text-decoration: none; }
 
 .ul-list-style {
   list-style-type: none;
+}
+
+.articleSection {
+  width: 100%;
+  padding: 6.25rem 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.answerSection {
+  width: 100%;
+  padding: 6.25rem 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(250, 250, 250);
 }
