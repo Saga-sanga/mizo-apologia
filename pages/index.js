@@ -21,9 +21,9 @@ export default function Home({ answers, articles, hero }) {
               <h1 className='hero-title'>{hero.title}</h1>
               <h2 className='hero-subtext'>{hero.subText}</h2>
           </div>
-          <h2>Zawhna Chhanna</h2>
+          <h1>Chhanna Thar Te</h1>
           <Answers answers={ answers} />
-          <h2>Articles</h2>
+          <h1>Latest Articles</h1>
           <Articles articles={ articles }/> 
         </main>
       </Layout>

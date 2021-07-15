@@ -127,6 +127,7 @@
   overflow: hidden;
   border-radius: .5rem;
   transition: transform .2s ease-out;
+  background-color: white;
 }
 
 .articleCard:hover,
@@ -148,6 +149,7 @@
 }
 
 .articleCardText p {
+  color: rgba(107, 114, 128, 0.9);
   margin: 0.75rem 0 0 0;
 }
 

@@ -22,7 +22,7 @@ const ArticleCard = ({ article }) => {
             <span>{article.category.name}</span>
             <h3>{article.title}</h3>
             <p>{article.description}</p>
-            <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
+            <div className="uk-grid-small uk-flex-left"  style={{marginTop: '1.5rem'}} data-uk-grid="true">
               <div>
                 {article.author.picture && (
                   <Image
@@ -37,8 +37,8 @@ const ArticleCard = ({ article }) => {
                 )}
               </div>
               <div className="uk-width-expand">
-                <p className="uk-margin-remove-bottom">
-                  By {article.author.name}
+                <p className="uk-margin-remove-bottom" style={{margin: 0, color:'black'}}>
+                  {article.author.name}
                 </p>
                 <p className="uk-text-meta uk-margin-remove-top">
                   <Moment format="MMM Do YYYY">{article.published_at}</Moment>

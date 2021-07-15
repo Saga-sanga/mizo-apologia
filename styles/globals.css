@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: floralwhite;
 }
 
 h1, h2, h3 {
@@ -85,7 +86,7 @@ a:active { text-decoration: none; }
   align-items: flex-start;
   padding-left: 10%;
   padding-top: 5%;
-  height: 650px;
+  height: 700px;
 }
 
 .hero-title {
