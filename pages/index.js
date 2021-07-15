@@ -36,7 +36,7 @@ export async function getStaticProps() {
   let articles = await fetchAPI("/articles?_sort=id:DESC");
   const hero = await fetchAPI("/hero");
 
-  answers = answers.slice(0,6);
+  answers = answers.slice(0,8);
   articles = articles.slice(0,6);
 
   return {

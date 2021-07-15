@@ -12,7 +12,7 @@ const ArticleCard = ({ article }) => {
       <a>
         <div className={`${styles.articleCard} nav-shadow`}>
           <div>
-            <img
+            <img 
               className={styles.articleCardImage}
               src={getStrapiURL(article.image.formats.small.url)} 
               alt={article.image.alternativeText}
@@ -28,10 +28,10 @@ const ArticleCard = ({ article }) => {
                   <Image
                     image={article.author.picture}
                     style={{
-                      // position: "static",
+                      objectFit: 'cover',
                       borderRadius: 9999,
                       height: "2.5rem",
-                      // width: "2.5rem"
+                      width: "2.5rem"
                     }}
                   />
                 )}

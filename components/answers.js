@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 
 const Answers = ({ answers }) => {
   return (
-    <div className={styles.grid}>
+    <div className={styles.answerGrid}>
       {answers.map(answer => {
         return (
           <AnswerCard answer={answer} key={answer.slug}/>

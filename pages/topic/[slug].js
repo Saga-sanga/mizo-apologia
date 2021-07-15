@@ -3,7 +3,7 @@ import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 
-const Topic = ({ topic, topics, global }) => {
+const Topic = ({ topic, topics, answers, global }) => {
   const seo = {
     metaTitle: topic.name,
     metaDescription: `All ${topic.name} answers`,
@@ -15,7 +15,7 @@ const Topic = ({ topic, topics, global }) => {
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{topic.name}</h1>
-          <Answers answers={topic.answers} />
+          <Answers answers={answers} />
         </div>
       </div>
     </Layout>
@@ -38,10 +38,11 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const topic = (await fetchAPI(`/topics?slug=${params.slug}`))[0];
   const topics = await fetchAPI("/topics");
+  const answers = await fetchAPI(`/answers?topic.slug=${params.slug}`)
   const global = await fetchAPI("/global");
 
   return {
-    props: { topic, topics, global },
+    props: { topic, topics, answers, global },
     revalidate: 1,
   };
 }
