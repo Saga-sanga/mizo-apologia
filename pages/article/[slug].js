@@ -39,9 +39,10 @@ const Article = ({ article, categories }) => {
                 <Image
                   image={article.author.picture}
                   style={{
-                    position: "static",
-                    borderRadius: "50%",
-                    height: 30,
+                    objectFit: 'cover',
+                    borderRadius: 9999,
+                    height: "2.5rem",
+                    width: "2.5rem"
                   }}
                 />
               )}
