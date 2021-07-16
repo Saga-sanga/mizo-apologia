@@ -209,6 +209,10 @@
     background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.buttonStyle:active {
+  background-color: #8f1fa3;
+}
+
 .buttonStyle:hover,
 .buttonStyle:focus,
 .buttonStyle:target {

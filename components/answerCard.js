@@ -18,10 +18,10 @@ const AnswerCard = ({ answer }) => {
           </div>
           <div className={styles.answerCardText}>
             {/* <span>{answer.topic.name}</span> */}
-            <p style={{color: 'black'}}>{answer.title}</p>
+            <p style={{color: 'black', marginBottom: 0}}>{answer.title}</p>
             <div 
               className="uk-grid-small uk-flex-left"  
-              style={{marginTop: '0.8rem'}} 
+              style={{marginTop: '0.8rem'}}
               data-uk-grid="true"
             >
               <div className="uk-width-expand">

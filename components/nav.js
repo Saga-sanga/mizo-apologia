@@ -15,16 +15,16 @@ const Nav = () => {
             </a>
           </Link>
         </div>
-        <div className="nav-style">
-          <div className="wrapper-nav nav-link">
-            <Link href="/category">
-              <a>Thuziak</a>
-            </Link>  
-          </div>
+        <div className="nav-style">         
           <div className="wrapper-nav nav-link">
             <Link href="/topic">
               <a>Chhanna</a>
             </Link>
+          </div>
+          <div className="wrapper-nav nav-link">
+            <Link href="/category">
+              <a>Thuziak</a>
+            </Link>  
           </div>
           <div className="wrapper-nav nav-link">
             <Link href="/aboutus">
