@@ -193,11 +193,11 @@
 }
 
 .buttonStyle {
-  font-size: 1.25rem;
-  padding: 12px 30px;
+  font-size: 1rem;
+  padding: 16px 40px;
   /* text-transform: uppercase; */
   color: white;
-  border-radius: 30px;
+  border-radius: 8px;
   text-align: center;
   box-shadow: 
     0 2px 2px 0 rgb(156 39 176 / 14%), 
