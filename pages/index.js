@@ -30,9 +30,9 @@ export default function Home({ answers, articles, hero }) {
                   Chhanna Tharte
               </h1>
               <Answers answers={ answers} />
-              <Link href='' passHref>
-                <CustomButton>Chhiar Belh Rawh</CustomButton>              
-              </Link>
+              <div style={{textAlign: 'center', marginTop: '3rem'}}>
+                <CustomButton linkPath="/topic">Chhiar Belh Rawh</CustomButton>              
+              </div>
             </div>
           </section>
           <section className='articleSection'>

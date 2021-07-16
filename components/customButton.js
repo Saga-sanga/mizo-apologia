@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from '../styles/Home.module.css'
+import Link from 'next/link';
 
-const CustomButton = ({children}) => {
+const CustomButton = ({linkPath, children}) => {
+  console.log(linkPath);
   return (
-    <a className={styles.buttonStyle}>
-      {children}
-    </a>
+    <Link href={linkPath} passHref>
+      <a className={styles.buttonStyle}>
+        {children}
+      </a>
+    </Link>
   );
 }
 
