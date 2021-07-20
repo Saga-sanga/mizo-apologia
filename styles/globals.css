@@ -14,7 +14,7 @@ h1, h2, h3, h4 {
   font-weight: 500;
 }
 
-.uk-container p {
+.uk-container > p {
   text-align: justify;
 }
 
@@ -151,7 +151,7 @@ a:active { text-decoration: none; }
 
 .articleSection {
   width: 100%;
-  padding: 6.25rem 0px;
+  padding: 5rem 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -161,7 +161,7 @@ a:active { text-decoration: none; }
 
 .answerSection {
   width: 100%;
-  padding: 6.25rem 0px;
+  padding: 5rem 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -174,4 +174,9 @@ a:active { text-decoration: none; }
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.textAreaContainer {
+  max-width: 750px;
+  font-size: 1.125rem;
 }

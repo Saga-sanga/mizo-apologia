@@ -2,7 +2,7 @@ import React from 'react';
 import AnswerCard from './answerCard.js'
 import styles from '../styles/Home.module.css'
 
-const Answers = ({ answers }) => {
+const AnswerList = ({ answers }) => {
   return (
     <div className={styles.answerGrid}>
       {answers.map(answer => {
@@ -14,4 +14,4 @@ const Answers = ({ answers }) => {
   )
 }
 
-export default Answers;
+export default AnswerList;

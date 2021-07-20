@@ -30,7 +30,7 @@ const Article = ({ article, categories }) => {
         <h1 className='contentTitleBlur'>{article.title}</h1>
       </div>
       <div className="uk-section">
-        <div className="uk-container uk-container-small">
+        <div className="uk-container textAreaContainer">
           <ReactMarkdown rehypePlugins={[rehypeRaw]} children={article.content}/>
           <hr className="uk-divider-small" />
           <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
@@ -48,7 +48,7 @@ const Article = ({ article, categories }) => {
               )}
             </div>
             <div className="uk-width-expand">
-              <p className="uk-margin-remove-bottom">
+              <p className="uk-margin-remove-bottom" style={{fontSize: '1rem'}}>
                 By {article.author.name}
               </p>
               <p className="uk-text-meta uk-margin-remove-top">

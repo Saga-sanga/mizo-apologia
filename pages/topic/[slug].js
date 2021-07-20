@@ -1,4 +1,4 @@
-import Answers from "../../components/answers";
+import AnswerList from "../../components/answerList";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
@@ -15,7 +15,7 @@ const Topic = ({ topic, topics, answers, global }) => {
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{topic.name}</h1>
-          <Answers answers={answers} />
+          <AnswerList answers={answers} />
         </div>
       </div>
     </Layout>

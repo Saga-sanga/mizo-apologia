@@ -1,4 +1,4 @@
-import Articles from "../../components/articles";
+import ArticleList from "../../components/articleList";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
@@ -15,7 +15,7 @@ const Category = ({ category, categories, articles, global }) => {
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{category.name}</h1>
-          <Articles articles={articles} />
+          <ArticleList articles={articles} />
         </div>
       </div>
     </Layout>

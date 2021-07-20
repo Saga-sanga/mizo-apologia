@@ -1,11 +1,10 @@
 import styles from '../styles/Home.module.css'
 import Layout from '../components/layout.js'
-import Articles from '../components/articles.js'
-import Answers from '../components/answers'
+import Articles from '../components/articleList.js'
+import AnswerList from '../components/answerList'
 import { fetchAPI } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
 import CustomButton from '../components/customButton'
-import Link from 'next/link'
 
 export default function Home({ answers, articles, hero }) {
   const imageUrl = getStrapiMedia(hero.heroImage);
@@ -29,9 +28,9 @@ export default function Home({ answers, articles, hero }) {
                 style={{textAlign:'center'}}>
                   Chhanna Tharte
               </h1>
-              <Answers answers={ answers} />
+              <AnswerList answers={ answers} />
               <div style={{textAlign: 'center', marginTop: '3rem'}}>
-                <CustomButton linkPath="/topic">Chhiar Belh Rawh</CustomButton>              
+                <CustomButton linkPath="/answers">Chhanna Dang Chhiar Rawh</CustomButton>              
               </div>
             </div>
           </section>
@@ -41,7 +40,10 @@ export default function Home({ answers, articles, hero }) {
                 style={{textAlign:'center'}}>
                   Thuziak Tharte
               </h1>
-              <Articles articles={ articles }/> 
+              <Articles articles={ articles }/>
+              <div style={{textAlign: 'center', marginTop: '3rem'}}>
+                <CustomButton linkPath="/articles">Thuziak Dang Chhiar Rawh</CustomButton>              
+              </div>
             </div>
           </section>
         </main>
