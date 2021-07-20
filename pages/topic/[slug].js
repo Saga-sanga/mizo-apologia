@@ -12,7 +12,7 @@ const Topic = ({ topic, topics, answers, global }) => {
   return (
     <Layout topics={topics} global={global}>
       <Seo seo={seo} />
-      <div className="uk-section">
+      <div className="answerSection">
         <div className="uk-container uk-container-large">
           <h1>{topic.name}</h1>
           <AnswerList answers={answers} />

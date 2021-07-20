@@ -12,7 +12,7 @@ const Category = ({ category, categories, articles, global }) => {
   return (
     <Layout categories={categories} global={global}>
       <Seo seo={seo} />
-      <div className="uk-section">
+      <div className="articleSection">
         <div className="uk-container uk-container-large">
           <h1>{category.name}</h1>
           <ArticleList articles={articles} />
