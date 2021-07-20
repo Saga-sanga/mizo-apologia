@@ -29,7 +29,7 @@ const Answer = ({ answer, topics }) => {
         <h1 className='contentTitleBlur'>{answer.title}</h1>
       </div>
       <div className="uk-section">
-        <div className="uk-container uk-container-small">
+        <div className="uk-container textAreaContainer">
           <ReactMarkdown rehypePlugins={[rehypeRaw]} children={answer.content}/>
           <hr className="uk-divider-small" />
           <div className="uk-grid-small uk-flex-left" data-uk-grid="true">

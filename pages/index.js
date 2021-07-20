@@ -19,7 +19,7 @@ export default function Home({ answers, articles, hero }) {
           data-srcset={imageUrl}
           data-uk-img
           >
-              <h1 className='hero-title'>{hero.title}</h1>
+              <h1 style={{textAlign: 'left'}} className='hero-title'>{hero.title}</h1>
               <h2 className='hero-subtext'>{hero.subText}</h2>
           </div>
           <section className='answerSection'>

@@ -32,6 +32,13 @@ const Article = ({ article, categories }) => {
       <div className="uk-section">
         <div className="uk-container textAreaContainer">
           <ReactMarkdown rehypePlugins={[rehypeRaw]} children={article.content}/>
+          {
+            (article.endNote === null || article.endNote == '') ? '' 
+            : <div style={{fontSize: '0.925rem'}}>
+                <hr />
+                <ReactMarkdown rehypePlugins={[rehypeRaw]} children={article.endNote}/>
+              </div>
+          }
           <hr className="uk-divider-small" />
           <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
             <div>
