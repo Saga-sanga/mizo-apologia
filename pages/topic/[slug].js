@@ -31,7 +31,7 @@ export async function getStaticPaths() {
         slug: topic.slug,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
@@ -43,7 +43,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { topic, topics, answers, global },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

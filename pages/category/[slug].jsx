@@ -31,7 +31,7 @@ export async function getStaticPaths() {
         slug: category.slug,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
@@ -43,7 +43,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { category, categories, articles, global },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

@@ -3,7 +3,7 @@ import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 
-const Topic = ({ categories, articles, global }) => {
+const Topic = ({ articles, global }) => {
   const seo = {
     metaTitle: 'Answers',
     metaDescription: `All articles`,
@@ -36,13 +36,13 @@ const Topic = ({ categories, articles, global }) => {
 // }
 
 export async function getStaticProps() {
-  const categories = await fetchAPI("/categories");
+  // const categories = await fetchAPI("/categories");
   const articles = await fetchAPI('/articles?_sort=id:DESC');
   const global = await fetchAPI("/global");
 
   return {
-    props: { categories, articles, global },
-    revalidate: 1,
+    props: { articles, global },
+    revalidate: 60,
   };
 }
 

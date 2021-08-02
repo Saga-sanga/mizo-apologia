@@ -52,7 +52,7 @@ export default function Home({ answers, articles, hero }) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   let answers = await fetchAPI("/answers?_sort=id:DESC");
   let articles = await fetchAPI("/articles?_sort=id:DESC");
   const hero = await fetchAPI("/hero");
@@ -61,7 +61,7 @@ export async function getServerSideProps() {
   articles = articles.slice(0,6);
 
   return {
-    props: {answers, articles, hero}
-    // ,revalidate: 1
+    props: {answers, articles, hero},
+    revalidate: 60
   };
 }

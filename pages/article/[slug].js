@@ -7,7 +7,7 @@ import Image from "../../components/image";
 import Seo from "../../components/seo";
 import { getStrapiMedia } from "../../lib/media";
 
-const Article = ({ article, categories }) => {
+const Article = ({ article }) => {
   const imageUrl = getStrapiMedia(article.image);
 
   const seo = {
@@ -78,7 +78,7 @@ export async function getStaticPaths() {
         slug: article.slug,
       },
     })),
-    fallback: true,
+    fallback: 'blocking',
   };
 }
 
@@ -86,11 +86,11 @@ export async function getStaticProps({ params }) {
   const articles = await fetchAPI(
     `/articles?slug=${params.slug}`
   );
-  const categories = await fetchAPI("/categories");
+  // const categories = await fetchAPI("/categories");
 
   return {
-    props: { article: articles[0], categories },
-    revalidate: 1,
+    props: { article: articles[0] },
+    revalidate: 60,
   };
 }
 

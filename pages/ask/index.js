@@ -5,7 +5,11 @@ import Layout from '../../components/layout';
 function Ask() {
   return(
     <Layout>
-      
+      <div>
+        <form action="">
+          <formGroup></formGroup>
+        </form>
+      </div>
     </Layout>
   )
 }
