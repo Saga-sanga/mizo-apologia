@@ -54,7 +54,7 @@ export async function getStaticPaths() {
         slug: answer.slug,
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
 
