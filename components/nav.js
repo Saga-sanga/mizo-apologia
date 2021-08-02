@@ -23,7 +23,7 @@ const Nav = () => {
           </div>
           <div className="wrapper-nav nav-link">
             <Link href="/category">
-              <a>Thuziak</a>
+              <a>Blog</a>
             </Link>  
           </div>
           <div className="wrapper-nav nav-link">
@@ -32,7 +32,11 @@ const Nav = () => {
             </Link>
           </div>
           <div className="wrapper-nav nav-link">
-            Ask
+            <Link href="/ask">
+              <a>
+                Ask
+              </a>
+            </Link>
           </div>
           <div className="wrapper-nav nav-link">
             Search

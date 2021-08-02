@@ -38,7 +38,7 @@ export default function Home({ answers, articles, hero }) {
             <div>
               <h1 
                 style={{textAlign:'center'}}>
-                  Thuziak Tharte
+                  Blog
               </h1>
               <Articles articles={ articles }/>
               <div style={{textAlign: 'center', marginTop: '3rem'}}>
