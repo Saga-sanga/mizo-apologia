@@ -180,3 +180,27 @@ a:active { text-decoration: none; }
   max-width: 750px;
   font-size: 1.125rem;
 }
+
+.aboutUsBody {
+  text-align: justify;
+  max-width: 750px;
+  padding-top: 2em;
+}
+
+.navAskButton {
+  cursor: pointer;
+  border: none;
+  background: #fc446d;
+  padding: 0.5em 1.5em;
+  border-radius: .28571429rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-left: 0.5em;
+  transition: all .1s ease;
+}
+
+.navAskButton:hover,
+.navAskButton:active {
+  background-color: #fc2857;
+}

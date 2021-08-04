@@ -31,10 +31,10 @@ const Nav = () => {
               <a>About Us</a>
             </Link>
           </div>
-          <div className="wrapper-nav nav-link">
+          <div className="wrapper-nav nav-link navAskButton">
             <Link href="/ask">
               <a>
-                Ask
+                Zawt Rawh
               </a>
             </Link>
           </div>

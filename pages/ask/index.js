@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Head from 'next/head';
 import styles from './EmailForm.module.css';
 import Layout from '../../components/layout';
 
