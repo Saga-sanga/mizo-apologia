@@ -188,6 +188,7 @@ a:active { text-decoration: none; }
 }
 
 .navAskButton {
+  display: block;
   cursor: pointer;
   border: none;
   background: #fc446d;
@@ -196,7 +197,7 @@ a:active { text-decoration: none; }
   color: white;
   font-weight: 500;
   font-size: 1.1rem;
-  margin-left: 0.5em;
+  margin-left: 16px;
   transition: all .1s ease;
 }
 
