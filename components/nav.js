@@ -38,9 +38,9 @@ const Nav = () => {
               </a>
             </Link>
           </div>
-          <div className="wrapper-nav nav-link">
+          {/* <div className="wrapper-nav nav-link">
             Search
-          </div>
+          </div> */}
         </div>
       </nav>
     </div>

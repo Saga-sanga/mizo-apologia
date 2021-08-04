@@ -1,0 +1,70 @@
+.headingMargin {
+  margin: 0;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.rowField {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.formField:nth-child(1) {
+  padding-right: 0.5em;
+}
+
+.formField:nth-child(2) {
+  padding-left: 0.5em;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.textArea {
+  width: 100%;
+  margin-bottom: 1.25em;
+  height: 200px;
+}
+
+.textInputField {
+  border-radius: 0.2rem;
+  border: 1px solid rgba(34,36,38,.15);
+  line-height: 1.21428571em;
+  padding: .67857143em 1em;
+}
+
+.formLabel {
+  color: rgba(0,0,0,.87);
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 0.25rem;
+}
+
+.submitButton {
+  font-size: 1em;
+  font-weight: 700;
+  padding: .75em 1.5em;
+  cursor: pointer;
+  background: #c8d0d5cf none;
+  color: rgba(0,0,0,.6);
+  border: none;
+  border-radius: .28571429rem;
+  transition: all .1s ease;
+}
+
+.submitButton:hover,
+.submitButton:active {
+  background: #868c91cf none;
+  color: rgba(0,0,0,.8);
+}

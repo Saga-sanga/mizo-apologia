@@ -17,6 +17,7 @@ const MyApp = ({ Component, pageProps }) => {
     <div>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="Bible Zawhna leh Chhana"/>
         <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
         <link
           rel="stylesheet"

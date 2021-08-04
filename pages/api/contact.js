@@ -6,14 +6,14 @@ export default async (req, res) => {
   
   const message = `
     Name: ${body.name}\r\n
-    Email: ${body.email}\r\n
+    Email ID: ${body.email}\r\n
     Message: ${body.message}
   `;
 
   const data = {
     to: 'mizo.apologia@gmail.com',
     from: 'mizoapologia.noreply@gmail.com',
-    subject: `New message from ${body.name}`,
+    subject: `New question from ${body.name}`,
     text: message,
     html: message.replace(/\r\n/g, '<br />'),
   };

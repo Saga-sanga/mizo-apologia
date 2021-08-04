@@ -42,7 +42,7 @@ export async function getStaticProps() {
 
   return {
     props: { articles, global },
-    revalidate: 60,
+    revalidate: 1
   };
 }
 
