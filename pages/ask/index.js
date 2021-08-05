@@ -30,46 +30,48 @@ function Ask() {
 
   return (
     <Layout>
-      <div className="topic-body">
-        <h1 className={styles.headingMargin}>Zawhna Zawt Rawh</h1>
-        <h5 className={styles.headingMargin}>A hnuaia form hmang hian i zawhna zawt rawh le</h5>
-        <form onSubmit={handleSubmit} className={styles.contactForm}>
-          <div className={styles.rowField}>
-            <div className={styles.formField}>
-              <label className={styles.formLabel} htmlFor="name">Name</label>
-              <input
-                className={styles.textInputField}
-                id="name"
-                type="text"
-                placeholder="e.g. Lalnuntluanga Ralte"
-                onChange={e => setName(e.target.value)}
-                required
-              />
+      <div className={styles.formContainer}>
+        <div className={`topic-body ${styles.formBody}`}>
+          <h1 className={styles.headingMargin}>Zawhna Zawt Rawh</h1>
+          <h5 className={styles.headingMargin}>A hnuaia form hmang hian i zawhna zawt rawh le</h5>
+          <form onSubmit={handleSubmit} className={styles.contactForm}>
+            <div className={styles.rowField}>
+              <div className={styles.formField}>
+                <label className={styles.formLabel} htmlFor="name">Name</label>
+                <input
+                  className={styles.textInputField}
+                  id="name"
+                  type="text"
+                  placeholder="e.g. Lalnuntluanga Ralte"
+                  onChange={e => setName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className={styles.formField}>
+                <label className={styles.formLabel} htmlFor="email">Email</label>
+                <input
+                  className={styles.textInputField}
+                  id="email"
+                  type="email"
+                  // pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
+                  placeholder="e.g. valtea@email.com"
+                  onChange={e => setEmail(e.target.value)}
+                  required
+                />
+              </div>
             </div>
-            <div className={styles.formField}>
-              <label className={styles.formLabel} htmlFor="email">Email</label>
-              <input
-                className={styles.textInputField}
-                id="email"
-                type="email"
-                // pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
-                placeholder="e.g. valtea@email.com"
-                onChange={e => setEmail(e.target.value)}
-                required
-              />
-            </div>
-          </div>
-          <label className={styles.formLabel} htmlFor="message">Message</label>
-          <textarea
-            className={styles.textArea + ' ' + styles.textInputField}
-            id="message"
-            type="text"
-            rows="4"
-            onChange={e => setMessage(e.target.value)}
-            required
-          />
-          <button className={styles.submitButton} type="submit">Submit</button>
-        </form>
+            <label className={styles.formLabel} htmlFor="message">Message</label>
+            <textarea
+              className={styles.textArea + ' ' + styles.textInputField}
+              id="message"
+              type="text"
+              rows="4"
+              onChange={e => setMessage(e.target.value)}
+              required
+            />
+            <button className={styles.submitButton} type="submit">Submit</button>
+          </form>
+        </div>
       </div>
     </Layout>
   );
