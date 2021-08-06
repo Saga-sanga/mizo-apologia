@@ -270,6 +270,7 @@ a:active { text-decoration: none; }
 
   #heroButton1 {    
     align-self: center;
+    margin-top: 15% !important;
   }
 }
 
