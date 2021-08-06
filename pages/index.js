@@ -27,7 +27,8 @@ export default function Home({ answers, articles, hero }) {
                 style={{
                   marginTop: '5%', 
                   marginLeft: 0,
-                  fontSize: '1.3rem'
+                  fontSize: '1.3rem',
+                  alignSelf: 'center'
                 }}
               >
                 <Link href="/ask">
@@ -35,7 +36,10 @@ export default function Home({ answers, articles, hero }) {
                     Zawhna Zawt Rawh
                   </a>
                 </Link>
-              </div>  
+              </div>
+              {/* <div>
+                <img src="/scroll-down.png" alt="scroll icon" />
+              </div> */}
           </div>
           <section className='answerSection'>
             <div className='answerContentFlex'>
@@ -44,7 +48,7 @@ export default function Home({ answers, articles, hero }) {
                   Chhanna Tharte
               </h1>
               <AnswerList answers={ answers} />
-              <div style={{textAlign: 'center', marginTop: '3rem'}}>
+              <div style={{marginTop: '3rem'}}>
                 <CustomButton linkPath="/answers">Chhanna Dang Chhiar Rawh</CustomButton>              
               </div>
             </div>
@@ -56,7 +60,7 @@ export default function Home({ answers, articles, hero }) {
                   Blog
               </h1>
               <Articles articles={ articles }/>
-              <div style={{textAlign: 'center', marginTop: '3rem'}}>
+              <div style={{marginTop: '3rem'}}>
                 <CustomButton linkPath="/articles">Thuziak Dang Chhiar Rawh</CustomButton>              
               </div>
             </div>
