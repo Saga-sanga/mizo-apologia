@@ -15,7 +15,8 @@ const Nav = () => {
             </a>
           </Link>
         </div>
-        <div className="nav-style">         
+        
+        <div className="nav-style nav-links">         
           <div className="wrapper-nav nav-link">
             <Link href="/topic">
               <a>Chhanna</a>
@@ -37,10 +38,62 @@ const Nav = () => {
                 Zawt Rawh
               </a>
             </Link>
-          </div>
+          </div>        
           {/* <div className="wrapper-nav nav-link">
             Search
           </div> */}
+        </div>
+
+        <div 
+          className="hamburger-menu" 
+          onClick={() => {document.querySelector('.modal-container').style.display = 'block'}}
+        >
+          <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="48px" height="48px"><path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"/></svg>
+        </div>
+
+        {/* Modal Menu */}
+        <div className="modal-container">
+          <div className="modal-menu">
+            <span 
+              className="close-icon"
+              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
+            >
+              x
+            </span>
+            <div 
+              className="wrapper-nav nav-link"
+              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
+            >
+              <Link href="/topic">
+                <a>Chhanna</a>
+              </Link>
+            </div>
+            <div 
+              className="wrapper-nav nav-link"
+            >
+              <Link href="/category">
+                <a>Blog</a>
+              </Link>  
+            </div>
+            <div 
+              className="wrapper-nav nav-link"
+            >
+              <Link href="/aboutus">
+                <a>About Us</a>
+              </Link>
+            </div>
+            <div 
+              className="wrapper-nav nav-link navAskButton" 
+              style={{marginTop: '16px', marginLeft: 0}}
+            >
+              <Link href="/ask">
+                <a>
+                  Zawt Rawh
+                </a>
+              </Link>
+            </div>
+            <div style={{padding: '14px'}}></div>
+          </div>
         </div>
       </nav>
     </div>

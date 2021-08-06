@@ -223,3 +223,26 @@
     0 8px 10px -5px rgb(156 39 176 / 20%);
   /* background-color: #9c27b0; */
 }
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .answerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .articleGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .articleGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .answerGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

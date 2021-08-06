@@ -205,3 +205,54 @@ a:active { text-decoration: none; }
 .navAskButton:active {
   background-color: #fc2857;
 }
+
+.modal-container {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 9px;
+}
+
+.modal-menu {
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px, rgb(0 0 0 / 15%) 0px 5px 25px 0px, rgb(0 0 0 / 5%) 0px 3px 3px 0px;
+  z-index: 2;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.close-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 1;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 24px 26px;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-subtext {
+    margin-right: 25%;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
