@@ -181,10 +181,12 @@ a:active { text-decoration: none; }
   font-size: 1.125rem;
 }
 
-.aboutUsBody {
-  text-align: justify;
+.aboutUsBody{
   max-width: 750px;
   padding-top: 2em;
+}
+.aboutUsBody p {
+  text-align: justify;
 }
 
 .navAskButton {
@@ -255,4 +257,20 @@ a:active { text-decoration: none; }
   .hamburger-menu {
     display: block;
   }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero-subtext {
+    margin-right: 0;
+  }
+  
+  .hero-title {
+    font-size: 4rem !important;
+  } 
+}
+
+@media only screen and (max-width: 430px) {
+  .hero-title {
+    font-size: 3rem !important;
+  } 
 }

@@ -5,6 +5,7 @@ import AnswerList from '../components/answerList'
 import { fetchAPI } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
 import CustomButton from '../components/customButton'
+import Link from 'next/link'
 
 export default function Home({ answers, articles, hero }) {
   const imageUrl = getStrapiMedia(hero.heroImage);
@@ -21,6 +22,20 @@ export default function Home({ answers, articles, hero }) {
           >
               <h1 style={{textAlign: 'left'}} className='hero-title'>{hero.title}</h1>
               <h2 className='hero-subtext'>{hero.subText}</h2>
+              <div 
+                className="wrapper-nav nav-link navAskButton"
+                style={{
+                  marginTop: '5%', 
+                  marginLeft: 0,
+                  fontSize: '1.3rem'
+                }}
+              >
+                <Link href="/ask">
+                  <a>
+                    Zawhna Zawt Rawh
+                  </a>
+                </Link>
+              </div>  
           </div>
           <section className='answerSection'>
             <div className='answerContentFlex'>
