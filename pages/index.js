@@ -23,12 +23,12 @@ export default function Home({ answers, articles, hero }) {
               <h1 style={{textAlign: 'left'}} className='hero-title'>{hero.title}</h1>
               <h2 className='hero-subtext'>{hero.subText}</h2>
               <div 
+                id='heroButton1'
                 className="wrapper-nav nav-link navAskButton"
                 style={{
                   marginTop: '5%', 
                   marginLeft: 0,
-                  fontSize: '1.3rem',
-                  alignSelf: 'center'
+                  fontSize: '1.3rem'
                 }}
               >
                 <Link href="/ask">
