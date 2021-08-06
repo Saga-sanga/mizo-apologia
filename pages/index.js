@@ -48,7 +48,7 @@ export default function Home({ answers, articles, hero }) {
                   Chhanna Tharte
               </h1>
               <AnswerList answers={ answers} />
-              <div style={{marginTop: '3rem'}}>
+              <div style={{textAlign: 'center', marginTop: '3rem'}}>
                 <CustomButton linkPath="/answers">Chhanna Dang Chhiar Rawh</CustomButton>              
               </div>
             </div>
@@ -60,7 +60,7 @@ export default function Home({ answers, articles, hero }) {
                   Blog
               </h1>
               <Articles articles={ articles }/>
-              <div style={{marginTop: '3rem'}}>
+              <div style={{textAlign: 'center', marginTop: '3rem'}}>
                 <CustomButton linkPath="/articles">Thuziak Dang Chhiar Rawh</CustomButton>              
               </div>
             </div>
