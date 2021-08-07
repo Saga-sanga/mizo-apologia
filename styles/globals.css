@@ -257,6 +257,10 @@ a:active { text-decoration: none; }
   .hamburger-menu {
     display: block;
   }
+
+  .contentTitleBlur {
+    font-size: 3rem !important;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -271,6 +275,10 @@ a:active { text-decoration: none; }
   #heroButton1 {    
     align-self: center;
     margin-top: 15% !important;
+  }
+
+  .contentTitleBlur {
+    font-size: 2.2rem !important;
   }
 }
 
