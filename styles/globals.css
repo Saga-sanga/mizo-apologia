@@ -98,14 +98,14 @@ a:active { text-decoration: none; }
 
 .hero-title {
   font-size: 4.3rem !important;
-  text-shadow: 3px 4px 3px #272626;
+  text-shadow: 1px 1px 3px #272626;
 }
 
 .hero-subtext {
   margin-top: 0;
   font-size: 1.4rem;
   margin-right: 50%;
-  text-shadow: 3px 4px 3px #272626;
+  text-shadow: 1px 1px 3px #272626;
 }
 
 .logo-container {
