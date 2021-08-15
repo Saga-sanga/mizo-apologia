@@ -1,75 +1,72 @@
 import React from 'react';
 import Link from 'next/link';
+import styles from '../styles/Footer.module.css'
 // import Moment from 'react-moment';
 
 function Footer() {
   const date = new Date().getFullYear();
   return (
     <div 
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        fontSize: '0.8rem',
-        borderTop: '1px solid #e1e0e3'
-      }}
+      className={styles.footerContainer}
     >
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        justifyContent: 'space-evenly',
-        marginTop: '2rem'
-      }}>
-        <div
-          style={{maxWidth: '25%'}}
-        >
-          <h4>Our Mission</h4>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis eaque odit eius accusamus quis temporibus aliquid eligendi vel laudantium quos molestiae a, nam obcaecati culpa voluptate natus quae veritatis asperiores.</p>
+      <div 
+        className={styles.footerBody}
+      >
+        <div>
+          <h4 className={styles.footerh4}>Our Mission</h4>
+          <p className={styles.missionText}>
+            Mizo Apologia rawngbawlna hian internet kaltlangin thlarau lam thila zawhna 
+            hrang hrang te Bible atanga chhanna hmangin Lalpa Isua Krista ram tih zau a tum a ni. 
+          </p>
         </div>
 
         <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start'
-          }}
+          className={styles.footerContent}
         >
-          <h4>Quick Links</h4>
+          <h4 className={styles.footerh4}>Quick Links</h4>
           <Link href="/topic">
-            <a>Chhanna</a>
+            <a className={styles.footerText}>Chhanna</a>
           </Link>
           <Link href="/category">
-            <a>Blog</a>
+            <a className={styles.footerText}>Blog</a>
           </Link> 
           <Link href="/aboutus">
-            <a>About Us</a>
+            <a className={styles.footerText}>About Us</a>
           </Link>
           <Link href="/ask">
-            <a>
+            <a className={styles.footerText}>
               Zawt Rawh
             </a>
           </Link>
         </div>
 
         <div 
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start'
-          }}
+          className={styles.footerContent}
         >
-          <h4>Contact Us</h4>
-          <span>Phn: number</span>
-          <span>Email: email@email.com</span>
-          <span>Add: VB-97, Vaivakawn, Aizawl, Mizoram, P.O. 796009.</span>
+          <h4 className={styles.footerh4}>Contact Us</h4>
+          <span className={styles.footerText}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg> number
+          </span>
+          <span className={styles.footerText}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+              </path><polyline points="22,6 12,13 2,6"></polyline>
+            </svg> email@email.com
+          </span>
+          <span className={styles.footerText}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+              </path><circle cx="12" cy="10" r="3"></circle>
+            </svg> VB-97, Vaivakawn, Aizawl, Mizoram, P.O. 796009
+          </span>
         </div>
       </div>
 
       <span 
-        style={{
-          textAlign: 'center',
-          margin: '1rem'
-        }}
+        className={styles.copyRightText}
       >
         Copyright © {date} MizoApologia.org. All Rights Reserved.
       </span>

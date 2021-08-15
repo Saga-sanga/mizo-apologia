@@ -37,7 +37,7 @@ function Ask() {
           <form onSubmit={handleSubmit} className={styles.contactForm}>
             <div className={styles.rowField}>
               <div className={styles.formField}>
-                <label className={styles.formLabel} htmlFor="name">Name</label>
+                <label className={styles.formLabel} htmlFor="name">Hming</label>
                 <input
                   className={styles.textInputField}
                   id="name"
@@ -60,7 +60,7 @@ function Ask() {
                 />
               </div>
             </div>
-            <label className={styles.formLabel} htmlFor="message">Message</label>
+            <label className={styles.formLabel} htmlFor="message">Zawhna</label>
             <textarea
               className={styles.textArea + ' ' + styles.textInputField}
               id="message"
