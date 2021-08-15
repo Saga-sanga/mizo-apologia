@@ -17,8 +17,16 @@ function Footer() {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'flex-start',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        marginTop: '2rem'
       }}>
+        <div
+          style={{maxWidth: '25%'}}
+        >
+          <h4>Our Mission</h4>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis eaque odit eius accusamus quis temporibus aliquid eligendi vel laudantium quos molestiae a, nam obcaecati culpa voluptate natus quae veritatis asperiores.</p>
+        </div>
+
         <div
           style={{
             display: 'flex',
@@ -57,8 +65,10 @@ function Footer() {
         </div>
       </div>
 
-      <span style={{
-        textAlign: 'center',
+      <span 
+        style={{
+          textAlign: 'center',
+          margin: '1rem'
         }}
       >
         Copyright © {date} MizoApologia.org. All Rights Reserved.
