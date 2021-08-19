@@ -21,10 +21,10 @@ function Ask() {
       console.log('Response Received!');
       if (res.status === 200) {
         console.log('Message Sent!');
-        setName('');
-        setEmail('');
-        setMessage('');
       }
+      setName('');
+      setEmail('');
+      setMessage('');
     });
   };
 

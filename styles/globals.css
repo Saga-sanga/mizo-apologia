@@ -134,7 +134,8 @@ a:active { text-decoration: none; }
 .topic-body {
   height: 100%;
   margin: 0 15% 0 15%;
-  padding-top: 2em;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 }
 
 .ul-list-style {
@@ -147,6 +148,21 @@ a:active { text-decoration: none; }
   text-shadow: 3px 4px 3px #272626;
   padding: 0.5rem 1.3rem;
   border-radius: 15px;
+}
+
+.indexTitleContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.homeLink {
+  display: flex;
+  position: absolute;
+  top: 7rem;
 }
 
 .articleSection {
@@ -183,7 +199,8 @@ a:active { text-decoration: none; }
 
 .aboutUsBody{
   max-width: 750px;
-  padding-top: 2em;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .aboutUsBody p {
   text-align: justify;

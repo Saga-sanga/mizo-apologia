@@ -16,7 +16,7 @@ function Footer() {
           <h4 className={styles.footerh4}>Our Mission</h4>
           <p className={styles.missionText}>
             Mizo Apologia rawngbawlna hian internet kaltlangin thlarau lam thila zawhna 
-            hrang hrang te Bible atanga chhanna hmangin Lalpa Isua Krista ram tih zau a tum a ni. 
+            hrang hrangte Bible atanga chhanna hmangin Lalpa Isua Krista ram tihzauh a tum a ni. 
           </p>
         </div>
 

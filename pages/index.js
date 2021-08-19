@@ -37,16 +37,22 @@ export default function Home({ answers, articles, hero }) {
                   </a>
                 </Link>
               </div>
-              {/* <div>
-                <img src="/scroll-down.png" alt="scroll icon" />
-              </div> */}
           </div>
           <section className='answerSection'>
             <div className='answerContentFlex'>
-              <h1 
-                style={{textAlign:'center'}}>
-                  Chhanna Tharte
-              </h1>
+              <div className='indexTitleContainer'>
+                <h1>
+                    Chhanna Tharte
+                </h1>
+                <Link href='/topic'>
+                  <a style={{display: 'flex'}}>
+                    Topics
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                </Link>
+              </div>
               <AnswerList answers={ answers} />
               <div style={{textAlign: 'center', marginTop: '3rem'}}>
                 <CustomButton linkPath="/answers">Chhanna Dang Chhiar Rawh</CustomButton>              
@@ -55,10 +61,19 @@ export default function Home({ answers, articles, hero }) {
           </section>
           <section className='articleSection'>
             <div>
-              <h1 
-                style={{textAlign:'center'}}>
-                  Blog
-              </h1>
+              <div className='indexTitleContainer'>
+                <h1>
+                    Blog
+                </h1>
+                <Link href='/category'>
+                  <a style={{display: 'flex'}}>
+                    Categories
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                </Link>  
+              </div>
               <Articles articles={ articles }/>
               <div style={{textAlign: 'center', marginTop: '3rem'}}>
                 <CustomButton linkPath="/articles">Thuziak Dang Chhiar Rawh</CustomButton>              
