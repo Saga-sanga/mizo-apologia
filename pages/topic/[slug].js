@@ -2,6 +2,7 @@ import AnswerList from "../../components/answerList";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
+import Link from "next/link";
 
 const Topic = ({ topic, topics, answers, global }) => {
   const seo = {
@@ -14,7 +15,15 @@ const Topic = ({ topic, topics, answers, global }) => {
       <Seo seo={seo} />
       <div className="answerSection">
         <div className="uk-container uk-container-large">
-          <h1>{topic.name}</h1>
+          <Link href="/topic">
+            <a className="homeLink">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              Topics
+            </a>
+          </Link>
+          <h1 style={{marginTop: 0}}>{topic.name}</h1>
           <AnswerList answers={answers} />
         </div>
       </div>

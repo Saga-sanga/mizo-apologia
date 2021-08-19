@@ -2,6 +2,7 @@ import ArticleList from "../../components/articleList";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
+import Link from "next/link";
 
 const Category = ({ category, categories, articles, global }) => {
   const seo = {
@@ -14,7 +15,15 @@ const Category = ({ category, categories, articles, global }) => {
       <Seo seo={seo} />
       <div className="articleSection">
         <div className="uk-container uk-container-large">
-          <h1>{category.name}</h1>
+          <Link href="/category">
+            <a className="homeLink">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              Categories
+            </a>
+          </Link>
+          <h1 style={{marginTop: 0}}>{category.name}</h1>
           <ArticleList articles={articles} />
         </div>
       </div>

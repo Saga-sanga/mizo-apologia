@@ -13,7 +13,7 @@ function Footer() {
         className={styles.footerBody}
       >
         <div>
-          <h4 className={styles.footerh4}>Our Mission</h4>
+          <h4 className={styles.footerh4}>Kan Mission</h4>
           <p className={styles.missionText}>
             Mizo Apologia rawngbawlna hian internet kaltlangin thlarau lam thila zawhna 
             hrang hrangte Bible atanga chhanna hmangin Lalpa Isua Krista ram tihzauh a tum a ni. 
@@ -60,7 +60,7 @@ function Footer() {
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-map-pin">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
               </path><circle cx="12" cy="10" r="3"></circle>
-            </svg> VB-97, Vaivakawn, Aizawl, Mizoram, P.O. 796009
+            </svg> VB-97, Vaivakawn, Aizawl, Mizoram, P.O. 796009 
           </span>
         </div>
       </div>

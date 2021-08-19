@@ -57,6 +57,9 @@ a:active { text-decoration: none; }
 .nav-link a{
   color: inherit;
 }
+/* .nav-link a:hover {
+  color: black;
+} */
 
 .wrapper-nav {
   display: inline-block;
