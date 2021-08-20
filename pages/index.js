@@ -63,7 +63,7 @@ export default function Home({ answers, articles, hero }) {
             <div>
               <div className='indexTitleContainer'>
                 <h1>
-                    Blog
+                    Thuziak Tharte
                 </h1>
                 <Link href='/category'>
                   <a style={{display: 'flex'}}>
