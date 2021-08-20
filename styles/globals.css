@@ -162,6 +162,12 @@ a:active { text-decoration: none; }
   padding: 0 1rem;
 }
 
+.indexTitleContainer a{
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+}
+
 .homeLink {
   display: flex;
   position: absolute;

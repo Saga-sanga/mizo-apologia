@@ -1,12 +1,19 @@
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from 'rehype-raw';
 import Layout from '../../components/layout';
+import Seo from "../../components/seo";
 import { fetchAPI } from '../../lib/api';
 
 export default function AboutUs({ aboutUs }) {
+  const seo = {
+    metaTitle: 'About Us',
+    metaDescription: `Kan chanchin leh kan thu rin te`,
+  };
+
   return (
     <div>
       <Layout>
+        <Seo seo={seo} />
         <main className="uk-container aboutUsBody">
           <div>
             <h1>{aboutUs.title}</h1>

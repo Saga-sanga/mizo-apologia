@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const Topic = ({ articles, global }) => {
   const seo = {
-    metaTitle: 'Answers',
-    metaDescription: `All articles`,
+    metaTitle: 'Thuziak',
+    metaDescription: `Thuziak zawng zawng te`,
   };
 
   return (
@@ -24,7 +24,7 @@ const Topic = ({ articles, global }) => {
             </a>
           </Link>
           <div className='indexTitleContainer'>
-          <h1 style={{marginTop: 0}}>All Articles</h1>
+          <h1 style={{marginTop: 0}}>Thuziakte</h1>
             <Link href='/category'>
               <a style={{display: 'flex'}}>
                 Categories

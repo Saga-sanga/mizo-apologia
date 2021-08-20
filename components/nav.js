@@ -64,15 +64,15 @@ const Nav = () => {
               className="wrapper-nav nav-link"
               onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
             >
-              <Link href="/topic">
+              <Link href="/answers">
                 <a>Chhanna</a>
               </Link>
             </div>
             <div 
               className="wrapper-nav nav-link"
             >
-              <Link href="/category">
-                <a>Blog</a>
+              <Link href="/articles">
+                <a>Thuziak</a>
               </Link>  
             </div>
             <div 
