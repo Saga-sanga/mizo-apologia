@@ -28,7 +28,7 @@ function Footer() {
             <a className={styles.footerText}>Chhanna</a>
           </Link>
           <Link href="/category">
-            <a className={styles.footerText}>Blog</a>
+            <a className={styles.footerText}>Thuziak</a>
           </Link> 
           <Link href="/aboutus">
             <a className={styles.footerText}>About Us</a>
