@@ -35,7 +35,7 @@ function Home({categories}) {
 }
 
 export async function getStaticProps() {
-  const categories = await fetchAPI("/categories");
+  const categories = await fetchAPI("/categories?_sort=slug:ASC");
 
   return {
     props: {categories},

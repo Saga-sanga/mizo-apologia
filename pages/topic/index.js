@@ -35,7 +35,7 @@ function Home({topics}) {
 }
 
 export async function getStaticProps() {
-  const topics = await fetchAPI("/topics");
+  const topics = await fetchAPI("/topics?_sort=slug:ASC");
 
   return {
     props: {topics},

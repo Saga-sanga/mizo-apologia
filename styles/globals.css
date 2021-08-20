@@ -164,7 +164,6 @@ a:active { text-decoration: none; }
 
 .indexTitleContainer a{
   flex-direction: row;
-  width: 100%;
   justify-content: flex-end;
 }
 
