@@ -173,6 +173,12 @@ a:active { text-decoration: none; }
   top: 7rem;
 }
 
+.articleLink {
+  display: flex;
+  position: relative;
+  right: 10px;
+}
+
 .articleSection {
   width: 100%;
   padding: 5rem 0px;
