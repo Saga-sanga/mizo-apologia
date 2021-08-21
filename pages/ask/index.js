@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import styles from './EmailForm.module.css';
 import Layout from '../../components/layout';
+import { useRouter } from 'next/router';
 
 function Ask() {
+  const router = useRouter();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -21,6 +23,7 @@ function Ask() {
       console.log('Response Received!');
       if (res.status === 200) {
         console.log('Message Sent!');
+        router.push('/success');
       }
       setName('');
       setEmail('');
