@@ -25,9 +25,6 @@ function Ask() {
         console.log('Message Sent!');
         router.push('/success');
       }
-      setName('');
-      setEmail('');
-      setMessage('');
     });
   };
 
