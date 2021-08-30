@@ -20,7 +20,7 @@ function Home({categories}) {
           {
             categories.map(category => {
               return (
-                <li key={category.id}>
+                <li key={category.id} className="listContentStyle">
                   <Link as={`/category/${category.slug}`} href="/category/[id]">
                     <a>{category.name}</a>
                   </Link>

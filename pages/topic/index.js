@@ -20,7 +20,7 @@ function Home({topics}) {
           {
             topics.map(topic => {
               return (
-                <li key={topic.id}>
+                <li key={topic.id} className="listContentStyle">
                   <Link as={`/topic/${topic.slug}`} href="/topic/[id]">
                     <a>{topic.name}</a>
                   </Link>
