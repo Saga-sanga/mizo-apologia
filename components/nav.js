@@ -75,6 +75,7 @@ const Nav = () => {
             </div>         
             <div 
               className="wrapper-nav nav-link"
+              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
             >
               <Link href="/answers">
                 <a>Chhanna</a>
@@ -82,6 +83,7 @@ const Nav = () => {
             </div>
             <div 
               className="wrapper-nav nav-link"
+              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
             >
               <Link href="/articles">
                 <a>Thuziak</a>
@@ -89,13 +91,15 @@ const Nav = () => {
             </div>
             <div 
               className="wrapper-nav nav-link"
+              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
             >
               <Link href="/aboutus">
                 <a>About Us</a>
               </Link>
             </div>
             <div 
-              className="wrapper-nav nav-link navAskButton" 
+              className="wrapper-nav nav-link navAskButton"
+              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
               style={{marginTop: '16px', marginLeft: 0}}
             >
               <Link href="/ask">
