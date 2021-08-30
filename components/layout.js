@@ -5,7 +5,11 @@ const Layout = ({children}) => {
   return (
     <div>
       <Nav/>
-      {children}
+        <div 
+          onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
+        >
+         {children}
+        </div>
       <Footer />
     </div>
   )

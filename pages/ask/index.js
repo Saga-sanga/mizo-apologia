@@ -30,7 +30,7 @@ function Ask() {
 
   return (
     <Layout>
-      <div className={styles.formContainer}>
+      <main className={styles.formContainer}>
         <div className={`topic-body ${styles.formBody}`}>
           <h1 className={styles.headingMargin}>Zawhna Zawt Rawh</h1>
           <h5 className={styles.headingMargin}>A hnuaia form hmang hian i zawhna zawt rawh le</h5>
@@ -72,7 +72,7 @@ function Ask() {
             <button className={styles.submitButton} type="submit">Submit</button>
           </form>
         </div>
-      </div>
+      </main>
     </Layout>
   );
 }

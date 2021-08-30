@@ -13,7 +13,7 @@ const Category = ({ category, categories, articles, global }) => {
   return (
     <Layout categories={categories} global={global}>
       <Seo seo={seo} />
-      <div className="articleSection">
+      <main className="articleSection">
         <div className="uk-container uk-container-large">
           <Link href="/category">
             <a className="homeLink">
@@ -26,7 +26,7 @@ const Category = ({ category, categories, articles, global }) => {
           <h1 style={{marginTop: 0}}>{category.name}</h1>
           <ArticleList articles={articles} />
         </div>
-      </div>
+      </main>
     </Layout>
   );
 };

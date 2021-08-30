@@ -13,7 +13,7 @@ const Topic = ({ topic, topics, answers, global }) => {
   return (
     <Layout topics={topics} global={global}>
       <Seo seo={seo} />
-      <div className="answerSection">
+      <main className="answerSection">
         <div className="uk-container uk-container-large">
           <Link href="/topic">
             <a className="homeLink">
@@ -26,7 +26,7 @@ const Topic = ({ topic, topics, answers, global }) => {
           <h1 style={{marginTop: 0}}>{topic.name}</h1>
           <AnswerList answers={answers} />
         </div>
-      </div>
+      </main>
     </Layout>
   );
 };
