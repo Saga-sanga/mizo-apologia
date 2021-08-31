@@ -99,7 +99,6 @@ export async function getStaticProps({ params }) {
   const articles = await fetchAPI(
     `/articles?slug=${params.slug}`
   );
-  // const categories = await fetchAPI("/categories");
 
   return {
     props: { article: articles[0] },

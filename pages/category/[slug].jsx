@@ -4,14 +4,14 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import Link from "next/link";
 
-const Category = ({ category, categories, articles, global }) => {
+const Category = ({ category, articles }) => {
   const seo = {
     metaTitle: category.name,
     metaDescription: `All ${category.name} articles`,
   };
 
   return (
-    <Layout categories={categories} global={global}>
+    <Layout>
       <Seo seo={seo} />
       <main className="articleSection">
         <div className="uk-container uk-container-large">
@@ -46,12 +46,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const category = (await fetchAPI(`/categories?slug=${params.slug}`))[0];
-  const categories = await fetchAPI("/categories");
-  const articles = await fetchAPI(`/articles?category.slug=${params.slug}`)
-  const global = await fetchAPI("/global");
+  const articles = await fetchAPI(`/articles?category.slug=${params.slug}`);
 
   return {
-    props: { category, categories, articles, global },
+    props: { category, articles },
     revalidate: 1
   };
 }

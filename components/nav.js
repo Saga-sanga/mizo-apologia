@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import SearchModule from './searchModule';
+import ModalMenu from './modalMenu';
 
 const Nav = () => {
   return (
@@ -44,10 +46,17 @@ const Nav = () => {
               </a>
             </Link>
           </div>        
-          {/* <div className="wrapper-nav nav-link">
-            Search
-          </div> */}
+          <div 
+            className="wrapper-nav nav-link"
+            onClick={() => {document.querySelector('.search-container').style.visibility = 'visible'}}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
         </div>
+        <SearchModule/>
 
         <div 
           className="hamburger-menu" 
@@ -55,62 +64,7 @@ const Nav = () => {
         >
           <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="34px" height="34px"><path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"/></svg>
         </div>
-
-        {/* Modal Menu */}
-        <div className="modal-container">
-          <div className="modal-menu">
-            <span 
-              className="close-icon"
-              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </span>
-            <div 
-              className="wrapper-nav nav-link" 
-              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
-            >
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </div>         
-            <div 
-              className="wrapper-nav nav-link"
-              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
-            >
-              <Link href="/answers">
-                <a>Chhanna</a>
-              </Link>
-            </div>
-            <div 
-              className="wrapper-nav nav-link"
-              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
-            >
-              <Link href="/articles">
-                <a>Thuziak</a>
-              </Link>  
-            </div>
-            <div 
-              className="wrapper-nav nav-link"
-              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
-            >
-              <Link href="/aboutus">
-                <a>About Us</a>
-              </Link>
-            </div>
-            <div 
-              className="wrapper-nav nav-link navAskButton"
-              onClick={() => {document.querySelector('.modal-container').style.display = 'none'}}
-              style={{marginTop: '16px', marginLeft: 0}}
-            >
-              <Link href="/ask">
-                <a>
-                  Zawt Rawh
-                </a>
-              </Link>
-            </div>
-            <div style={{padding: '14px'}}></div>
-          </div>
-        </div>
+        <ModalMenu/>
       </nav>
     </div>
   )

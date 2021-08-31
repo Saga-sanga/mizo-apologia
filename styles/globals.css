@@ -16,6 +16,7 @@ h1, h2, h3, h4 {
 
 .uk-container > p {
   text-align: justify;
+  line-height: 1.55;
 }
 
 a {
@@ -63,8 +64,9 @@ a:active { text-decoration: none; }
 
 .wrapper-nav {
   display: inline-block;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
+  cursor: pointer;
 }
 
 ._1200px-nav-container {
@@ -230,13 +232,45 @@ a:active { text-decoration: none; }
   color: white;
   font-weight: 500;
   font-size: 1.1rem;
-  margin-left: 16px;
+  margin: 0 12px;
   transition: all .1s ease;
 }
 
 .navAskButton:hover,
 .navAskButton:active {
   background-color: #fc2857;
+}
+
+.search-container {
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 9px;
+}
+
+.search-content {
+  max-width: 900px;
+  margin: 100px auto;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-bar > svg {
+  position: absolute; 
+  z-index: 6;
+  top: 16px;
+  left: 10px;
+}
+
+.search-bar > input {
+  width: 100%;
+  height: 60px;
+  padding: 0 42px;
 }
 
 .modal-container {
@@ -257,6 +291,11 @@ a:active { text-decoration: none; }
   background-color: white;
   box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px, rgb(0 0 0 / 15%) 0px 5px 25px 0px, rgb(0 0 0 / 5%) 0px 3px 3px 0px;
   z-index: 2;
+}
+
+.search-menu {
+  height: 98vh;
+  z-index: 5;
 }
 
 .hamburger-menu {
@@ -280,7 +319,7 @@ a:active { text-decoration: none; }
 
 /* Media Queries */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 840px) {
   .nav-links {
     display: none;
   }
