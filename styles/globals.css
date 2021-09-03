@@ -335,7 +335,8 @@ a:active { text-decoration: none; }
 }
 
 .mobile-search-icon {
-  padding: 0 0.75rem;
+  padding: 0 0.5rem;
+  margin: 0 0.5rem;
   color: black;
 }
 
