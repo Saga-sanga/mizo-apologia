@@ -17,7 +17,7 @@ function Search() {
     const contentType = 'answers';
     let results = [];
     if (query.length) {
-      results = await fetchAPI(`/${contentType}?slug_contains=${query}`);
+      results = await fetchAPI(`/${contentType}?title_contains=${query}`);
       setResults(results);
       if (results.length === 0) {
         setMessage('I thil zawn kan hmu lo!');
