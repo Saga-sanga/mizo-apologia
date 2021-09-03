@@ -325,7 +325,7 @@ a:active { text-decoration: none; }
 }
 
 .hamburger-menu {
-  display: none;
+  visibility: hidden;
 }
 
 .mobile-menu-section {
@@ -366,7 +366,7 @@ a:active { text-decoration: none; }
   }
 
   .hamburger-menu {
-    display: block;
+    visibility: visible;
   }
 
   .contentTitleBlur {
