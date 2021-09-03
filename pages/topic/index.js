@@ -5,7 +5,7 @@ import Layout from '../../components/layout';
 
 function Home({topics}) {
   return (
-    <Layout topics={topics}>
+    <Layout>
       <main className="topic-body">
         <Link href="/answers">
           <a className="homeLink">

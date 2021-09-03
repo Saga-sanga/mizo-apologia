@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import SearchModule from './searchModule';
 import ModalMenu from './modalMenu';
 
 const Nav = () => {
@@ -48,21 +47,35 @@ const Nav = () => {
           </div>        
           <div 
             className="wrapper-nav nav-link"
-            onClick={() => {document.querySelector('.search-container').style.visibility = 'visible'}}
+            // onClick={() => {document.querySelector('.search-container').style.visibility = 'visible'}}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
+            <Link href="/search">
+              <a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </a>
+            </Link>
           </div>
         </div>
-        <SearchModule/>
+        {/* <SearchModule/> */}
 
-        <div 
-          className="hamburger-menu" 
-          onClick={() => {document.querySelector('.modal-container').style.display = 'block'}}
-        >
-          <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="34px" height="34px"><path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"/></svg>
+        <div className="mobile-menu-section">
+          <Link href="/search">
+            <a className='mobile-search-icon hamburger-menu'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </a>
+          </Link>
+          <div 
+            className="hamburger-menu" 
+            onClick={() => {document.querySelector('.modal-container').style.display = 'block'}}
+          >
+            <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="34px" height="34px"><path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"/></svg>
+          </div>
         </div>
         <ModalMenu/>
       </nav>
