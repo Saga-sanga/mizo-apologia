@@ -23,7 +23,7 @@ function Search() {
         setMessage('I thil zawn kan hmu lo!');
       }
     }
-    console.log(results);
+    // console.log(results);
   }
 
   return (
