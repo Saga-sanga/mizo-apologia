@@ -77,7 +77,6 @@ const Nav = () => {
           </div>
         </div>
 
-        
         <ModalMenu/>
       </nav>
     </div>

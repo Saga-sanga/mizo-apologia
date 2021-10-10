@@ -68,7 +68,7 @@ const Article = ({ article }) => {
               </div>
               <div className="uk-width-expand">
                 <p className="uk-margin-remove-bottom" style={{fontSize: '1rem'}}>
-                  By {article.author.name}
+                  By {article.author.name}, {article.author.Title}
                 </p>
                 <p className="uk-text-meta uk-margin-remove-top">
                   <Moment format="MMM Do YYYY">{article.published_at}</Moment>

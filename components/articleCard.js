@@ -23,22 +23,25 @@ const ArticleCard = ({ article }) => {
             <h3>{article.title}</h3>
             <p>{article.description}</p>
             <div className="uk-grid-small uk-flex-left"  style={{marginTop: '1.5rem'}} data-uk-grid="true">
-              <div>
+              <div style={{alignSelf: 'center'}}>
                 {article.author.picture && (
                   <Image
                     image={article.author.picture}
                     style={{
                       objectFit: 'cover',
                       borderRadius: 9999,
-                      height: "2.5rem",
-                      width: "2.5rem"
+                      height: "2.8rem",
+                      width: "2.8rem"
                     }}
                   />
                 )}
               </div>
               <div className="uk-width-expand">
                 <p className="uk-margin-remove-bottom" style={{margin: 0, color:'black'}}>
-                  {article.author.name}
+                  {article.author.name},
+                </p>
+                <p className="uk-margin-remove-bottom" style={{margin: 0, color:'black', fontSize: '14px'}}>
+                  {article.author.Title}
                 </p>
                 <p className="uk-text-meta uk-margin-remove-top">
                   <Moment format="MMM Do YYYY">{article.published_at}</Moment>
