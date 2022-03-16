@@ -12,7 +12,7 @@ const AnswerCard = ({ answer }) => {
           <div>
             <img 
               className={styles.answerCardImage}
-              src={getStrapiURL(answer.image.formats.thumbnail.url)} 
+              src={getStrapiURL(answer.image.formats.small.url)} 
               alt={answer.image.alternativeText}
             />
           </div>

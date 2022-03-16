@@ -1,4 +1,5 @@
 const mail = require('@sendgrid/mail');
+// import cors from 'cors';
 mail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async (req, res) => {
@@ -9,7 +10,7 @@ export default async (req, res) => {
     Email ID: ${body.email}\r\n
     Message: ${body.message}
   `;
-
+ 
   const data = {
     to: 'mizo.apologia@gmail.com',
     from: 'mizoapologia.noreply@gmail.com',
