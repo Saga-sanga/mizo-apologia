@@ -8,9 +8,12 @@ function Ask() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const submitButton = document.getElementById('submitButton');
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    submitButton.disabled = true;
 
     const data = {
       name,
@@ -72,7 +75,7 @@ function Ask() {
               onChange={e => setMessage(e.target.value)}
               required
             />
-            <button className={styles.submitButton} type="submit">Submit</button>
+            <button id='submitButton' className={styles.submitButton} type="submit">Submit</button>
           </form>
           <div>
             <h3 style={{margin: '3rem 0 0.4rem 0'}}>Zawhna Thehluhna Chhungchanga Kaihhruaina</h3>
