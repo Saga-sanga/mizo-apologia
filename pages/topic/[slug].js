@@ -47,7 +47,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const topic = (await fetchAPI(`/topics?slug=${params.slug}`))[0];
   const topics = await fetchAPI("/topics");
-  const answers = await fetchAPI(`/answers?topic.slug=${params.slug}`)
+  const answers = await fetchAPI(`/answers?topic.slug=${params.slug}&_sort=slug:DESC`)
   const global = await fetchAPI("/global");
 
   return {
