@@ -31,7 +31,7 @@ const Answer = ({ answer }) => {
           <h1 className='contentTitleBlur'>{answer.title}</h1>
         </div>
         <div className="uk-section" style={{paddingTop: '25px'}}>
-          <div className="uk-container textAreaContainer">
+          <div className='uk-container textAreaContainer'>
             <div>
               <Link href="/answers">
                 <a className="articleLink">

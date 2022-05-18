@@ -14,6 +14,22 @@ h1, h2, h3, h4 {
   font-weight: 500;
 }
 
+/* Article Image and caption Style */
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+figcaption {
+  font-size: 0.85em;
+  margin-top: 10px;
+}
+
+/* <-- End --> */
+
 .uk-container > p {
   text-align: justify;
   line-height: 1.55;
