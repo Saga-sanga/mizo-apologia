@@ -98,7 +98,7 @@ a:active { text-decoration: none; }
 }
 
 .banner {
-  height: 560px;
+  height: 50vh;
   width: auto;
 }
 .banner h1 {

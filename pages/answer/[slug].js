@@ -6,6 +6,7 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import { getStrapiMedia } from "../../lib/media";
 import Link from "next/link";
+import Image from "next/image"
 
 const Answer = ({ answer }) => {
   const imageUrl = getStrapiMedia(answer.image);
@@ -31,6 +32,8 @@ const Answer = ({ answer }) => {
           <h1 className='contentTitleBlur'>{answer.title}</h1>
         </div>
         <div className="uk-section" style={{paddingTop: '25px'}}>
+          {/* <h1>{answer.title}</h1>
+          <Image src={imageUrl} alt="title image" layout="fill" objectFit="contain"/> */}
           <div className='uk-container textAreaContainer'>
             <div>
               <Link href="/answers">
