@@ -30,6 +30,20 @@ figcaption {
 
 /* <-- End --> */
 
+.bannerTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.bannerTitle > h1 {
+  align-self: flex-start;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
 .uk-container > p {
   text-align: justify;
   line-height: 1.55;
@@ -227,6 +241,7 @@ a:active { text-decoration: none; }
 .textAreaContainer {
   max-width: 750px;
   font-size: 1.125rem;
+  padding-top: 30px;
 }
 
 .aboutUsBody{

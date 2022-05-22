@@ -22,7 +22,7 @@ const Answer = ({ answer }) => {
     <Layout >
       <Seo seo={seo} />
       <main>
-        <div
+        {/* <div
           id="banner"
           className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin banner"
           data-src={imageUrl}
@@ -30,10 +30,12 @@ const Answer = ({ answer }) => {
           data-uk-img
         >
           <h1 className='contentTitleBlur'>{answer.title}</h1>
-        </div>
-        <div className="uk-section" style={{paddingTop: '25px'}}>
-          {/* <h1>{answer.title}</h1>
-          <Image src={imageUrl} alt="title image" layout="fill" objectFit="contain"/> */}
+        </div> */}
+        <div className="uk-section" style={{padding: '55px 25px'}}>
+          <div className="bannerTitle">
+            <h1>{answer.title}</h1>
+            <Image src={imageUrl} alt="title image" width='1400' height='700' objectFit="cover"/>
+          </div>
           <div className='uk-container textAreaContainer'>
             <div>
               <Link href="/answers">
