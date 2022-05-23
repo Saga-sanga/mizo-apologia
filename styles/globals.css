@@ -99,12 +99,12 @@ a:active { text-decoration: none; }
   cursor: pointer;
 }
 
-._1200px-nav-container {
-  max-width: 1200px;
+._1440px-nav-container {
+  max-width: 1440px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 
 .nav-shadow {

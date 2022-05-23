@@ -1,12 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
-import Image from '../components/image';
+// import Image from '../components/image';
 import Moment from 'react-moment';
-// import NextImage from 'next/image';
+import Image from 'next/image';
 import { getStrapiURL } from '../lib/api';
+import { getStrapiMedia } from "../lib/media";
 
 const ArticleCard = ({ article }) => {
+  const imageUrl = getStrapiMedia(article.author.picture);
+
   return (
     <Link as={`/article/${article.slug}`} href="/article/[id]">
       <a>
@@ -26,13 +29,11 @@ const ArticleCard = ({ article }) => {
               <div style={{alignSelf: 'center'}}>
                 {article.author.picture && (
                   <Image
-                    image={article.author.picture}
-                    style={{
-                      objectFit: 'cover',
-                      borderRadius: 9999,
-                      height: "2.8rem",
-                      width: "2.8rem"
-                    }}
+                    className={styles.authorImage}
+                    src={imageUrl}
+                    objectFit="cover"
+                    height="45"
+                    width="45"
                   />
                 )}
               </div>

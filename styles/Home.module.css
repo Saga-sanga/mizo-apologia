@@ -168,6 +168,10 @@
   max-width: 1000px;
 }
 
+.authorImage {
+  border-radius: 9999px;
+}
+
 .answerGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
