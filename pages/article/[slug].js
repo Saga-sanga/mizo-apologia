@@ -3,13 +3,16 @@ import rehypeRaw from 'rehype-raw';
 import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
-import Image from "../../components/image";
+import styles from '../../styles/Home.module.css';
+// import Image from "../../components/image";
+import Image from 'next/image';
 import Seo from "../../components/seo";
 import { getStrapiMedia } from "../../lib/media";
 import Link from "next/link";
 
 const Article = ({ article }) => {
   const imageUrl = getStrapiMedia(article.image);
+  const authorImageUrl = getStrapiMedia(article.author.picture);
 
   const seo = {
     metaTitle: article.title,
@@ -22,7 +25,7 @@ const Article = ({ article }) => {
     <Layout >
       <Seo seo={seo} />
       <main>
-        <div
+        {/* <div
           id="banner"
           className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin banner"
           data-src={imageUrl}
@@ -30,8 +33,12 @@ const Article = ({ article }) => {
           data-uk-img
         >
           <h1 className='contentTitleBlur'>{article.title}</h1>
-        </div>
+        </div> */}
         <div className="uk-section" style={{paddingTop: '25px'}}>
+          <div className="bannerTitle">
+            <h1>{article.title}</h1>
+            <Image src={imageUrl} alt="title image" width='1400' height='700' objectFit="cover"/>
+          </div>
           <div className="uk-container textAreaContainer">
             <div>
               <Link href="/articles">
@@ -56,13 +63,11 @@ const Article = ({ article }) => {
               <div>
                 {article.author.picture && (
                   <Image
-                    image={article.author.picture}
-                    style={{
-                      objectFit: 'cover',
-                      borderRadius: 9999,
-                      height: "2.5rem",
-                      width: "2.5rem"
-                    }}
+                    src={authorImageUrl}
+                    className={styles.authorImage}
+                    objectFit="cover"
+                    height="45"
+                    width="45"
                   />
                 )}
               </div>
