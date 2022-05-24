@@ -31,7 +31,7 @@ const Answer = ({ answer }) => {
         >
           <h1 className='contentTitleBlur'>{answer.title}</h1>
         </div> */}
-        <div className="uk-section" style={{padding: '55px 25px'}}>
+        <div className="uk-section" style={{padding: '55px 12px'}}>
           <div className="bannerTitle">
             <h1>{answer.title}</h1>
             <Image src={imageUrl} alt="title image" width='1400' height='700' objectFit="cover"/>
