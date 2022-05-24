@@ -422,7 +422,7 @@ a:active { text-decoration: none; }
     visibility: visible;
   }
 
-  .contentTitleBlur {
+  .bannerTitle > h1 {
     font-size: 3rem !important;
   }
 }
@@ -441,7 +441,7 @@ a:active { text-decoration: none; }
     margin-top: 15% !important;
   }
 
-  .contentTitleBlur {
+  .bannerTitle > h1 {
     font-size: 2.2rem !important;
   }
 }
