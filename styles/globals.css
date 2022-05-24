@@ -28,6 +28,10 @@ figcaption {
   margin-top: 10px;
 }
 
+.textAreaContainer > p > img {
+  margin: 30px 0;
+}
+
 /* <-- End --> */
 
 .bannerTitle {
