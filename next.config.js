@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ['api.mizoapologia.org'],
+    domains: ['api.mizoapologia.org','localhost'],
   },
 }

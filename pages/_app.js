@@ -2,7 +2,7 @@ import '../styles/globals.css'
 
 import App from "next/app";
 import Head from "next/head";
-// import "../assets/css/style.css";
+import Script from "next/script";
 import { createContext } from "react";
 import { getStrapiMedia } from "../lib/media";
 import { fetchAPI } from "../lib/api";
@@ -16,36 +16,39 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <div>
       <Head>
-        {/* Google Tag Manager */}
-        <script dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-TS2GP8F');`,
-          }}>
-        </script>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="description" content={global.defaultSeo.metaDescription}/>
         <title>{global.siteName}</title>
         <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Staatliches"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        {/* <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/> */}
-        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css"
-        />
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js" />
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
       </Head>
+
+      {/* UI Kits */}
+
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"
+        strategy='beforeInteractive'
+      />
+      <Script
+        src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"
+        strategy='beforeInteractive'
+      />
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js"
+        strategy='beforeInteractive'
+      />
+
+      {/* Google Tag Manager */}
+
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TS2GP8F');`,
+        }}
+      />
       <GlobalContext.Provider value={global}>
         <Component {...pageProps} />
       </GlobalContext.Provider>

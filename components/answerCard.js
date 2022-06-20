@@ -17,7 +17,7 @@ const AnswerCard = ({ answer }) => {
             />
           </div>
           <div className={styles.answerCardText}>
-            {/* <span>{answer.topic.name}</span> */}
+            {(answer.topic === null) ? '' : <span>{answer.topic.name}</span>}            
             <p style={{color: 'black', marginBottom: 0}}>{answer.title}</p>
             <div 
               className="uk-grid-small uk-flex-left"  

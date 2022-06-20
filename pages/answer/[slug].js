@@ -48,6 +48,13 @@ const Answer = ({ answer }) => {
               </Link>
             </div>
             <ReactMarkdown rehypePlugins={[rehypeRaw]} children={answer.content}/>
+            {
+              (answer.endNote === null || answer.endNote == '') ? '' 
+              : <div style={{fontSize: '0.925rem'}}>
+                  <hr />
+                  <ReactMarkdown rehypePlugins={[rehypeRaw]} children={answer.endNote}/>
+                </div>
+            }
             <hr className="uk-divider-small" />
             <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
               <div className="uk-width-expand">

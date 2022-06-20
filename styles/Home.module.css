@@ -245,7 +245,7 @@
   }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 420px) {
   .answerGrid {
     grid-template-columns: repeat(1, 1fr);
   }
