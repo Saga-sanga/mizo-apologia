@@ -65,6 +65,7 @@ const Article = ({ article }) => {
                   <Image
                     src={authorImageUrl}
                     className={styles.authorImage}
+                    alt="author image"
                     objectFit="cover"
                     height="45"
                     width="45"

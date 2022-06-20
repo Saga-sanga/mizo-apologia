@@ -25,14 +25,17 @@ const MyApp = ({ Component, pageProps }) => {
       {/* UI Kits */}
 
       <Script
+        id='uikit'
         src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"
         strategy='beforeInteractive'
       />
       <Script
+        id='uikit-icons'
         src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"
         strategy='beforeInteractive'
       />
       <Script
+        id='uikit-ajax'
         src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js"
         strategy='beforeInteractive'
       />
@@ -40,6 +43,7 @@ const MyApp = ({ Component, pageProps }) => {
       {/* Google Tag Manager */}
 
       <Script
+        id='google-tagmanager'
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
