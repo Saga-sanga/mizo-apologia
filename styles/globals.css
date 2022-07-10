@@ -6,6 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   /* background-color: azure; */
   background-color: rgb(250, 250, 250);
+  /* color: black; */
 }
 
 h1, h2, h3, h4 {
@@ -97,9 +98,10 @@ a:active { text-decoration: none; }
 .nav-link a{
   color: inherit;
 }
-/* .nav-link a:hover {
+
+.nav-link-hover:hover {
   color: black;
-} */
+}
 
 .wrapper-nav {
   display: inline-block;

@@ -36,22 +36,22 @@ const Nav = () => {
         
         {/* Navigation Links */}
         <div className="nav-style nav-links">
-         <div className="wrapper-nav nav-link">
+         <div className="wrapper-nav nav-link nav-link-hover">
             <Link href="/">
               <a>Home</a>
             </Link>
           </div>         
-          <div className="wrapper-nav nav-link">
+          <div className="wrapper-nav nav-link nav-link-hover">
             <Link href="/answers">
               <a>Chhanna</a>
             </Link>
           </div>
-          <div className="wrapper-nav nav-link">
+          <div className="wrapper-nav nav-link nav-link-hover">
             <Link href="/articles">
               <a>Thuziak</a>
             </Link>  
           </div>
-          <div className="wrapper-nav nav-link">
+          <div className="wrapper-nav nav-link nav-link-hover">
             <Link href="/aboutus">
               <a>About Us</a>
             </Link>
