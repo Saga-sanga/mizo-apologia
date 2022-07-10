@@ -64,7 +64,7 @@ const Nav = () => {
             </Link>
           </div>        
           <div 
-            className="wrapper-nav nav-link"
+            className="wrapper-nav nav-link nav-link-hover"
           >
             <Link href="/search">
               <a>
