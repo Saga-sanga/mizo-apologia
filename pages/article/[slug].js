@@ -53,7 +53,7 @@ const Article = ({ article }) => {
             <ReactMarkdown rehypePlugins={[rehypeRaw]} children={article.content}/>
             {
               (article.endNote === null || article.endNote == '') ? '' 
-              : <div style={{fontSize: '0.925rem'}}>
+              : <div className="endNote">
                   <hr />
                   <ReactMarkdown rehypePlugins={[rehypeRaw]} children={article.endNote}/>
                 </div>
