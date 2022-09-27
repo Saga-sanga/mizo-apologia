@@ -30,7 +30,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### The purpose
 
-Mizo Apologia is a website created to be a repository of Bible answers to questions concerning faith, religion and doctrine. The website is built for the Mizo community therefore the content might be unaccessable to non native speakers.
+Mizo Apologia is a website created to be a repository of Bible answers to questions concerning faith, religion and doctrine. The website is built for the Mizo community therefore the content might be inaccessable to non native speakers.
 
 Users should be able to:
 
