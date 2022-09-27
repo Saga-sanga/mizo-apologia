@@ -90,6 +90,10 @@ export async function getStaticProps() {
   let answers = await fetchAPI("/answers?_sort=id:DESC");
   let articles = await fetchAPI("/articles?_sort=id:DESC");
   const hero = await fetchAPI("/hero");
+  // let answers = await fetchAPI("/answers?sort=id:desc&pagination[page]=1&pagination[pageSize]=8");
+  // let articles = await fetchAPI("/articles?sort=id:desc&pagination[page]=1&pagination[pageSize]=6")
+
+  // console.log(typeof(answers));
 
   answers = answers.slice(0,8);
   articles = articles.slice(0,6);
