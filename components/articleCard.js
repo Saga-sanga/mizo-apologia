@@ -10,6 +10,13 @@ import placeholder from "../public/placeholder.png";
 
 const ArticleCard = ({ article }) => {
   const imageUrl = getStrapiMedia(article.author.picture);
+  let displayImage;
+  
+  if (article.image.formats.hasOwnProperty("small")) {
+    displayImage = getStrapiURL(article.image.formats.small.url);
+  } else {
+    displayImage = placeholder.src;
+  }
 
   return (
     <Link as={`/article/${article.slug}`} href="/article/[id]">
@@ -18,7 +25,7 @@ const ArticleCard = ({ article }) => {
           <div>
             <img 
               className={styles.articleCardImage}
-              src={getStrapiURL(article.image.formats.small.url) || placeholder} 
+              src={displayImage} 
               alt={article.image.alternativeText}
             />
           </div>

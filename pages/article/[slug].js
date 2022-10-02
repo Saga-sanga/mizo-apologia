@@ -12,8 +12,17 @@ import Link from "next/link";
 import placeholder from "../../public/placeholder.png";
 
 const Article = ({ article }) => {
-  const imageUrl = getStrapiMedia(article.image);
+  // const imageUrl = getStrapiMedia(article.image);
   const authorImageUrl = getStrapiMedia(article.author.picture);
+  let imageUrl;
+
+  if (article.image.hasOwnProperty("url")) {
+    imageUrl = getStrapiMedia(article.image);
+  } else {
+    imageUrl = placeholder.src;
+  }
+
+  console.log(imageUrl);
 
   const seo = {
     metaTitle: article.title,

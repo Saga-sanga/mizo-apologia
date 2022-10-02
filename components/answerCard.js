@@ -6,6 +6,14 @@ import { getStrapiURL } from '../lib/api';
 import placeholder from '../public/placeholder.png';
 
 const AnswerCard = ({ answer }) => {
+  let displayImage;
+  
+  if (answer.image.formats.hasOwnProperty("small")) {
+    displayImage = getStrapiURL(answer.image.formats.small.url);
+  } else {
+    displayImage = placeholder.src;
+  }
+
   return (
     <Link as={`/answer/${answer.slug}`} href="/answer/[id]">
       <a >
@@ -13,8 +21,9 @@ const AnswerCard = ({ answer }) => {
           <div>
             <img 
               className={styles.answerCardImage}
-              src={getStrapiURL(answer.image.formats.small.url) || placeholder} 
+              src={displayImage} 
               alt={answer.image.alternativeText}
+              // onError={this.src=placeholder}
             />
           </div>
           <div className={styles.answerCardText}>
