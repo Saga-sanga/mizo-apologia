@@ -25,7 +25,7 @@ function Ask() {
       method: 'post',
       body: JSON.stringify(data),
     }).then(res => {
-      console.log('Response Received!');
+      console.log(res.status);
       if (res.status === 200) {
         console.log('Message Sent!');
         router.push('/success');
