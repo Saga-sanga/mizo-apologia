@@ -6,6 +6,7 @@ import Moment from 'react-moment';
 import Image from 'next/image';
 import { getStrapiURL } from '../lib/api';
 import { getStrapiMedia } from "../lib/media";
+import placeholder from "../public/placeholder.png";
 
 const ArticleCard = ({ article }) => {
   const imageUrl = getStrapiMedia(article.author.picture);
@@ -17,7 +18,7 @@ const ArticleCard = ({ article }) => {
           <div>
             <img 
               className={styles.articleCardImage}
-              src={getStrapiURL(article.image.formats.small.url)} 
+              src={getStrapiURL(article.image.formats.small.url) || placeholder} 
               alt={article.image.alternativeText}
             />
           </div>

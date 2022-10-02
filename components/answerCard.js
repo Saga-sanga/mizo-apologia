@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import Moment from 'react-moment';
 import { getStrapiURL } from '../lib/api';
+import placeholder from '../public/placeholder.png';
 
 const AnswerCard = ({ answer }) => {
   return (
@@ -12,7 +13,7 @@ const AnswerCard = ({ answer }) => {
           <div>
             <img 
               className={styles.answerCardImage}
-              src={getStrapiURL(answer.image.formats.small.url)} 
+              src={getStrapiURL(answer.image.formats.small.url) || placeholder} 
               alt={answer.image.alternativeText}
             />
           </div>

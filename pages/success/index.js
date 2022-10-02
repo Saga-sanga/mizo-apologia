@@ -6,7 +6,7 @@ function Success() {
   return(
   <Layout>
     <main className="topic-body">
-      <div style={{textAlign: 'center', paddingTop: '2rem'}}>
+      <div style={{textAlign: 'center', paddingTop: '4rem'}}>
         <h1 >I Zawhna chu thehluh a ni e!</h1>
         <p>I zawhna hi kan review ang a, kan remchan velah website-ah kan ron update don nia.</p>
       </div>
