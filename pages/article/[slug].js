@@ -12,17 +12,8 @@ import Link from "next/link";
 import placeholder from "../../public/placeholder.png";
 
 const Article = ({ article }) => {
-  // const imageUrl = getStrapiMedia(article.image);
   const authorImageUrl = getStrapiMedia(article.author.picture);
-  let imageUrl;
-
-  if (article.image.hasOwnProperty("url")) {
-    imageUrl = getStrapiMedia(article.image);
-  } else {
-    imageUrl = placeholder.src;
-  }
-
-  console.log(imageUrl);
+  const imageUrl = getStrapiMedia(article.image);
 
   const seo = {
     metaTitle: article.title,
@@ -47,7 +38,7 @@ const Article = ({ article }) => {
         <div className="uk-section" style={{padding: '55px 12px'}}>
           <div className="bannerTitle">
             <h1>{article.title}</h1>
-            <Image src={imageUrl || placeholder} alt="title image" width='1400' height='700' objectFit="cover"/>
+            <Image src={article.image.hasOwnProperty("url") ? imageUrl : placeholder.src} alt="title image" width='1400' height='700' objectFit="cover"/>
           </div>
           <div className="uk-container textAreaContainer">
             <div>

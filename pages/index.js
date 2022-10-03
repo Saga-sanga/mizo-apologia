@@ -87,16 +87,16 @@ export default function Home({ answers, articles, hero }) {
 }
 
 export async function getStaticProps() {
-  let answers = await fetchAPI("/answers?_sort=id:DESC");
-  let articles = await fetchAPI("/articles?_sort=id:DESC");
+  let answers = await fetchAPI("/answers?_sort=id:DESC&_limit=8");
+  let articles = await fetchAPI("/articles?_sort=id:DESC&_limit=6");
   const hero = await fetchAPI("/hero");
   // let answers = await fetchAPI("/answers?sort=id:desc&pagination[page]=1&pagination[pageSize]=8");
   // let articles = await fetchAPI("/articles?sort=id:desc&pagination[page]=1&pagination[pageSize]=6")
 
   // console.log(typeof(answers));
 
-  answers = answers.slice(0,8);
-  articles = articles.slice(0,6);
+  // answers = answers.slice(0,8);
+  // articles = articles.slice(0,6);
 
   return {
     props: {answers, articles, hero},

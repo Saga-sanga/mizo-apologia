@@ -10,14 +10,7 @@ import Image from "next/image"
 import placeholder from "../../public/placeholder.png";
 
 const Answer = ({ answer }) => {
-  // const imageUrl = getStrapiMedia(answer.image);
-  let imageUrl;
-
-  if (answer.image.hasOwnProperty("url")) {
-    imageUrl = getStrapiMedia(answer.image);
-  } else {
-    imageUrl = placeholder.src;
-  }
+  const imageUrl = getStrapiMedia(answer.image);
 
   const seo = {
     metaTitle: answer.title,
@@ -42,7 +35,7 @@ const Answer = ({ answer }) => {
         <div className="uk-section" style={{padding: '55px 12px'}}>
           <div className="bannerTitle">
             <h1>{answer.title}</h1>
-            <Image src={imageUrl} alt="title image" width='1400' height='700' objectFit="cover"/>
+            <Image src={answer.image.hasOwnProperty("url") ? imageUrl : placeholder.src} alt="title image" width='1400' height='700' objectFit="cover"/>
           </div>
           <div className='uk-container textAreaContainer'>
             <div>
