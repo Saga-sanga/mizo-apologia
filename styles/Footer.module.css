@@ -38,8 +38,14 @@
 }
 
 .footerText {
+  display: flex;
+  gap: 0.5rem;
   color: #cacaca;
   padding: 6px 0;
+}
+
+.footerText span:last-child {
+  max-width: 25ch;
 }
 
 a.footerText:hover {
