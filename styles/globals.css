@@ -143,6 +143,7 @@ a:active { text-decoration: none; }
 }
 
 .hero-title {
+  transform: translateX(-4px);
   font-size: 4.3rem !important;
   text-shadow: 1px 1px 3px #272626;
 }
