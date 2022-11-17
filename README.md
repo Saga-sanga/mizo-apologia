@@ -9,7 +9,7 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
+  <!-- - [What I learned](#what-i-learned) -->
   - [Continued development](#continued-development)
 - [Author](#author)
 
@@ -18,15 +18,22 @@
 
 ### Getting Started
 
-First, run the development server:
+* Firstly, this project pulls data from an API. Therefore you'll have to add this variable to your local .env file
+`NEXT_PUBLIC_STRAPI_API_URL='https://api.mizoapologia.org'`
 
+* Install the dependencies
+```bash
+npm install
+```
+
+* Start the development server
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### The purpose
 
@@ -58,7 +65,7 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
 
-### What I learned
+<!-- ### What I learned
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
@@ -76,7 +83,7 @@ To see how you can add code snippets, see below:
 const proudOfThisFunc = () => {
   console.log('🎉')
 }
-```
+``` -->
 
 ### Continued development
 
