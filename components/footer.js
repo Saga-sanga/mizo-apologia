@@ -23,19 +23,19 @@ function Footer() {
           className={styles.footerContent}
         >
           <h4 className={styles.footerh4}>Quick Links</h4>
-          <Link href="/topic">
-            <a className={styles.footerText}>Chhanna</a>
+          <Link href="/topic" className={styles.footerText}>
+            Chhanna
           </Link>
-          <Link href="/category">
-            <a className={styles.footerText}>Thuziak</a>
+          <Link href="/category" className={styles.footerText}>
+            Thuziak
           </Link>
-          <Link href="/aboutus">
-            <a className={styles.footerText}>About Us</a>
+          <Link href="/aboutus" className={styles.footerText}>
+            About Us
           </Link>
-          <Link href="/ask">
-            <a className={styles.footerText}>
+          <Link href="/ask" className={styles.footerText}>
+            
               Zawt Rawh
-            </a>
+            
           </Link>
         </div>
 

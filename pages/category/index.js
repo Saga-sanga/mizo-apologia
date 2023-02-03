@@ -7,7 +7,7 @@ function Home({categories}) {
   return (
     <Layout>
       <main className="topic-body">
-        <Link href="/articles" className="homeLink">
+        <Link href="/articles" className="homeLink" legacyBehavior>
 
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
             <polyline points="15 18 9 12 15 6"></polyline>
@@ -19,7 +19,7 @@ function Home({categories}) {
             categories.map(category => {
               return (
                 <li key={category.id} className="listContentStyle">
-                  <Link as={`/category/${category.slug}`} href="/category/[id]">
+                  <Link as={`/category/${category.slug}`} href="/category/[id]" legacyBehavior>
                     {category.name}
                   </Link>
                 </li>

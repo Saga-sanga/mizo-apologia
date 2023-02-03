@@ -16,7 +16,7 @@ const Topic = ({ articles, global }) => {
       <main>
         <div className="articleSection">
           <div className="uk-container uk-container-large">
-            <Link href="/" className="homeLink">
+            <Link href="/" className="homeLink" legacyBehavior>
 
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
                 <polyline points="15 18 9 12 15 6"></polyline>
@@ -24,7 +24,7 @@ const Topic = ({ articles, global }) => {
             </Link>
             <div className='indexTitleContainer'>
             <h1 style={{marginTop: 0}}>Thuziakte</h1>
-              <Link href='/category' style={{display: 'flex'}}>
+              <Link href='/category' style={{display: 'flex'}} legacyBehavior>
                 Categories<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>

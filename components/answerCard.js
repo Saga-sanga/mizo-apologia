@@ -15,8 +15,8 @@ const AnswerCard = ({ answer }) => {
   }
 
   return (
-    <Link as={`/answer/${answer.slug}`} href="/answer/[id]">
-      <a >
+    (<Link as={`/answer/${answer.slug}`} href="/answer/[id]" legacyBehavior>
+      <a>
         <div className={`${styles.articleCard} nav-shadow`}>
           <div>
             <img 
@@ -45,8 +45,8 @@ const AnswerCard = ({ answer }) => {
           </div>
         </div>
       </a>
-    </Link>
-  )
+    </Link>)
+  );
 }
 
 export default AnswerCard;
