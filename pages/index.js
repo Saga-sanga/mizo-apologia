@@ -32,9 +32,9 @@ export default function Home({ answers, articles, hero }) {
                 }}
               >
                 <Link href="/ask">
-                  <a>
+                  
                     Zawhna Zawt Rawh
-                  </a>
+                  
                 </Link>
               </div>
           </div>
@@ -44,13 +44,11 @@ export default function Home({ answers, articles, hero }) {
                 <h1>
                     Chhanna Tharte
                 </h1>
-                <Link href='/topic'>
-                  <a style={{display: 'flex'}}>
-                    Topics
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                  </a>
+                <Link href='/topic' passHref style={{display: 'flex'}}>
+                  Topics<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+
                 </Link>
               </div>
               <AnswerList answers={ answers} />
@@ -65,13 +63,11 @@ export default function Home({ answers, articles, hero }) {
                 <h1>
                     Thuziak Tharte
                 </h1>
-                <Link href='/category'>
-                  <a style={{display: 'flex'}}>
-                    Categories
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                  </a>
+                <Link href='/category' passHref style={{display: 'flex'}}>
+                  Categories<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+
                 </Link>  
               </div>
               <Articles articles={ articles }/>
@@ -83,7 +79,7 @@ export default function Home({ answers, articles, hero }) {
         </main>
       </Layout>
     </div>
-  )
+  );
 }
 
 export async function getStaticProps() {
