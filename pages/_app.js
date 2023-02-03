@@ -11,7 +11,7 @@ import { fetchAPI } from "../lib/api";
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }) => {
-  const { global } = pageProps;
+  const { global }  = pageProps;
 
   return (
     <div>
