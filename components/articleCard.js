@@ -9,11 +9,13 @@ import { getStrapiMedia } from "../lib/media";
 import placeholder from "../public/placeholder.png";
 
 const ArticleCard = ({ article }) => {
-  const imageUrl = getStrapiMedia(article.author.picture);
+  const authorImage = article.author.data.attributes.picture;
+  const articleImage = article.image.data.attributes;
+  const imageUrl = getStrapiMedia(authorImage);
   let displayImage;
   
-  if (article.image.formats.hasOwnProperty("small")) {
-    displayImage = getStrapiURL(article.image.formats.small.url);
+  if (articleImage.formats.hasOwnProperty("small")) {
+    displayImage = getStrapiURL(articleImage.formats.small.url);
   } else {
     displayImage = placeholder.src;
   }
@@ -30,16 +32,17 @@ const ArticleCard = ({ article }) => {
           />
         </div>
         <div className={styles.articleCardText}>
-          <span>{article.category.name}</span>
+          <span>{article.category.data.attributes.name}</span>
           <h3>{article.title}</h3>
           <p>{article.description}</p>
           <div className="uk-grid-small uk-flex-left"  style={{marginTop: '1.5rem'}} data-uk-grid="true">
             <div style={{alignSelf: 'center'}}>
-              {article.author.picture && (
+              {authorImage && (
                 <Image
                   className={styles.authorImage}
                   src={imageUrl}
                   objectFit="cover"
+                  style={{objectFit: "cover"}}
                   height="45"
                   width="45"
                 />
@@ -47,10 +50,10 @@ const ArticleCard = ({ article }) => {
             </div>
             <div className="uk-width-expand">
               <p className="uk-margin-remove-bottom" style={{margin: 0, color:'black'}}>
-                {article.author.name},
+                {article.author.data.attributes.name},
               </p>
               <p className="uk-margin-remove-bottom" style={{margin: 0, color:'black', fontSize: '14px'}}>
-                {article.author.Title}
+                {article.author.data.attributes.Title}
               </p>
               <p className="uk-text-meta uk-margin-remove-top">
                 <Moment format="MMM Do YYYY">{article.published_at}</Moment>

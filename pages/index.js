@@ -20,8 +20,8 @@ export default function Home({ answers, articles, hero }) {
           data-srcset={imageUrl}
           data-uk-img
           >
-              <h1 style={{textAlign: 'left'}} className='hero-title'>{hero.title}</h1>
-              <h2 className='hero-subtext'>{hero.subText}</h2>
+              <h1 style={{textAlign: 'left'}} className='hero-title'>{hero.attributes.title}</h1>
+              <h2 className='hero-subtext'>{hero.attributes.subText}</h2>
               <div 
                 id='heroButton1'
                 className="wrapper-nav nav-link navAskButton"
@@ -85,8 +85,29 @@ export default function Home({ answers, articles, hero }) {
 }
 
 export async function getStaticProps() {
-  let answers = await fetchAPI("/answers?_sort=id:DESC&_limit=8");
-  let articles = await fetchAPI("/articles?_sort=id:DESC&_limit=6");
+  let answers = await fetchAPI("/answers", {
+    sort: ['id:desc'],
+    pagination: {
+      limit: 8
+    },
+    populate: {
+      image: "*",
+      topic: "*"
+    }
+  });
+  let articles = await fetchAPI("/articles", {
+    sort: ['id:desc'],
+    pagination: {
+      limit: 6
+    },
+    populate: {
+      image: "*",
+      category: "*",
+      author: {
+        populate: ['picture']
+      }
+    }
+  });
   const hero = await fetchAPI("/hero", {
     populate: {
       heroImage: "*"
@@ -100,6 +121,7 @@ export async function getStaticProps() {
   // answers = answers.slice(0,8);
   // articles = articles.slice(0,6);
 
+  // console.log({answers: answers.data}, answers);
   return {
     props: {answers: answers.data, articles: articles.data, hero: hero.data},
     revalidate: 1

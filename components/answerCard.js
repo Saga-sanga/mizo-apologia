@@ -7,9 +7,10 @@ import placeholder from '../public/placeholder.png';
 
 const AnswerCard = ({ answer }) => {
   let displayImage;
+  const answerImage = answer.image.data.attributes;
   
-  if (answer.image.formats.hasOwnProperty("small")) {
-    displayImage = getStrapiURL(answer.image.formats.small.url);
+  if (answerImage.formats.hasOwnProperty("small")) {
+    displayImage = getStrapiURL(answerImage.formats.small.url);
   } else {
     displayImage = placeholder.src;
   }
@@ -22,12 +23,12 @@ const AnswerCard = ({ answer }) => {
             <img 
               className={styles.answerCardImage}
               src={displayImage} 
-              alt={answer.image.alternativeText}
+              alt={answerImage.alternativeText}
               // onError={this.src=placeholder}
             />
           </div>
           <div className={styles.answerCardText}>
-            {(answer.topic === null) ? '' : <span>{answer.topic.name}</span>}            
+            {(answer.topic.data === null) ? '' : <span>{answer.topic.data.attributes.name}</span>}            
             <p style={{color: 'black', marginBottom: 0}}>{answer.title}</p>
             <div 
               className="uk-grid-small uk-flex-left"  
