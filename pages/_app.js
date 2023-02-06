@@ -17,9 +17,9 @@ const MyApp = ({ Component, pageProps }) => {
     <div>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="description" content={global.defaultSeo.metaDescription}/>
+        <meta name="description" content={global.attributes.defaultSeo.metaDescription}/>
         <title>{global.siteName}</title>
-        <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
+        <link rel="shortcut icon" href={getStrapiMedia(global.attributes.favicon)} />
       </Head>
 
       {/* UI Kits */}
@@ -53,7 +53,7 @@ const MyApp = ({ Component, pageProps }) => {
             })(window,document,'script','dataLayer','GTM-TS2GP8F');`,
         }}
       />
-      <GlobalContext.Provider value={global}>
+      <GlobalContext.Provider value={global.attributes}>
         <Component {...pageProps} />
       </GlobalContext.Provider>
     </div>
@@ -68,9 +68,17 @@ MyApp.getInitialProps = async (ctx) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(ctx);
   // Fetch global site settings from Strapi
-  const global = await fetchAPI("/global");
+  const globalRes = await fetchAPI("/global", {
+    populate: {
+      favicon: true,
+      defaultSeo: {
+        populate: true
+      }
+    }
+  });
+
   // Pass the data to our page via props
-  return { ...appProps, pageProps: { global } };
+  return { ...appProps, pageProps: { global: globalRes.data } };
 };
 
 export default MyApp;

@@ -26,15 +26,6 @@ const Article = ({ article }) => {
     <Layout >
       <Seo seo={seo} />
       <main>
-        {/* <div
-          id="banner"
-          className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin banner"
-          data-src={imageUrl}
-          data-srcset={imageUrl}
-          data-uk-img
-        >
-          <h1 className='contentTitleBlur'>{article.title}</h1>
-        </div> */}
         <div className="uk-section" style={{padding: '55px 12px'}}>
           <div className="bannerTitle">
             <h1>{article.title}</h1>
@@ -67,6 +58,7 @@ const Article = ({ article }) => {
                     className={styles.authorImage}
                     alt="author image"
                     objectFit="cover"
+                    style={{objectFit: 'cover'}}
                     height="45"
                     width="45"
                   />

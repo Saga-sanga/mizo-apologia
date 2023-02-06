@@ -8,7 +8,7 @@ import CustomButton from '../components/customButton'
 import Link from 'next/link'
 
 export default function Home({ answers, articles, hero }) {
-  const imageUrl = getStrapiMedia(hero.heroImage);
+  const imageUrl = getStrapiMedia(hero.attributes.heroImage);
   return (
     <div>
       <Layout>
@@ -87,7 +87,11 @@ export default function Home({ answers, articles, hero }) {
 export async function getStaticProps() {
   let answers = await fetchAPI("/answers?_sort=id:DESC&_limit=8");
   let articles = await fetchAPI("/articles?_sort=id:DESC&_limit=6");
-  const hero = await fetchAPI("/hero");
+  const hero = await fetchAPI("/hero", {
+    populate: {
+      heroImage: "*"
+    }
+  });
   // let answers = await fetchAPI("/answers?sort=id:desc&pagination[page]=1&pagination[pageSize]=8");
   // let articles = await fetchAPI("/articles?sort=id:desc&pagination[page]=1&pagination[pageSize]=6")
 
@@ -97,7 +101,7 @@ export async function getStaticProps() {
   // articles = articles.slice(0,6);
 
   return {
-    props: {answers, articles, hero},
+    props: {answers: answers.data, articles: articles.data, hero: hero.data},
     revalidate: 1
   };
 }
