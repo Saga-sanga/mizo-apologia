@@ -113,15 +113,7 @@ export async function getStaticProps() {
       heroImage: "*"
     }
   });
-  // let answers = await fetchAPI("/answers?sort=id:desc&pagination[page]=1&pagination[pageSize]=8");
-  // let articles = await fetchAPI("/articles?sort=id:desc&pagination[page]=1&pagination[pageSize]=6")
-
-  // console.log(typeof(answers));
-
-  // answers = answers.slice(0,8);
-  // articles = articles.slice(0,6);
-
-  // console.log({answers: answers.data}, answers);
+  
   return {
     props: {answers: answers.data, articles: articles.data, hero: hero.data},
     revalidate: 1

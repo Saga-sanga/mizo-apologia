@@ -14,8 +14,8 @@ const ArticleCard = ({ article }) => {
   const imageUrl = getStrapiMedia(authorImage);
   let displayImage;
   
-  if (articleImage.formats.hasOwnProperty("small")) {
-    displayImage = getStrapiURL(articleImage.formats.small.url);
+  if (articleImage.formats.hasOwnProperty("medium")) {
+    displayImage = getStrapiURL(articleImage.formats.medium.url);
   } else {
     displayImage = placeholder.src;
   }
