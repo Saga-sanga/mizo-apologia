@@ -10,7 +10,6 @@ const Seo = ({ seo }) => {
     ...seo,
   };
 
-  console.log("seo:", seo);
   const fullSeo = {
     ...seoWithDefaults,
     // Add title suffix

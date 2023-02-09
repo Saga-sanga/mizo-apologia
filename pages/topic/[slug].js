@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const Topic = ({ topic, answers}) => {
   const seo = {
-    metaTitle: topic.name,
-    metaDescription: `All ${topic.name} answers`,
+    metaTitle: topic.attributes.name,
+    metaDescription: `All ${topic.attributes.name} answers`,
   };
 
   return (
@@ -30,12 +30,14 @@ const Topic = ({ topic, answers}) => {
 };
 
 export async function getStaticPaths() {
-  const topics = await fetchAPI("/topics");
+  const topics = await fetchAPI('/topics', {
+    fields: ['slug']
+  });
 
   return {
-    paths: topics.map((topic) => ({
+    paths: topics.data.map((topic) => ({
       params: {
-        slug: topic.slug,
+        slug: topic.attributes.slug,
       },
     })),
     fallback: 'blocking',
@@ -43,20 +45,30 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const topic = (await fetchAPI(`/topics?slug=${params.slug}`))[0];
-  const topics = await fetchAPI("/topics");
-  const answers = await fetchAPI(`/answers?topic.slug=${params.slug}&_sort=published_at:DESC`)
-  const global = await fetchAPI("/global", {
-    populate: {
-      favicon: true,
-      defaultSeo: {
-        populate: true
-      }
-    }
-  });
+  const topic = await fetchAPI(`/topics`);
 
+  // ?topic.slug=${params.slug}&_sort=published_at:DESC
+  const answers = await fetchAPI(`/answers`, {
+    filters: {topic: {
+      slug: params.slug
+    }},
+    sort: ['publishedAt:desc'],
+    populate: {
+      topic: "*"
+    }
+  })
+  // const global = await fetchAPI("/global", {
+  //   populate: {
+  //     favicon: true,
+  //     defaultSeo: {
+  //       populate: true 
+  //     }
+  //   }
+  // });
+  // console.log("Topic:", topic)
+  console.log("Answers:", answers)
   return {
-    props: { topic, answers},
+    props: { topic, answers: answers.data},
     revalidate: 1,
   };
 }
