@@ -4,14 +4,15 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import Link from "next/link";
 
-const Topic = ({ answers, global }) => {
+const Topic = ({ answers }) => {
   const seo = {
     metaTitle: 'Chhanna',
     metaDescription: `Chhanna te`,
+    shareImage: null
   };
 
   return (
-    <Layout global={global}>
+    <Layout>
       <Seo seo={seo} />
       <main>
         <div className="answerSection">
@@ -54,11 +55,11 @@ const Topic = ({ answers, global }) => {
 
 export async function getStaticProps() {
   // const topics = await fetchAPI("/topics");
-  const answers = await fetchAPI('/answers?_sort=id:DESC');
-  const global = await fetchAPI("/global");
+  const answers = await fetchAPI('/answers', {sort: ['id:desc']});
+  // const global = await fetchAPI("/global");
 
   return {
-    props: { answers, global },
+    props: { answers: answers.data},
     revalidate: 1
   };
 }

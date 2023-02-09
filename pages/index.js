@@ -32,9 +32,7 @@ export default function Home({ answers, articles, hero }) {
                 }}
               >
                 <Link href="/ask">
-                  
                     Zawhna Zawt Rawh
-                  
                 </Link>
               </div>
           </div>

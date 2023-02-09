@@ -18,7 +18,7 @@ const MyApp = ({ Component, pageProps }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="description" content={global.attributes.defaultSeo.metaDescription}/>
-        <title>{global.siteName}</title>
+        <title>{global.attributes.siteName}</title>
         <link rel="shortcut icon" href={getStrapiMedia(global.attributes.favicon)} />
       </Head>
 

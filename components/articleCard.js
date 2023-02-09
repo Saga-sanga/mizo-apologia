@@ -14,8 +14,8 @@ const ArticleCard = ({ article }) => {
   const imageUrl = getStrapiMedia(authorImage);
   let displayImage;
   
-  if (articleImage.formats.hasOwnProperty("medium")) {
-    displayImage = getStrapiURL(articleImage.formats.medium.url);
+  if (articleImage.formats.hasOwnProperty("small")) {
+    displayImage = getStrapiURL(articleImage.formats.small.url);
   } else {
     displayImage = placeholder.src;
   }
@@ -56,7 +56,7 @@ const ArticleCard = ({ article }) => {
                 {article.author.data.attributes.Title}
               </p>
               <p className="uk-text-meta uk-margin-remove-top">
-                <Moment format="MMM Do YYYY">{article.published_at}</Moment>
+                <Moment format="MMM Do YYYY">{article.publishedAt}</Moment>
               </p>
             </div>
           </div>

@@ -19,8 +19,8 @@ function Home({categories}) {
             categories.map(category => {
               return (
                 <li key={category.id} className="listContentStyle">
-                  <Link as={`/category/${category.slug}`} href="/category/[id]" legacyBehavior>
-                    {category.name}
+                  <Link as={`/category/${category.attributes.slug}`} href="/category/[id]" legacyBehavior>
+                    {category.attributes.name}
                   </Link>
                 </li>
               );
@@ -33,10 +33,10 @@ function Home({categories}) {
 }
 
 export async function getStaticProps() {
-  const categories = await fetchAPI("/categories?_sort=slug:ASC");
+  const categories = await fetchAPI("/categories", {sort: ['slug:asc']});
 
   return {
-    props: {categories},
+    props: {categories: categories.data},
     revalidate: 1
   }
 }

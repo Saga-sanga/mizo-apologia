@@ -16,7 +16,7 @@ const Answer = ({ answer }) => {
     metaTitle: answer.attributes.title,
     metaDescription: answer.attributes.description,
     shareImage: answer.attributes.image,
-    answer: true,
+    article: true,
   };
 
   return (
@@ -50,7 +50,7 @@ const Answer = ({ answer }) => {
             <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
               <div className="uk-width-expand">
                 <p className="uk-text-meta uk-margin-remove-top">
-                  <Moment format="MMM Do YYYY">{answer.attributes.published_at}</Moment>
+                  <Moment format="MMM Do YYYY">{answer.attributes.publishedAt}</Moment>
                 </p>
               </div>
             </div>

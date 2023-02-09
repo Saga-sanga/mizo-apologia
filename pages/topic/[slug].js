@@ -4,14 +4,14 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import Link from "next/link";
 
-const Topic = ({ topic, topics, answers, global }) => {
+const Topic = ({ topic, answers}) => {
   const seo = {
     metaTitle: topic.name,
     metaDescription: `All ${topic.name} answers`,
   };
 
   return (
-    <Layout topics={topics} global={global}>
+    <Layout>
       <Seo seo={seo} />
       <main className="answerSection">
         <div className="uk-container uk-container-large">
@@ -46,10 +46,17 @@ export async function getStaticProps({ params }) {
   const topic = (await fetchAPI(`/topics?slug=${params.slug}`))[0];
   const topics = await fetchAPI("/topics");
   const answers = await fetchAPI(`/answers?topic.slug=${params.slug}&_sort=published_at:DESC`)
-  const global = await fetchAPI("/global");
+  const global = await fetchAPI("/global", {
+    populate: {
+      favicon: true,
+      defaultSeo: {
+        populate: true
+      }
+    }
+  });
 
   return {
-    props: { topic, topics, answers, global },
+    props: { topic, answers},
     revalidate: 1,
   };
 }

@@ -39,7 +39,7 @@ const AnswerCard = ({ answer }) => {
                 <p 
                   className="uk-text-meta uk-margin-remove-top"
                 >
-                  <Moment format="MMM Do YYYY">{answer.published_at}</Moment>
+                  <Moment format="MMM Do YYYY">{answer.publishedAt}</Moment>
                 </p>
               </div>
             </div>
