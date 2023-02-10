@@ -16,12 +16,13 @@ const Topic = ({ topic, answers}) => {
       <main className="answerSection">
         <div className="uk-container uk-container-large">
           <Link href="/topic" className="homeLink" legacyBehavior>
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>Topics
+            <a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>Topics
+            </a>
           </Link>
-          <h1 style={{marginTop: 0}}>{topic.name}</h1>
+          <h1 style={{marginTop: 0}}>{topic.attributes.name}</h1>
           <AnswerList answers={answers} />
         </div>
       </main>
@@ -45,30 +46,28 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const topic = await fetchAPI(`/topics`);
+  const topic = await fetchAPI(`/topics`, {
+    filters: {
+      slug: params.slug
+    }
+  });
 
   // ?topic.slug=${params.slug}&_sort=published_at:DESC
   const answers = await fetchAPI(`/answers`, {
-    filters: {topic: {
-      slug: params.slug
-    }},
+    filters: {
+      topic: {
+        slug: params.slug
+      }
+    },
     sort: ['publishedAt:desc'],
     populate: {
+      image: "*",
       topic: "*"
     }
-  })
-  // const global = await fetchAPI("/global", {
-  //   populate: {
-  //     favicon: true,
-  //     defaultSeo: {
-  //       populate: true 
-  //     }
-  //   }
-  // });
-  // console.log("Topic:", topic)
-  console.log("Answers:", answers)
+  });
+
   return {
-    props: { topic, answers: answers.data},
+    props: { topic: topic.data[0], answers: answers.data},
     revalidate: 1,
   };
 }

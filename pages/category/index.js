@@ -8,10 +8,11 @@ function Home({categories}) {
     <Layout>
       <main className="topic-body">
         <Link href="/articles" className="homeLink" legacyBehavior>
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>Thuziakte
+          <a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>Thuziakte
+          </a>
         </Link>
         <h2>Categories</h2>
         <ul  className="ul-list-style">
