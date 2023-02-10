@@ -36,12 +36,11 @@ const ArticleCard = ({ article }) => {
           <h3>{article.title}</h3>
           <p>{article.description}</p>
           <div className="uk-grid-small uk-flex-left"  style={{marginTop: '1.5rem'}} data-uk-grid="true">
-            <div style={{alignSelf: 'center'}}>
+            <div style={{alignSelf: 'center'}} className='pl-zero'>
               {authorImage && (
                 <Image
                   className={styles.authorImage}
                   src={imageUrl}
-                  objectFit="cover"
                   style={{objectFit: "cover"}}
                   height="45"
                   width="45"

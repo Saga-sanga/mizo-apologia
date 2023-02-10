@@ -20,6 +20,10 @@ blockquote {
   text-align: justify;
 }
 
+.pl-zero {
+  padding-inline-start: 0;
+}
+
 /* Article Image and caption Style */
 
 figure {

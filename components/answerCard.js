@@ -35,10 +35,8 @@ const AnswerCard = ({ answer }) => {
               style={{marginTop: '0.8rem'}}
               data-uk-grid="true"
             >
-              <div className="uk-width-expand">
-                <p 
-                  className="uk-text-meta uk-margin-remove-top"
-                >
+              <div className="uk-width-expand pl-zero">
+                <p className="uk-text-meta uk-margin-remove-top">
                   <Moment format="MMM Do YYYY">{answer.publishedAt}</Moment>
                 </p>
               </div>
