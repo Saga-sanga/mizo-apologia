@@ -8,7 +8,7 @@ import CustomButton from '../components/customButton'
 import Link from 'next/link'
 
 export default function Home({ answers, articles, hero }) {
-  const imageUrl = getStrapiMedia(hero.heroImage);
+  const imageUrl = getStrapiMedia(hero.attributes.heroImage);
   return (
     <div>
       <Layout>
@@ -20,8 +20,8 @@ export default function Home({ answers, articles, hero }) {
           data-srcset={imageUrl}
           data-uk-img
           >
-              <h1 style={{textAlign: 'left'}} className='hero-title'>{hero.title}</h1>
-              <h2 className='hero-subtext'>{hero.subText}</h2>
+              <h1 style={{textAlign: 'left'}} className='hero-title'>{hero.attributes.title}</h1>
+              <h2 className='hero-subtext'>{hero.attributes.subText}</h2>
               <div 
                 id='heroButton1'
                 className="wrapper-nav nav-link navAskButton"
@@ -32,9 +32,7 @@ export default function Home({ answers, articles, hero }) {
                 }}
               >
                 <Link href="/ask">
-                  <a>
                     Zawhna Zawt Rawh
-                  </a>
                 </Link>
               </div>
           </div>
@@ -44,10 +42,9 @@ export default function Home({ answers, articles, hero }) {
                 <h1>
                     Chhanna Tharte
                 </h1>
-                <Link href='/topic'>
-                  <a style={{display: 'flex'}}>
-                    Topics
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
+                <Link href='/topic' passHref style={{display: 'flex'}} legacyBehavior>
+                  <a>
+                    Topics<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
                       <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
                   </a>
@@ -65,10 +62,9 @@ export default function Home({ answers, articles, hero }) {
                 <h1>
                     Thuziak Tharte
                 </h1>
-                <Link href='/category'>
-                  <a style={{display: 'flex'}}>
-                    Categories
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
+                <Link href='/category' passHref style={{display: 'flex'}} legacyBehavior>
+                  <a>
+                    Categories<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
                       <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
                   </a>
@@ -83,23 +79,41 @@ export default function Home({ answers, articles, hero }) {
         </main>
       </Layout>
     </div>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  let answers = await fetchAPI("/answers?_sort=id:DESC&_limit=8");
-  let articles = await fetchAPI("/articles?_sort=id:DESC&_limit=6");
-  const hero = await fetchAPI("/hero");
-  // let answers = await fetchAPI("/answers?sort=id:desc&pagination[page]=1&pagination[pageSize]=8");
-  // let articles = await fetchAPI("/articles?sort=id:desc&pagination[page]=1&pagination[pageSize]=6")
-
-  // console.log(typeof(answers));
-
-  // answers = answers.slice(0,8);
-  // articles = articles.slice(0,6);
-
+  let answers = await fetchAPI("/answers", {
+    sort: ['id:desc'],
+    pagination: {
+      limit: 8
+    },
+    populate: {
+      image: "*",
+      topic: "*"
+    }
+  });
+  let articles = await fetchAPI("/articles", {
+    sort: ['id:desc'],
+    pagination: {
+      limit: 6
+    },
+    populate: {
+      image: "*",
+      category: "*",
+      author: {
+        populate: ['picture']
+      }
+    }
+  });
+  const hero = await fetchAPI("/hero", {
+    populate: {
+      heroImage: "*"
+    }
+  });
+  
   return {
-    props: {answers, articles, hero},
+    props: {answers: answers.data, articles: articles.data, hero: hero.data},
     revalidate: 1
   };
 }

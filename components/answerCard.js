@@ -7,27 +7,28 @@ import placeholder from '../public/placeholder.png';
 
 const AnswerCard = ({ answer }) => {
   let displayImage;
+  const answerImage = answer.image.data.attributes;
   
-  if (answer.image.formats.hasOwnProperty("small")) {
-    displayImage = getStrapiURL(answer.image.formats.small.url);
+  if (answerImage.formats.hasOwnProperty("small")) {
+    displayImage = getStrapiURL(answerImage.formats.small.url);
   } else {
     displayImage = placeholder.src;
   }
 
   return (
-    <Link as={`/answer/${answer.slug}`} href="/answer/[id]">
-      <a >
+    (<Link as={`/answer/${answer.slug}`} href="/answer/[id]" legacyBehavior>
+      <a>
         <div className={`${styles.articleCard} nav-shadow`}>
           <div>
             <img 
               className={styles.answerCardImage}
               src={displayImage} 
-              alt={answer.image.alternativeText}
+              alt={answerImage.alternativeText}
               // onError={this.src=placeholder}
             />
           </div>
           <div className={styles.answerCardText}>
-            {(answer.topic === null) ? '' : <span>{answer.topic.name}</span>}            
+            {(answer.topic.data === null) ? '' : <span>{answer.topic.data.attributes.name}</span>}            
             <p style={{color: 'black', marginBottom: 0}}>{answer.title}</p>
             <div 
               className="uk-grid-small uk-flex-left"  
@@ -38,15 +39,15 @@ const AnswerCard = ({ answer }) => {
                 <p 
                   className="uk-text-meta uk-margin-remove-top"
                 >
-                  <Moment format="MMM Do YYYY">{answer.published_at}</Moment>
+                  <Moment format="MMM Do YYYY">{answer.publishedAt}</Moment>
                 </p>
               </div>
             </div>
           </div>
         </div>
       </a>
-    </Link>
-  )
+    </Link>)
+  );
 }
 
 export default AnswerCard;

@@ -7,25 +7,25 @@ const Nav = () => {
     <div className="nav-shadow nav-sticky">
       <nav className="nav-style _1440px-nav-container">
         <div>
-          <Link href="/">
-            <a className="logo-container">
-              <h1 className="logo">
-                Mizo Apologia
-              </h1>
-              <span className="logo-sub-text">I Zawhna te. Bible Atanga Chhanna.</span>
-            </a>
+          <Link href="/" className="logo-container">
+
+            <h1 className="logo">
+              Mizo Apologia
+            </h1>
+            <span className="logo-sub-text">I Zawhna te. Bible Atanga Chhanna.</span>
+
           </Link>
         </div>
 
         {/* Hamburger and search icon */}
         <div className="mobile-menu-section hamburger-menu">
-          <Link href="/search">
-            <a className='mobile-search-icon'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </a>
+          <Link href="/search" className='mobile-search-icon'>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+
           </Link>
           <div 
             onClick={() => {document.querySelector('.modal-container').style.display = 'block'}}
@@ -38,41 +38,41 @@ const Nav = () => {
         <div className="nav-style nav-links">
          <div className="wrapper-nav nav-link nav-link-hover">
             <Link href="/">
-              <a>Home</a>
+              Home
             </Link>
           </div>         
           <div className="wrapper-nav nav-link nav-link-hover">
             <Link href="/answers">
-              <a>Chhanna</a>
+              Chhanna
             </Link>
           </div>
           <div className="wrapper-nav nav-link nav-link-hover">
             <Link href="/articles">
-              <a>Thuziak</a>
+              Thuziak
             </Link>  
           </div>
           <div className="wrapper-nav nav-link nav-link-hover">
             <Link href="/aboutus">
-              <a>About Us</a>
+              About Us
             </Link>
           </div>
           <div className="wrapper-nav nav-link navAskButton">
             <Link href="/ask">
-              <a>
+              
                 Zawt Rawh
-              </a>
+              
             </Link>
           </div>        
           <div 
             className="wrapper-nav nav-link nav-link-hover"
           >
             <Link href="/search">
-              <a>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-              </a>
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+
             </Link>
           </div>
         </div>
@@ -80,7 +80,7 @@ const Nav = () => {
         <ModalMenu/>
       </nav>
     </div>
-  )
+  );
 } 
 
 export default Nav;

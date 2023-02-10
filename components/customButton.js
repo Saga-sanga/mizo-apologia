@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 const CustomButton = ({linkPath, children}) => {
   return (
-    <Link href={linkPath} passHref>
-      <a className={styles.buttonStyle}>
-        {children}
-      </a>
-    </Link>
+    (<Link href={linkPath} passHref className={styles.buttonStyle}>
+
+      {children}
+
+    </Link>)
   );
 }
 

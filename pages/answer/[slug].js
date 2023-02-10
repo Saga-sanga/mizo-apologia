@@ -10,57 +10,47 @@ import Image from "next/image"
 import placeholder from "../../public/placeholder.png";
 
 const Answer = ({ answer }) => {
-  const imageUrl = getStrapiMedia(answer.image);
+  const imageUrl = getStrapiMedia(answer.attributes.image);
 
   const seo = {
-    metaTitle: answer.title,
-    metaDescription: answer.description,
-    shareImage: answer.image,
-    answer: true,
+    metaTitle: answer.attributes.title,
+    metaDescription: answer.attributes.description,
+    shareImage: answer.attributes.image,
+    article: true,
   };
 
   return (
     <Layout >
       <Seo seo={seo} />
       <main>
-        {/* <div
-          id="banner"
-          className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin banner"
-          data-src={imageUrl}
-          data-srcset={imageUrl}
-          data-uk-img
-        >
-          <h1 className='contentTitleBlur'>{answer.title}</h1>
-        </div> */}
         <div className="uk-section" style={{padding: '55px 12px'}}>
           <div className="bannerTitle">
-            <h1>{answer.title}</h1>
-            <Image src={answer.image.hasOwnProperty("url") ? imageUrl : placeholder.src} alt="title image" width='1400' height='700' objectFit="cover"/>
+            <h1>{answer.attributes.title}</h1>
+            <Image src={answer.attributes.image.data.attributes.hasOwnProperty("url") ? imageUrl : placeholder.src} alt="title image" width='1400' height='700' objectFit="cover"/>
           </div>
           <div className='uk-container textAreaContainer'>
             <div>
-              <Link href="/answers">
-                <a className="articleLink">
+              <Link href="/answers" className="articleLink" legacyBehavior>
+                <a>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
                     <polyline points="15 18 9 12 15 6"></polyline>
-                  </svg>
-                  Chhannate
+                  </svg>Chhannate
                 </a>
               </Link>
             </div>
-            <ReactMarkdown rehypePlugins={[rehypeRaw]} children={answer.content}/>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]} children={answer.attributes.content}/>
             {
-              (answer.endNote === null || answer.endNote == '') ? '' 
+              (answer.attributes.endNote === null || answer.attributes.endNote == '') ? '' 
               : <div className="endNote">
                   <hr />
-                  <ReactMarkdown rehypePlugins={[rehypeRaw]} children={answer.endNote}/>
+                  <ReactMarkdown rehypePlugins={[rehypeRaw]} children={answer.attributes.endNote}/>
                 </div>
             }
             <hr className="uk-divider-small" />
             <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
               <div className="uk-width-expand">
                 <p className="uk-text-meta uk-margin-remove-top">
-                  <Moment format="MMM Do YYYY">{answer.published_at}</Moment>
+                  <Moment format="MMM Do YYYY">{answer.attributes.publishedAt}</Moment>
                 </p>
               </div>
             </div>
@@ -72,12 +62,12 @@ const Answer = ({ answer }) => {
 };
 
 export async function getStaticPaths() {
-  const answers = await fetchAPI("/answers");
+  const answers = await fetchAPI("/answers", {fields: ['slug']});
 
   return {
-    paths: answers.map((answer) => ({
+    paths: answers.data.map((answer) => ({
       params: {
-        slug: answer.slug,
+        slug: answer.attributes.slug,
       },
     })),
     fallback: 'blocking',
@@ -85,13 +75,18 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const answers = await fetchAPI(
-    `/answers?slug=${params.slug}`
-  );
-  // const topics = await fetchAPI("/topics");
+  const answers = await fetchAPI(`/answers?`, {
+    filters: {
+      slug: params.slug
+    },
+    populate: {
+      image: "*",
+      topic: "*"
+    }
+  });
 
   return {
-    props: { answer: answers[0] },
+    props: { answer: answers.data[0] },
     revalidate: 1
   };
 }

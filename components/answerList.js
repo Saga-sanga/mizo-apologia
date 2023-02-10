@@ -7,7 +7,7 @@ const AnswerList = ({ answers }) => {
     <div className={styles.answerGrid}>
       {answers.map(answer => {
         return (
-          <AnswerCard answer={answer} key={answer.slug}/>
+          <AnswerCard answer={answer.attributes} key={answer.attributes.slug}/>
         );
       })}
     </div>

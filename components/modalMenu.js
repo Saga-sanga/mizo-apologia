@@ -4,7 +4,7 @@ import Link from 'next/link';
 function ModalMenu() {
   const closeModal = () => {document.querySelector('.modal-container').style.display = 'none'};
 
-  return(
+  return (
     <div className="modal-container">
       <div className="modal-menu">
         <span 
@@ -18,7 +18,7 @@ function ModalMenu() {
           onClick={closeModal}
         >
           <Link href="/">
-            <a>Home</a>
+            Home
           </Link>
         </div>         
         <div 
@@ -26,7 +26,7 @@ function ModalMenu() {
           onClick={closeModal}
         >
           <Link href="/answers">
-            <a>Chhanna</a>
+            Chhanna
           </Link>
         </div>
         <div 
@@ -34,7 +34,7 @@ function ModalMenu() {
           onClick={closeModal}
         >
           <Link href="/articles">
-            <a>Thuziak</a>
+            Thuziak
           </Link>  
         </div>
         <div 
@@ -42,7 +42,7 @@ function ModalMenu() {
           onClick={closeModal}
         >
           <Link href="/aboutus">
-            <a>About Us</a>
+            About Us
           </Link>
         </div>
         <div 
@@ -51,15 +51,15 @@ function ModalMenu() {
           style={{marginTop: '16px'}}
         >
           <Link href="/ask">
-            <a>
+            
               Zawt Rawh
-            </a>
+            
           </Link>
         </div>
         <div style={{padding: '14px'}}></div>
       </div>
     </div>
-  )
+  );
 }
 
 export default ModalMenu;
