@@ -12,22 +12,22 @@ const Topic = ({ articles }) => {
   };
 
   return (
-    <Layout global={global}>
+    <Layout>
       <Seo seo={seo} />
       <main>
         <div className="articleSection">
           <div className="uk-container uk-container-large">
-            <Link href="/" className="homeLink" legacyBehavior>
-              <a>
+            <Link href="/" legacyBehavior>
+              <a className="homeLink flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
                   <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>Home
               </a>
             </Link>
             <div className='indexTitleContainer'>
-            <h1 style={{marginTop: 0}}>Thuziakte</h1>
-              <Link href='/category' style={{display: 'flex'}} legacyBehavior>
-                <a>
+              <h1 className="mt-0 px-2 text-4xl">Thuziakte</h1>
+              <Link href='/category' legacyBehavior>
+                <a className="flex">
                   Categories<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
                     <polyline points="9 18 15 12 9 6"></polyline>
                   </svg>
