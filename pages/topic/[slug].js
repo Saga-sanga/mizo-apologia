@@ -3,6 +3,7 @@ import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import Link from "next/link";
+// import ReactPagination from 'react-pagination';
 
 const Topic = ({ topic, answers}) => {
   const seo = {
@@ -68,7 +69,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { topic: topic.data[0], answers: answers.data},
-    revalidate: 1,
+    revalidate: 20,
   };
 }
 

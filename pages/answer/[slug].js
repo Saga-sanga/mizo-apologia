@@ -87,7 +87,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { answer: answers.data[0] },
-    revalidate: 1
+    revalidate: 10
   };
 }
 

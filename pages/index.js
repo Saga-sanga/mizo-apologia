@@ -114,6 +114,6 @@ export async function getStaticProps() {
   
   return {
     props: {answers: answers.data, articles: articles.data, hero: hero.data},
-    revalidate: 1
+    revalidate: 10
   };
 }

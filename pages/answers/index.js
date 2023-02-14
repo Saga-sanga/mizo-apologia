@@ -3,13 +3,34 @@ import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import Link from "next/link";
+import useSWR from 'swr';
+import { useState } from "react";
 
-const Topic = ({ answers }) => {
+const Topic = ({ answers, answersMeta }) => {
+  const [pageIndex, setPageIndex] = useState(1);
+  
   const seo = {
     metaTitle: 'Chhanna',
     metaDescription: `Chhanna te`,
     shareImage: null
   };
+
+  const { data, error, isLoading} = useSWR(['/answers', {
+    sort: ['id:desc'],
+    pagination:{
+      page: pageIndex,
+      pageSize: 12
+    },
+    populate: {
+      image: "*",
+      topic: "*"
+    }
+  }], ([url, paramsObj]) => fetchAPI(url, paramsObj),
+  {
+    fallbackData: answers
+  })
+
+  console.log("Answers: ", data.data)
 
   return (
     <Layout>
@@ -34,10 +55,29 @@ const Topic = ({ answers }) => {
                 </a>
               </Link>
             </div>
-            <AnswerList answers={answers} />
+            <AnswerList answers={data.data ?? answers} />
           </div>
         </div>
+       
       </main>
+      <button 
+        disabled={pageIndex === 1}
+        onClick={() => {
+          setPageIndex(pageIndex - 1);
+          scrollTo(0,0);
+        }}
+      >
+        Previous
+      </button>
+      <button 
+        disabled={pageIndex === (data && answersMeta.pagination.pageCount)} 
+        onClick={() => {
+          setPageIndex(pageIndex + 1);
+          scrollTo(0,0);
+        }}
+      >
+        Next
+      </button>
     </Layout>
   );
 };
@@ -45,6 +85,10 @@ const Topic = ({ answers }) => {
 export async function getStaticProps() {
   const answers = await fetchAPI('/answers', {
     sort: ['id:desc'],
+    pagination:{
+      page: 1,
+      pageSize: 12
+    },
     populate: {
       image: "*",
       topic: "*"
@@ -52,8 +96,8 @@ export async function getStaticProps() {
   });
 
   return {
-    props: { answers: answers.data},
-    revalidate: 1
+    props: { answers: answers.data, answersMeta: answers.meta},
+    // revalidate: 20
   };
 }
 
