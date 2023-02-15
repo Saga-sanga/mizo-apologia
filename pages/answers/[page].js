@@ -32,13 +32,12 @@ export async function getStaticProps({params}) {
     }
   });
 
-  console.log(data);
-
   if (!data.length) {
     return {
       notFound: true
     }
   }
+
 
   // Redirect the first page to `/answers` to avoid duplicated content
   if (page === 1) {

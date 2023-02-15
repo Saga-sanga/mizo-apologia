@@ -2,7 +2,7 @@ import AnswerList from "./answerList"
 import Link from "next/link"
 import Pagination from "./Pagination";
 
-function PaginationPage({ items }) {
+function PaginationPage({ items, meta }) {
   return (
     <section>
         <div className="answerSection">
@@ -25,12 +25,22 @@ function PaginationPage({ items }) {
               </Link>
             </div>
             <Pagination
-              // totalItems={}
-              // currentPage={}
-              // itemsPerPage={}
-              renderPageLink={(page) => `/answers/${page}`}
+              totalPages={meta.pagination.pageCount}
+              currentPage={meta.pagination.page}
+              renderPageLink={(page) => 
+                // console.log(page)
+                `/answers/${page}`
+              }
             />
             <AnswerList answers={items} />
+            <Pagination
+              totalPages={meta.pagination.pageCount}
+              currentPage={meta.pagination.page}
+              renderPageLink={(page) => 
+                // console.log(page)
+                `/answers/${page}`
+              }
+            />
           </div>
         </div>
        

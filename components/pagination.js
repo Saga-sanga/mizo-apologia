@@ -5,12 +5,11 @@ import usePagination from '../hooks/usePagination'
 export const dotts = '...'
 
 const Pagination = ({
-  totalItems,
+  totalPages,
   currentPage,
-  itemsPerPage = 10,
   renderPageLink,
 }) => {
-  const pages = usePagination(totalItems, currentPage, itemsPerPage)
+  const pages = usePagination(totalPages, currentPage);
 
   return (
     <div className="flex items-center justify-center my-8">
@@ -27,7 +26,7 @@ const Pagination = ({
             key={i}
             href={renderPageLink(pageNumber)}
             className={`${
-              pageNumber === currentPage ? 'text-success-dark' : 'text-black'
+              pageNumber === currentPage ? 'text-sky-500' : 'text-black'
             } px-4 py-2 mx-1 rounded-full text-sm font-semibold no-underline`}
           >
             {pageNumber}

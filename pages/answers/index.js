@@ -35,7 +35,7 @@ const Topic = ({ answers, answersMeta }) => {
     <Layout>
       <Seo seo={seo} />
       <PaginationPage items={answers} meta={answersMeta}/>
-      <button 
+      {/* <button 
         // disabled={pageIndex === 1}
         onClick={() => {
           // setPageIndex(pageIndex - 1);
@@ -52,7 +52,7 @@ const Topic = ({ answers, answersMeta }) => {
         }}
       >
         Next
-      </button>
+      </button> */}
     </Layout>
   );
 };
