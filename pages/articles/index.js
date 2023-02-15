@@ -1,15 +1,17 @@
-import ArticleList from "../../components/articleList";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import Link from "next/link";
+import PaginationPage from "../../components/paginationPage";
 
-const Topic = ({ articles }) => {
+const Topic = ({ articles, articlesMeta }) => {
   const seo = {
     metaTitle: 'Thuziak',
     metaDescription: `Thuziak zawng zawng te`,
     shareImage: null
   };
+
+  const answer = false;
 
   return (
     <Layout>
@@ -34,7 +36,7 @@ const Topic = ({ articles }) => {
                 </a>
               </Link>
             </div>  
-            <ArticleList articles={articles} />
+            <PaginationPage items={articles} meta={articlesMeta} answer={answer}/>
           </div>
         </div>
       </main>
@@ -43,8 +45,12 @@ const Topic = ({ articles }) => {
 };
 
 export async function getStaticProps() {
-  const articles = await fetchAPI('/articles', {
+  const { data, meta } = await fetchAPI('/articles', {
     sort: ['id:desc'],
+    pagination:{
+      page: 1,
+      pageSize: 6
+    },
     populate: {
       image: "*",
       category: "*",
@@ -55,8 +61,7 @@ export async function getStaticProps() {
   });
 
   return {
-    props: { articles: articles.data},
-    revalidate: 20
+    props: { articles: data, articlesMeta: meta}
   };
 }
 

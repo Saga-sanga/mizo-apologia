@@ -1,23 +1,23 @@
-import Layout from "../../components/layout";
-import PaginationPage from "../../components/paginationPage";
-import Seo from "../../components/seo";
 import { fetchAPI } from "../../lib/api";
+import Layout from "../../components/layout";
+import Seo from "../../components/seo";
 import Link from "next/link";
+import PaginationPage from "../../components/paginationPage";
 
-function PaginatedPage({answers, answersMeta}) {
+const Topic = ({ articles, articlesMeta }) => {
   const seo = {
-    metaTitle: 'Chhanna',
-    metaDescription: `Chhanna te`,
+    metaTitle: 'Thuziak',
+    metaDescription: `Thuziak zawng zawng te`,
     shareImage: null
   };
 
-  const answer = true;
-  
+  const answer = false;
+
   return (
     <Layout>
-      <Seo seo={seo}/>
-      <section>
-        <div className="answerSection">
+      <Seo seo={seo} />
+      <main>
+        <div className="articleSection">
           <div className="uk-container uk-container-large">
             <Link href="/" legacyBehavior>
               <a className="homeLink flex">
@@ -27,34 +27,37 @@ function PaginatedPage({answers, answersMeta}) {
               </a>
             </Link>
             <div className='indexTitleContainer'>
-              <h1 className="mt-0 px-2 text-4xl">Chhannate</h1>
-              <Link href='/topic' legacyBehavior>
+              <h1 className="mt-0 px-2 text-4xl">Thuziakte</h1>
+              <Link href='/category' legacyBehavior>
                 <a className="flex">
-                  Topics<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
+                  Categories<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
                     <polyline points="9 18 15 12 9 6"></polyline>
                   </svg>
                 </a>
               </Link>
-            </div>
-            <PaginationPage items={answers} meta={answersMeta} answer={answer}/>
+            </div>  
+            <PaginationPage items={articles} meta={articlesMeta} answer={answer}/>
           </div>
         </div>
-      </section>
+      </main>
     </Layout>
-  )
-}
+  );
+};
 
 export async function getStaticProps({params}) {
   const page = Number(params.page) || 1;
-  const { data, meta } = await fetchAPI('/answers', {
+  const { data, meta } = await fetchAPI('/articles', {
     sort: ['id:desc'],
     pagination:{
       page: page,
-      pageSize: 12
+      pageSize: 6
     },
     populate: {
       image: "*",
-      topic: "*"
+      category: "*",
+      author: {
+        populate: ['picture']
+      }
     }
   });
 
@@ -64,19 +67,18 @@ export async function getStaticProps({params}) {
     }
   }
 
-
-  // Redirect the first page to `/answers` to avoid duplicated content
+  // Redirect the first page to `/articles` to avoid duplicated content
   if (page === 1) {
     return {
       redirect: {
-        destination: '/answers',
+        destination: '/articles',
         permanent: false,
       },
     }
   }
 
   return {
-    props: { answers: data, answersMeta: meta},
+    props: { articles: data, articlesMeta: meta},
     revalidate: 60 * 60 * 12, // <--- ISR cache: twice a day
   };
 }
@@ -85,10 +87,10 @@ export async function getStaticPaths() {
   return {
     // Prerender the next 5 pages after the first page, which is handled by the index page.
     // Other pages will be prerendered at runtime.
-    paths: Array.from({ length: 5 }).map((_, i) => `/answers/${i + 2}`),
+    paths: Array.from({ length: 5 }).map((_, i) => `/articles/${i + 2}`),
     // Block the request for non-generated pages and cache them in the background
     fallback: 'blocking',
   }
 }
 
-export default PaginatedPage;
+export default Topic;
