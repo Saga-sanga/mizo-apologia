@@ -85,6 +85,7 @@ export default function Home({ answers, articles, hero }) {
 export async function getStaticProps() {
   let answers = await fetchAPI("/answers", {
     sort: ['id:desc'],
+    fields: ['title', 'slug'],
     pagination: {
       limit: 8
     },
@@ -95,6 +96,7 @@ export async function getStaticProps() {
   });
   let articles = await fetchAPI("/articles", {
     sort: ['id:desc'],
+    fields: ['title', 'slug'],
     pagination: {
       limit: 6
     },

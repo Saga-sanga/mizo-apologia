@@ -64,7 +64,6 @@ export async function getStaticProps({params}) {
     }
   }
 
-
   // Redirect the first page to `/answers` to avoid duplicated content
   if (page === 1) {
     return {

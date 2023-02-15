@@ -75,7 +75,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const answers = await fetchAPI(`/answers?`, {
+  const answers = await fetchAPI(`/answers`, {
     filters: {
       slug: params.slug
     },

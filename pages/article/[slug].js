@@ -57,7 +57,6 @@ const Article = ({ article }) => {
                     src={authorImageUrl}
                     className={styles.authorImage}
                     alt="author image"
-                    objectFit="cover"
                     style={{objectFit: 'cover'}}
                     height="45"
                     width="45"
@@ -110,7 +109,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { article: articles.data[0] },
-    revalidate: 1
+    revalidate: 20
   };
 }
 
