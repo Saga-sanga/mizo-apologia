@@ -1,13 +1,13 @@
-import ArticleList from "../../components/articleList";
-import { fetchAPI } from "../../lib/api";
-import Layout from "../../components/layout";
-import Seo from "../../components/seo";
+import ArticleList from "../../../components/articleList";
+import { fetchAPI } from "../../../lib/api";
+import Layout from "../../../components/layout";
+import Seo from "../../../components/seo";
 import Link from "next/link";
 
 const Category = ({ category, articles }) => {
   const seo = {
-    metaTitle: category.name,
-    metaDescription: `All ${category.name} articles`,
+    metaTitle: category.attributes.name,
+    metaDescription: `All ${category.attributes.name} articles`,
   };
 
   return (

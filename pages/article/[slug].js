@@ -16,7 +16,7 @@ const Article = ({ article }) => {
   const imageUrl = getStrapiMedia(article.attributes.image);
 
   const seo = {
-    metaTitle: article.attributes.title,
+    metaTitle: `${article.attributes.title} | ${article.attributes.author.data.attributes.name}`,
     metaDescription: article.attributes.description,
     shareImage: article.attributes.image,
     article: true,

@@ -24,22 +24,11 @@ function PaginationPage({ items, meta }) {
                 </a>
               </Link>
             </div>
-            <Pagination
-              totalPages={meta.pagination.pageCount}
-              currentPage={meta.pagination.page}
-              renderPageLink={(page) => 
-                // console.log(page)
-                `/answers/${page}`
-              }
-            />
             <AnswerList answers={items} />
             <Pagination
               totalPages={meta.pagination.pageCount}
               currentPage={meta.pagination.page}
-              renderPageLink={(page) => 
-                // console.log(page)
-                `/answers/${page}`
-              }
+              renderPageLink={(page) => `/answers/${page}`}
             />
           </div>
         </div>

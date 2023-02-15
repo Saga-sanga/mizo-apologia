@@ -16,7 +16,7 @@ const Answer = ({ answer }) => {
     metaTitle: answer.attributes.title,
     metaDescription: answer.attributes.description,
     shareImage: answer.attributes.image,
-    article: true,
+    article: false,
   };
 
   return (

@@ -1,9 +1,8 @@
-import AnswerList from "../../components/answerList";
-import { fetchAPI } from "../../lib/api";
-import Layout from "../../components/layout";
-import Seo from "../../components/seo";
+import AnswerList from "../../../components/answerList";
+import { fetchAPI } from "../../../lib/api";
+import Layout from "../../../components/layout";
+import Seo from "../../../components/seo";
 import Link from "next/link";
-// import ReactPagination from 'react-pagination';
 
 const Topic = ({ topic, answers}) => {
   const seo = {
