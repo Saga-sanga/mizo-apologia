@@ -4,7 +4,6 @@ import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import styles from '../../styles/Home.module.css';
-// import Image from "../../components/image";
 import Image from 'next/image';
 import Seo from "../../components/seo";
 import { getStrapiMedia } from "../../lib/media";

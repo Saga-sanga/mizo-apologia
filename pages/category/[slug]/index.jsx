@@ -56,6 +56,7 @@ export async function getStaticProps({ params }) {
         slug: params.slug
       }
     },
+    fields: ['title', 'slug', 'description'],
     sort: ['publishedAt:desc'],
     populate: {
       image: "*",

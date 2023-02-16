@@ -96,7 +96,7 @@ export async function getStaticProps() {
   });
   let articles = await fetchAPI("/articles", {
     sort: ['id:desc'],
-    fields: ['title', 'slug'],
+    fields: ['title', 'slug', 'description'],
     pagination: {
       limit: 6
     },

@@ -25,20 +25,22 @@ const ArticleCard = ({ article }) => {
 
       <div className={`${styles.articleCard} nav-shadow`}>
         <div>
-          <img 
+          <Image
             className={styles.articleCardImage}
             src={displayImage} 
             alt={article.image.alternativeText}
+            fill
           />
         </div>
         <div className={styles.articleCardText}>
           <span>{article.category.data.attributes.name}</span>
           <h3>{article.title}</h3>
-          <p>{article.description}</p>
+          <p className='line-clamp-6'>{article.description}</p>
           <div className="uk-grid-small uk-flex-left"  style={{marginTop: '1.5rem'}} data-uk-grid="true">
             <div style={{alignSelf: 'center'}} className='pl-zero'>
               {authorImage && (
                 <Image
+                  alt="Author's headshot"
                   className={styles.authorImage}
                   src={imageUrl}
                   style={{objectFit: "cover"}}
