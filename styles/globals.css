@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -15,9 +19,52 @@ h1, h2, h3, h4 {
   font-weight: 500;
 }
 
+.textAreaContainer h1 {
+  font-size: 3rem;
+}
+
+.textAreaContainer h2 {
+  font-size: 2.25rem;
+}
+
+.textAreaContainer h3 {
+  font-size: 1.875rem;
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+ul {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
 blockquote {
   font-size: 1.125rem;
   text-align: justify;
+}
+
+.pl-zero {
+  padding-inline-start: 0;
 }
 
 /* Article Image and caption Style */
@@ -60,7 +107,7 @@ figcaption {
 }
 
 a {
-  /* color: inherit; */
+  color: #1e87f0;
   text-decoration: none;
 }
 
@@ -110,8 +157,8 @@ a:active { text-decoration: none; }
   cursor: pointer;
 }
 
-._1440px-nav-container {
-  max-width: 1440px;
+._large-nav-container {
+  max-width: 1188px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 18px;
@@ -170,6 +217,7 @@ a:active { text-decoration: none; }
 .logo {
   font-family: 'Abril Fatface', cursive;
   margin: 2px 0 0 0;
+  font-size: 42px;
 }
 
 .logo-sub-text {
@@ -221,6 +269,7 @@ a:active { text-decoration: none; }
   display: flex;
   position: relative;
   right: 10px;
+  padding-block-end: 20px;
 }
 
 .articleSection {

@@ -44,11 +44,12 @@ const Topic = ({ articles, articlesMeta }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticProps({params}) {
+  const page = Number(params.page) || 1;
   const { data, meta } = await fetchAPI('/articles', {
     sort: ['id:desc'],
     pagination:{
-      page: 1,
+      page: page,
       pageSize: 6
     },
     populate: {
@@ -60,9 +61,36 @@ export async function getStaticProps() {
     }
   });
 
+  if (!data.length) {
+    return {
+      notFound: true
+    }
+  }
+
+  // Redirect the first page to `/articles` to avoid duplicated content
+  if (page === 1) {
+    return {
+      redirect: {
+        destination: '/articles',
+        permanent: false,
+      },
+    }
+  }
+
   return {
-    props: { articles: data, articlesMeta: meta}
+    props: { articles: data, articlesMeta: meta},
+    revalidate: 60 * 60 * 12, // <--- ISR cache: twice a day
   };
+}
+
+export async function getStaticPaths() {
+  return {
+    // Prerender the next 5 pages after the first page, which is handled by the index page.
+    // Other pages will be prerendered at runtime.
+    paths: Array.from({ length: 5 }).map((_, i) => `/articles/${i + 2}`),
+    // Block the request for non-generated pages and cache them in the background
+    fallback: 'blocking',
+  }
 }
 
 export default Topic;

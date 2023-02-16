@@ -5,11 +5,12 @@ import styles from '../styles/Home.module.css'
 const ArticleList = ({ articles }) => {
   return (
     <div className={styles.articleGrid}>
-      {articles.map(article => {
+      { articles.length ?
+        articles.map(article => {
         return (
           <ArticleCard article={article.attributes} key={article.attributes.slug}/>
         );
-      })}
+      }) : <h1 className='min-h-[23vh]'>He Category ah hian Thuziak a om lo!</h1>}
     </div>
   )
 }

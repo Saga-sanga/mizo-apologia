@@ -4,7 +4,6 @@ import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import styles from '../../styles/Home.module.css';
-// import Image from "../../components/image";
 import Image from 'next/image';
 import Seo from "../../components/seo";
 import { getStrapiMedia } from "../../lib/media";
@@ -16,7 +15,7 @@ const Article = ({ article }) => {
   const imageUrl = getStrapiMedia(article.attributes.image);
 
   const seo = {
-    metaTitle: article.attributes.title,
+    metaTitle: `${article.attributes.title} | ${article.attributes.author.data.attributes.name}`,
     metaDescription: article.attributes.description,
     shareImage: article.attributes.image,
     article: true,
@@ -33,8 +32,8 @@ const Article = ({ article }) => {
           </div>
           <div className="uk-container textAreaContainer">
             <div>
-              <Link href="/articles" className="articleLink" legacyBehavior>
-                <a>
+              <Link href="/articles" legacyBehavior>
+                <a className="articleLink">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
                     <polyline points="15 18 9 12 15 6"></polyline>
                   </svg>Thuziakte
@@ -57,7 +56,6 @@ const Article = ({ article }) => {
                     src={authorImageUrl}
                     className={styles.authorImage}
                     alt="author image"
-                    objectFit="cover"
                     style={{objectFit: 'cover'}}
                     height="45"
                     width="45"
@@ -110,7 +108,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { article: articles.data[0] },
-    revalidate: 1
+    revalidate: 20
   };
 }
 
