@@ -2,7 +2,7 @@ const mail = require('@sendgrid/mail');
 // import cors from 'cors';
 mail.setApiKey(process.env.SENDGRID_API_KEY);
 
-export default async (req, res) => {
+const contact = async (req, res) => {
   const body = JSON.parse(req.body);
   
   const message = `
@@ -31,3 +31,5 @@ export default async (req, res) => {
 
   // console.log(body);
 };
+
+export default contact;

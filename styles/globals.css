@@ -19,16 +19,16 @@ h1, h2, h3, h4 {
   font-weight: 500;
 }
 
-.textAreaContainer h1 {
+h1 {
   font-size: 3rem;
 }
 
-.textAreaContainer h2 {
+h2 {
   font-size: 2.25rem;
 }
 
-.textAreaContainer h3 {
-  font-size: 1.875rem;
+h3 {
+  font-size: 1.5rem;
 }
 
 ol {
