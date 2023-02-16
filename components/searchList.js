@@ -7,7 +7,7 @@ const SearchList = ({ results }) => {
     <div className={styles.answerGrid}>
       {results.map(result => {
         return (
-          <SearchCard result={result} key={result.slug}/>
+          <SearchCard result={result} key={result.attributes.slug}/>
         );
       })}
     </div>

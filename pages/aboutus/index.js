@@ -16,13 +16,13 @@ export default function AboutUs({ aboutUs }) {
         <Seo seo={seo} />
         <main className="uk-container aboutUsBody">
           <div>
-            <h1>{aboutUs.title}</h1>
-            <ReactMarkdown rehypePlugins={[rehypeRaw]} children={aboutUs.content}/>
+            <h1>{aboutUs.attributes.title}</h1>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]} children={aboutUs.attributes.content}/>
           </div>
           <hr style={{margin: '3.5rem 0'}} />
           <div>
-            <h1>{aboutUs.StatementOfFaith.title}</h1>
-            <ReactMarkdown rehypePlugins={[rehypeRaw]} children={aboutUs.StatementOfFaith.content}/>
+            <h1>{aboutUs.attributes.StatementOfFaith.title}</h1>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]} children={aboutUs.attributes.StatementOfFaith.content}/>
           </div>
         </main>
       </Layout>
@@ -31,10 +31,14 @@ export default function AboutUs({ aboutUs }) {
 }
 
 export async function getStaticProps() {
-  const aboutUs = await fetchAPI("/about-us");
+  const aboutUs = await fetchAPI("/about-us", {
+    populate: {
+      StatementOfFaith: "*"
+    }
+  });
 
   return {
-    props: { aboutUs },
+    props: { aboutUs: aboutUs.data },
     revalidate: 1
   }
 }

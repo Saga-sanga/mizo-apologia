@@ -14,16 +14,23 @@ function Search() {
   }
 
   const submitSearch = async () => {
-    const contentType = 'answers';
-    let results = [];
     if (query.length) {
-      results = await fetchAPI(`/${contentType}?title_contains=${query}`);
-      setResults(results);
-      if (results.length === 0) {
+      const queryResults = await fetchAPI(`/answers`, {
+        filters: {
+          title: {
+            $containsi: query
+          }
+        },
+        populate: {
+          image: "*",
+          topic: "*"
+        }
+      });
+      setResults(queryResults.data);
+      if (queryResults.data.length === 0) {
         setMessage('I thil zawn kan hmu lo!');
       }
     }
-    // console.log(results);
   }
 
   return (
@@ -37,7 +44,7 @@ function Search() {
               className="search-text-input" 
               type="text" placeholder="Search" 
               onChange={handleChange}
-              onKeyPress={(e) => {
+              onKeyDown={(e) => {
                 if(e.key === "Enter") {
                   submitSearch();
                 }

@@ -5,7 +5,7 @@ import ModalMenu from './modalMenu';
 const Nav = () => {
   return (
     <div className="nav-shadow nav-sticky">
-      <nav className="nav-style _1440px-nav-container">
+      <nav className="nav-style _large-nav-container">
         <div>
           <Link href="/" className="logo-container">
 

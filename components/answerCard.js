@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 import Moment from 'react-moment';
 import { getStrapiURL } from '../lib/api';
 import placeholder from '../public/placeholder.png';
+import Image from 'next/image';
 
 const AnswerCard = ({ answer }) => {
   let displayImage;
@@ -20,25 +21,23 @@ const AnswerCard = ({ answer }) => {
       <a>
         <div className={`${styles.articleCard} nav-shadow`}>
           <div>
-            <img 
+            <Image 
               className={styles.answerCardImage}
               src={displayImage} 
               alt={answerImage.alternativeText}
-              // onError={this.src=placeholder}
+              fill
             />
           </div>
           <div className={styles.answerCardText}>
             {(answer.topic.data === null) ? '' : <span>{answer.topic.data.attributes.name}</span>}            
-            <p style={{color: 'black', marginBottom: 0}}>{answer.title}</p>
+            <p style={{color: 'black', marginBottom: 0}} className='line-clamp-5'>{answer.title}</p>
             <div 
               className="uk-grid-small uk-flex-left"  
               style={{marginTop: '0.8rem'}}
               data-uk-grid="true"
             >
-              <div className="uk-width-expand">
-                <p 
-                  className="uk-text-meta uk-margin-remove-top"
-                >
+              <div className="uk-width-expand pl-zero">
+                <p className="uk-text-meta uk-margin-remove-top">
                   <Moment format="MMM Do YYYY">{answer.publishedAt}</Moment>
                 </p>
               </div>
