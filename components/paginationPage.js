@@ -3,7 +3,6 @@ import ArticleList from "./articleList";
 import Pagination from "./Pagination";
 
 function PaginationPage({ items, meta, answer }) {
-  console.log("Pagination Page: ", answer);
   return (
     <>
       <Pagination
