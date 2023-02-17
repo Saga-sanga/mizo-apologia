@@ -1,6 +1,6 @@
 import AnswerList from "./answerList"
 import ArticleList from "./articleList";
-import Pagination from "./Pagination";
+import Pagination from "./pagination";
 
 function PaginationPage({ items, meta, answer }) {
   return (
