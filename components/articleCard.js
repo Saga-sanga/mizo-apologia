@@ -43,7 +43,7 @@ const ArticleCard = ({ article }) => {
                   alt="Author's headshot"
                   className={styles.authorImage}
                   src={imageUrl}
-                  style={{objectFit: "cover"}}
+                  style={{objectFit: "cover", height: '45px', width: '45px'}}
                   height="45"
                   width="45"
                 />

@@ -10,7 +10,7 @@ const ArticleList = ({ articles }) => {
         return (
           <ArticleCard article={article.attributes} key={article.attributes.slug}/>
         );
-      }) : <h1 className='min-h-[23vh]'>He Category ah hian Thuziak a om lo!</h1>}
+      }) : <p className='min-h-[23vh]'>He Category ah hian Thuziak a om lo!</p>}
     </div>
   )
 }
