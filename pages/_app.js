@@ -22,24 +22,6 @@ const MyApp = ({ Component, pageProps }) => {
         <link rel="shortcut icon" href={getStrapiMedia(global.attributes.favicon)} />
       </Head>
 
-      {/* UI Kits */}
-
-      <Script
-        id='uikit'
-        src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"
-        strategy='beforeInteractive'
-      />
-      <Script
-        id='uikit-icons'
-        src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"
-        strategy='beforeInteractive'
-      />
-      <Script
-        id='uikit-ajax'
-        src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js"
-        strategy='beforeInteractive'
-      />
-
       {/* Google Tag Manager */}
 
       <Script

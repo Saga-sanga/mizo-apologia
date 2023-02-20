@@ -87,6 +87,10 @@ figcaption {
 
 /* <-- End --> */
 
+.textAreaContainer > p {
+  color: #343434;
+}
+
 .bannerTitle {
   display: flex;
   flex-direction: column;
