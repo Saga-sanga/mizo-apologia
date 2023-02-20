@@ -3,17 +3,19 @@ import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import Moment from 'react-moment';
 import { getStrapiURL } from '../lib/api';
+import Image from 'next/image';
 
 const SearchCard = ({ result }) => {
   return (
     (<Link as={`/answer/${result.attributes.slug}`} href="/answer/[id]" legacyBehavior>
-      <a href="">
+      <a>
         <div className={`${styles.articleCard} nav-shadow`}>
           <div>
-            <img
+            <Image
               className={styles.answerCardImage}
               src={getStrapiURL(result.attributes.image.data.attributes.formats.thumbnail.url)}
               alt={result.attributes.image.data.attributes.alternativeText}
+              full
             />
           </div>
           <div className={styles.answerCardText}>
