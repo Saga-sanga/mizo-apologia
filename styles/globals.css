@@ -198,7 +198,7 @@ a:active { text-decoration: none; }
 .hero-subtext {
   margin-top: 0;
   font-size: 1.4rem;
-  margin-right: 50%;
+  margin-right: 40%;
   text-shadow: 1px 1px 3px #272626;
 }
 
@@ -318,7 +318,7 @@ a:active { text-decoration: none; }
   display: block;
   cursor: pointer;
   border: none;
-  background: #fc446d;
+  /* background: #fc446d; */
   padding: 0.5em 1.5em;
   border-radius: .28571429rem;
   color: white;
@@ -489,13 +489,20 @@ a:active { text-decoration: none; }
   }
 }
 
+@media only screen and (max-width: 850px) {
+  .hero-title {
+    font-size: 3.75rem !important;
+  } 
+}
+
 @media only screen and (max-width: 480px) {
   .hero-subtext {
     margin-right: 0;
+    font-size: 1.125rem;
   }
   
   .hero-title {
-    font-size: 4rem !important;
+    font-size: 3rem !important;
   } 
 
   #heroButton1 {    
@@ -508,8 +515,8 @@ a:active { text-decoration: none; }
   }
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 380px) {
   .hero-title {
-    font-size: 3.3rem !important;
+    font-size: 2.5rem !important;
   } 
 }

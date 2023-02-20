@@ -27,7 +27,7 @@ const Topic = ({ articles, articlesMeta }) => {
               </a>
             </Link>
             <div className='indexTitleContainer'>
-              <h1 className="mt-0 px-2 text-4xl">Thuziakte</h1>
+              <h1 className="mt-0 px-2 font-semibold text-2xl md:text-4xl">Thuziakte</h1>
               <Link href='/category' legacyBehavior>
                 <a className="flex">
                   Categories<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">

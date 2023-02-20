@@ -28,8 +28,6 @@ const contact = async (req, res) => {
     }
     res.status(400).json({ status: "ERROR", message: error.message });
   }
-
-  // console.log(body);
 };
 
 export default contact;

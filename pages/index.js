@@ -5,6 +5,7 @@ import AnswerList from '../components/answerList'
 import { fetchAPI } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
 import CustomButton from '../components/customButton'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home({ answers, articles, hero }) {
@@ -13,33 +14,36 @@ export default function Home({ answers, articles, hero }) {
     <div>
       <Layout>
         <main className={styles.main}>
-          <div
-          id="banner"
-          className="gap-5 uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin banner hero-container"
-          data-src={imageUrl}
-          data-srcset={imageUrl}
-          data-uk-img
+          <header
+          // id="banner"
+          className="relative w-full h-[90vh] grid place-items-center bg-cyan-600"
+          // data-src={imageUrl}
+          // data-srcset={imageUrl}
+          // data-uk-img
           >
-              <h1 style={{textAlign: 'left'}} className='hero-title'>{hero.attributes.title}</h1>
-              <h2 className='hero-subtext'>{hero.attributes.subText}</h2>
-              <div 
+            <Image src={imageUrl} alt="Church with view of sky" className='object-cover opacity-60' fill/>
+            <section className='absolute flex flex-col items-start gap-5 max-w-5xl px-8 mb-8'>
+              <h1 className='hero-title text-left text-white font-bold'>{hero.attributes.title}</h1>
+              <h2 className='hero-subtext text-white'>{hero.attributes.subText}</h2>
+              <div
                 id='heroButton1'
-                className="wrapper-nav nav-link navAskButton"
+                className="wrapper-nav nav-link navAskButton bg-rose-600"
                 style={{
-                  marginTop: '5%', 
+                  marginTop: '5%',
                   marginLeft: 0,
-                  fontSize: '1.3rem'
+                  fontSize: '1.2rem'
                 }}
               >
                 <Link href="/ask">
                     Zawhna Zawt Rawh
                 </Link>
               </div>
-          </div>
+            </section>
+          </header>
           <section className='answerSection'>
             <div className='answerContentFlex gap-5'>
               <div className='indexTitleContainer'>
-                <h1 className='text-4xl'>
+                <h1 className='text-2xl md:text-4xl'>
                     Chhanna Tharte
                 </h1>
                 <Link href='/topic' passHref legacyBehavior>
@@ -59,7 +63,7 @@ export default function Home({ answers, articles, hero }) {
           <section className='articleSection'>
             <div className='flex flex-col gap-5'>
               <div className='indexTitleContainer'>
-                <h1 className='text-4xl'>
+                <h1 className='text-2xl md:text-4xl'>
                     Thuziak Tharte
                 </h1>
                 <Link href='/category' passHref  legacyBehavior>
@@ -116,6 +120,6 @@ export async function getStaticProps() {
   
   return {
     props: {answers: answers.data, articles: articles.data, hero: hero.data},
-    revalidate: 10
+    revalidate: 60 * 60 * 2
   };
 }

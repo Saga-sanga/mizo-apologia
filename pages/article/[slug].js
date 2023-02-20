@@ -28,7 +28,13 @@ const Article = ({ article }) => {
         <div className="uk-section" style={{padding: '55px 12px'}}>
           <div className="bannerTitle">
             <h1>{article.attributes.title}</h1>
-            <Image src={article.attributes.image.data.attributes.hasOwnProperty("url") ? imageUrl : placeholder.src} alt="title image" width='1400' height='700' style={{objectFit: "cover"}}/>
+            <Image 
+              src={article.attributes.image.data.attributes.hasOwnProperty("url") ? imageUrl : placeholder.src} 
+              alt="title image" 
+              width='1400' 
+              height='700' 
+              style={{objectFit: "cover"}}
+            />
           </div>
           <div className="uk-container textAreaContainer">
             <div>

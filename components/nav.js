@@ -9,10 +9,10 @@ const Nav = () => {
         <div>
           <Link href="/" className="logo-container">
 
-            <h1 className="logo">
+            <h1 className="logo whitespace-nowrap">
               Mizo Apologia
             </h1>
-            <span className="logo-sub-text">I Zawhna te. Bible Atanga Chhanna.</span>
+            <span className="logo-sub-text whitespace-nowrap">I Zawhna te. Bible Atanga Chhanna.</span>
 
           </Link>
         </div>
@@ -35,7 +35,7 @@ const Nav = () => {
         </div>
         
         {/* Navigation Links */}
-        <div className="nav-style nav-links">
+        <div className="nav-style nav-links whitespace-nowrap">
          <div className="wrapper-nav nav-link nav-link-hover">
             <Link href="/">
               Home
@@ -56,7 +56,7 @@ const Nav = () => {
               About Us
             </Link>
           </div>
-          <div className="wrapper-nav nav-link navAskButton">
+          <div className="wrapper-nav nav-link navAskButton bg-rose-600">
             <Link href="/ask">
               
                 Zawt Rawh
