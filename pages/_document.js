@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 
 export default function Document() {
   return (
@@ -6,7 +7,7 @@ export default function Document() {
       <Head>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Staatliches"
+          href="https://fonts.googleapis.com/css?family=Staatliches&display=swap"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
@@ -15,6 +16,24 @@ export default function Document() {
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css"
+        />
+
+        {/* UI Kits */}
+
+        <Script
+          id='uikit'
+          src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"
+          strategy='beforeInteractive'
+        />
+        <Script
+          id='uikit-icons'
+          src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"
+          strategy='beforeInteractive'
+        />
+        <Script
+          id='uikit-ajax'
+          src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js"
+          strategy='beforeInteractive'
         />
       </Head>
       <body>
