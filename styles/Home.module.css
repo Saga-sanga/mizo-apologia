@@ -148,9 +148,15 @@
   margin: 0.5rem 0 0 0;
 }
 
-.articleCardText p {
+.articleCardText p,
+.answerCardText p {
   color: rgba(107, 114, 128, 0.9);
   margin: 0.75rem 0 0 0;
+}
+
+.articleCardText p > time,
+.answerCardText p > time {
+  font-size: 0.875rem;
 }
 
 .articleCardImage {

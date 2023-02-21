@@ -17,6 +17,7 @@ h1, h2, h3, h4 {
   font-family: -apple-system, 'Raleway', Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 500;
+  color: black;
 }
 
 h1 {
@@ -87,6 +88,10 @@ figcaption {
 
 /* <-- End --> */
 
+.textAreaContainer > p {
+  color: #343434;
+}
+
 .bannerTitle {
   display: flex;
   flex-direction: column;
@@ -99,6 +104,7 @@ figcaption {
   align-self: flex-start;
   font-weight: bold;
   font-size: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .uk-container > p {
@@ -493,6 +499,17 @@ a:active { text-decoration: none; }
   .hero-title {
     font-size: 3.75rem !important;
   } 
+
+  .bannerTitle > h1 {
+    font-size: 2.25rem !important;
+  }
+
+  .textAreaContainer > h2 {
+    font-size: 1.75rem !important;
+  }
+  .textAreaContainer > h3 {
+    font-size: 1.5rem !important;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -511,7 +528,14 @@ a:active { text-decoration: none; }
   }
 
   .bannerTitle > h1 {
-    font-size: 2.2rem !important;
+    font-size: 1.5rem !important;
+  }
+
+  .textAreaContainer > h2 {
+    font-size: 1.25rem !important;
+  }
+  .textAreaContainer > h3 {
+    font-size: 1.125rem !important;
   }
 }
 
