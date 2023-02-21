@@ -6,7 +6,7 @@ import SearchList from '../../components/searchList';
 function Search() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
-  const [message, setMessage] = useState('Zawng Rawh le');
+  const [message, setMessage] = useState('Zawng Rawh le!');
   
   const handleChange = (event) => {
     const query = event.target.value;
@@ -41,7 +41,7 @@ function Search() {
           <div className='search-bar'>
             
             <input 
-              className="search-text-input" 
+              className="search-text-input border border-black rounded" 
               type="text" placeholder="Search" 
               onChange={handleChange}
               onKeyDown={(e) => {

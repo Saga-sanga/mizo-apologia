@@ -46,7 +46,7 @@ function ModalMenu() {
           </Link>
         </div>
         <div 
-          className="wrapper-nav nav-link navAskButton"
+          className="wrapper-nav nav-link navAskButton bg-rose-600"
           onClick={closeModal}
           style={{marginTop: '16px'}}
         >
