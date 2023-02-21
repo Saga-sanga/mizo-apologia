@@ -17,6 +17,7 @@ h1, h2, h3, h4 {
   font-family: -apple-system, 'Raleway', Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 500;
+  color: black;
 }
 
 h1 {
@@ -86,6 +87,10 @@ figcaption {
 }
 
 /* <-- End --> */
+
+.textAreaContainer > p {
+  color: #343434;
+}
 
 .bannerTitle {
   display: flex;
