@@ -88,7 +88,8 @@ figcaption {
 
 /* <-- End --> */
 
-.textAreaContainer > p {
+.textAreaContainer > p
+, ul, ol {
   color: #343434;
 }
 
