@@ -55,7 +55,7 @@ const Article = ({ article }) => {
                 </div>
             }
             <hr className="uk-divider-small" />
-            <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
+            <div className="uk-grid-small flex" data-uk-grid="true">
               <div>
                 {article.attributes.author.data.attributes.picture && (
                   <Image

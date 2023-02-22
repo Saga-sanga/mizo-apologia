@@ -88,7 +88,8 @@ figcaption {
 
 /* <-- End --> */
 
-.textAreaContainer > p {
+.textAreaContainer > p
+, ul, ol {
   color: #343434;
 }
 
@@ -113,7 +114,7 @@ figcaption {
 }
 
 a {
-  color: #1e87f0;
+  color: #005df3;
   text-decoration: none;
 }
 
@@ -500,7 +501,8 @@ a:active { text-decoration: none; }
     font-size: 3.75rem !important;
   } 
 
-  .bannerTitle > h1 {
+  .bannerTitle > h1,
+  .textAreaContainer > h2  {
     font-size: 2.25rem !important;
   }
 
@@ -527,15 +529,16 @@ a:active { text-decoration: none; }
     margin-top: 15% !important;
   }
 
-  .bannerTitle > h1 {
-    font-size: 1.5rem !important;
+  .bannerTitle > h1,
+  .textAreaContainer > h1  {
+    font-size: 1.75rem !important;
   }
 
   .textAreaContainer > h2 {
-    font-size: 1.25rem !important;
+    font-size: 1.5rem !important;
   }
   .textAreaContainer > h3 {
-    font-size: 1.125rem !important;
+    font-size: 1.25rem !important;
   }
 }
 
