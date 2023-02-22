@@ -81,6 +81,7 @@ export default function Home({ answers, articles, hero }) {
             </div>
           </section>
         </main>
+        {/* <a href={church.src} download={'church Pic'}>Download</a> */}
       </Layout>
     </div>
   );
