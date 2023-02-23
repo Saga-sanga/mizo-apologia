@@ -32,7 +32,7 @@ const AnswerCard = ({ answer }) => {
             {(answer.topic.data === null) ? '' : <span>{answer.topic.data.attributes.name}</span>}            
             <p style={{color: 'black', marginBottom: 0}} className='line-clamp-5'>{answer.title}</p>
             <div 
-              className="uk-grid-small uk-flex-left"  
+              className="uk-flex-left"  
               style={{marginTop: '0.8rem'}}
               data-uk-grid="true"
             >
