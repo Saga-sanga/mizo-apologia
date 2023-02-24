@@ -14,13 +14,7 @@ export default function Home({ answers, articles, hero }) {
     <div>
       <Layout>
         <main className={styles.main}>
-          <header
-          // id="banner"
-          className="relative w-full h-[90vh] grid place-items-center bg-cyan-600"
-          // data-src={imageUrl}
-          // data-srcset={imageUrl}
-          // data-uk-img
-          >
+          <header className="relative w-full h-[90vh] min-h-[35em] grid place-items-center bg-cyan-600">
             <Image src={imageUrl} alt="Church with view of sky" className='object-cover opacity-60' fill/>
             <section className='absolute flex flex-col items-start gap-5 max-w-5xl px-8 mb-8'>
               <h1 className='hero-title text-left text-white font-bold'>{hero.attributes.title}</h1>
