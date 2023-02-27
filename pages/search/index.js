@@ -42,7 +42,7 @@ function Search() {
             
             <input 
               className="search-text-input border border-black rounded" 
-              type="text" placeholder="Search" 
+              type="text" placeholder="Hetah hian zawng rawh..." 
               onChange={handleChange}
               onKeyDown={(e) => {
                 if(e.key === "Enter") {
