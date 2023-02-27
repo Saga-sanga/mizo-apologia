@@ -15,14 +15,14 @@ const SearchCard = ({ result }) => {
               className={styles.answerCardImage}
               src={getStrapiURL(result.attributes.image.data.attributes.formats.thumbnail.url)}
               alt={result.attributes.image.data.attributes.alternativeText}
-              full
+              fill
             />
           </div>
           <div className={styles.answerCardText}>
             {/* <span>{answer.topic.name}</span> */}
             <p style={{color: 'black', marginBottom: 0}}>{result.attributes.title}</p>
             <div
-              className="uk-grid-small uk-flex-left"
+              className="uk-flex-left"
               style={{marginTop: '0.8rem'}}
               data-uk-grid="true"
             >
