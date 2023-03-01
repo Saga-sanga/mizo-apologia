@@ -24,7 +24,7 @@ const ArticleCard = ({ article }) => {
     (<Link as={`/article/${article.slug}`} href="/article/[id]">
 
       <div className={`${styles.articleCard} nav-shadow`}>
-        <div>
+        <div className='relative'>
           <Image
             className={styles.articleCardImage}
             src={displayImage} 

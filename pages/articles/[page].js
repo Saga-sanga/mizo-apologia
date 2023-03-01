@@ -3,15 +3,13 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import Link from "next/link";
 import PaginationPage from "../../components/paginationPage";
+import ArticleList from "../../components/articleList";
 
 const Topic = ({ articles, articlesMeta }) => {
   const seo = {
     metaTitle: 'Thuziak',
-    metaDescription: `Thuziak zawng zawng te`,
-    shareImage: null
+    metaDescription: `Thuziak zawng zawng te`
   };
-
-  const answer = false;
 
   return (
     <Layout>
@@ -36,7 +34,9 @@ const Topic = ({ articles, articlesMeta }) => {
                 </a>
               </Link>
             </div>  
-            <PaginationPage items={articles} meta={articlesMeta} answer={answer}/>
+            <PaginationPage meta={articlesMeta} link={'articles'}>
+              <ArticleList articles={articles}/>
+            </PaginationPage>
           </div>
         </div>
       </main>
@@ -79,7 +79,7 @@ export async function getStaticProps({params}) {
 
   return {
     props: { articles: data, articlesMeta: meta},
-    revalidate: 60 * 60 * 12, // <--- ISR cache: twice a day
+    revalidate: 60 * 60 * 1, // <--- ISR cache: once an hour
   };
 }
 

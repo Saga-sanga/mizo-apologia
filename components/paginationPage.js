@@ -1,20 +1,18 @@
-import AnswerList from "./answerList"
-import ArticleList from "./articleList";
 import Pagination from "./pagination";
 
-function PaginationPage({ items, meta, answer }) {
+function PaginationPage({children, meta, link}) {
   return (
     <>
       <Pagination
         totalPages={meta.pagination.pageCount}
         currentPage={meta.pagination.page}
-        renderPageLink={(page) => `/${answer === true ? `answers` : `articles`}/${page}`}
+        renderPageLink={(page) => `/${link}/${page}`}
       />
-      { answer === true ? <AnswerList answers={items}/> : <ArticleList articles={items}/> }
+      {children}
       <Pagination
         totalPages={meta.pagination.pageCount}
         currentPage={meta.pagination.page}
-        renderPageLink={(page) => `/${answer === true ? `answers` : `articles`}/${page}`}
+        renderPageLink={(page) => `/${link}/${page}`}
       />
     </>     
   )

@@ -1,21 +1,23 @@
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
-import Link from "next/link";
 import PaginationPage from "../../components/paginationPage";
-import ArticleList from "../../components/articleList";
+import Link from "next/link";
 
-const Topic = ({ articles, articlesMeta }) => {
+
+const BibleStudy = ({ bibleStudies, bibleStudiesMeta }) => {
   const seo = {
-    metaTitle: 'Thuziak',
-    metaDescription: `Thuziak zawng zawng te`
+    metaTitle: 'Bible Studies',
+    metaDescription: `Bible Studies om te in list chhuak`,
   };
+
+  // const answer = true;
 
   return (
     <Layout>
       <Seo seo={seo} />
-      <main>
-        <div className="articleSection">
+      <section>
+        <div className="answerSection">
           <div className="uk-container uk-container-large">
             <Link href="/" legacyBehavior>
               <a className="homeLink flex">
@@ -25,44 +27,37 @@ const Topic = ({ articles, articlesMeta }) => {
               </a>
             </Link>
             <div className='indexTitleContainer'>
-              <h1 className="mt-0 px-2 font-semibold text-2xl md:text-4xl">Thuziakte</h1>
-              <Link href='/category' legacyBehavior>
+              <h1 className="mt-0 px-2 font-semibold text-2xl md:text-4xl">Bible Studies</h1>
+              {/* <Link href='/topic' legacyBehavior>
                 <a className="flex">
-                  Categories<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
+                  Topics<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
                     <polyline points="9 18 15 12 9 6"></polyline>
                   </svg>
                 </a>
-              </Link>
-            </div>  
-            <PaginationPage meta={articlesMeta} link={'articles'}>
-              <ArticleList articles={articles}/>
+              </Link> */}
+            </div>
+            <PaginationPage meta={bibleStudiesMeta} link={'bible-studies'}>
+              <p>Hello Everywan!</p>
             </PaginationPage>
           </div>
         </div>
-      </main>
+      </section>
     </Layout>
   );
 };
 
 export async function getStaticProps() {
-  const { data, meta } = await fetchAPI('/articles', {
+  const { data, meta} = await fetchAPI('/bible-studies', {
     sort: ['id:desc'],
     pagination:{
       page: 1,
-      pageSize: 6
-    },
-    populate: {
-      image: "*",
-      category: "*",
-      author: {
-        populate: ['picture']
-      }
+      pageSize: 12
     }
   });
 
   return {
-    props: { articles: data, articlesMeta: meta}
+    props: { bibleStudies: data, bibleStudiesMeta: meta},
   };
 }
 
-export default Topic;
+export default BibleStudy;

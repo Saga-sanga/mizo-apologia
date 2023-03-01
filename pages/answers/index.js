@@ -3,16 +3,14 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import PaginationPage from "../../components/paginationPage";
 import Link from "next/link";
+import AnswerList from "../../components/answerList";
 
 
 const Topic = ({ answers, answersMeta }) => {
   const seo = {
     metaTitle: 'Chhanna',
-    metaDescription: `Chhanna te`,
-    shareImage: null
+    metaDescription: `Chhanna te`
   };
-
-  const answer = true;
 
   return (
     <Layout>
@@ -37,7 +35,9 @@ const Topic = ({ answers, answersMeta }) => {
                 </a>
               </Link>
             </div>
-            <PaginationPage items={answers} meta={answersMeta} answer={answer}/>
+            <PaginationPage meta={answersMeta} link={'answers'}>
+              <AnswerList answers={answers}/>
+            </PaginationPage>
           </div>
         </div>
       </section>

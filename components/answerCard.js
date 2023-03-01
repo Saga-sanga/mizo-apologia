@@ -20,7 +20,7 @@ const AnswerCard = ({ answer }) => {
     (<Link as={`/answer/${answer.slug}`} href="/answer/[id]" legacyBehavior>
       <a>
         <div className={`${styles.articleCard} nav-shadow`}>
-          <div>
+          <div className='relative'>
             <Image 
               className={styles.answerCardImage}
               src={displayImage} 
