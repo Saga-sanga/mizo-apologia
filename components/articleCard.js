@@ -33,7 +33,7 @@ const ArticleCard = ({ article }) => {
           />
         </div>
         <div className={styles.articleCardText}>
-          <span>{article.category.data.attributes.name}</span>
+          <span className='text-sm'>{article.category.data.attributes.name}</span>
           <h3 className='text-lg'>{article.title}</h3>
           <p className='line-clamp-6'>{article.description}</p>
           <div className="flex gap-4"  style={{marginTop: '1.5rem'}} data-uk-grid="true">

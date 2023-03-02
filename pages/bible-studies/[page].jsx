@@ -1,7 +1,7 @@
-import { fetchAPI } from "../../../lib/api";
-import Layout from "../../../components/layout";
-import Seo from "../../../components/seo";
-import PaginationPage from "../../../components/paginationPage";
+import { fetchAPI } from "../../lib/api";
+import Layout from "../../components/layout";
+import Seo from "../../components/seo";
+import PaginationPage from "../../components/paginationPage";
 import Link from "next/link";
 
 
