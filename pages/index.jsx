@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css'
-import Layout from '../components/layout.js'
-import Articles from '../components/articleList.js'
+import Layout from '../components/layout.jsx'
+import Articles from '../components/articleList.jsx'
 import AnswerList from '../components/answerList'
 import { fetchAPI } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
