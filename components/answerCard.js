@@ -30,7 +30,7 @@ const AnswerCard = ({ answer }) => {
           </div>
           <div className={styles.answerCardText}>
             {(answer.topic.data === null) ? '' : <span className='text-sm'>{answer.topic.data.attributes.name}</span>}            
-            <p style={{color: 'black', marginBottom: 0}} className='line-clamp-5'>{answer.title}</p>
+            <p style={{color: 'black', marginBottom: 0}} className='line-clamp-5 text-lg font-serif'>{answer.title}</p>
             <div 
               className="uk-flex-left"  
               style={{marginTop: '0.8rem'}}

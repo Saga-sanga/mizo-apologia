@@ -1,14 +1,12 @@
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from 'rehype-raw';
 import Moment from "react-moment";
-import { fetchAPI } from "../../../lib/api";
-import Layout from "../../../components/layout";
-import styles from '../../../styles/Home.module.css';
+import { fetchAPI } from "../../lib/api";
+import Layout from "../../components/layout";
 import Image from 'next/image';
-import Seo from "../../../components/seo";
-import { getStrapiMedia } from "../../../lib/media";
+import Seo from "../../components/seo";
+import { getStrapiMedia } from "../../lib/media";
 import Link from "next/link";
-import placeholder from "../../../public/placeholder.png";
 
 const Article = ({ lesson }) => {
   const pdfUrl = getStrapiMedia(lesson.attributes.download);
@@ -25,14 +23,6 @@ const Article = ({ lesson }) => {
       <main>
         <div className="uk-section" style={{padding: '55px 12px'}}>
           <div className="bannerTitle">
-            {/* <h1>{lesson.attributes.title}</h1> */}
-            {/* <Image 
-              src={lesson.attributes.image.data.attributes.hasOwnProperty("url") ? imageUrl : placeholder.src} 
-              alt="title image" 
-              width='1400' 
-              height='700' 
-              style={{objectFit: "cover"}}
-            /> */}
           </div>
           <div className="uk-container textAreaContainer">
             <div>

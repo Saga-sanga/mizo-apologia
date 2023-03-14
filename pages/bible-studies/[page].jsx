@@ -5,7 +5,7 @@ import PaginationPage from "../../components/paginationPage";
 import Link from "next/link";
 
 
-const BibleStudy = ({ bibleStudies, bibleStudiesMeta }) => {
+const BibleStudies = ({ bibleStudies, bibleStudiesMeta }) => {
   const seo = {
     metaTitle: 'Bible Studies',
     metaDescription: `Bible Studies om te in list chhuak`,
@@ -51,7 +51,7 @@ export async function getStaticProps({params}) {
   const { data, meta} = await fetchAPI('/bible-studies', {
     sort: ['id:desc'],
     pagination:{
-      page: 1,
+      page,
       pageSize: 12
     }
   });
@@ -88,4 +88,4 @@ export async function getStaticPaths() {
     }
   }
 
-export default BibleStudy;
+export default BibleStudies;

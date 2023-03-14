@@ -1,7 +1,8 @@
 import Layout from '../../components/layout';
 import React, { useState } from 'react';
 import { fetchAPI } from '../../lib/api';
-import SearchList from '../../components/searchList';
+import CardList from '../../components/cardList';
+import SearchCard from '../../components/searchCard';
 
 function Search() {
   const [query, setQuery] = useState('');
@@ -62,7 +63,10 @@ function Search() {
           </div>
         </div>
 
-        {results.length === 0 ? <h3>{message}</h3> : <SearchList results={results}/>}
+        {results.length === 0 ? <h3>{message}</h3> : 
+          <CardList>
+            {results.map(result => <SearchCard result={result} key={result.attributes.slug}/>)}
+          </CardList>}
         
       </div>
     </Layout>

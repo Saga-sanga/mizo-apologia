@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
-// import Image from '../components/image';
 import Moment from 'react-moment';
 import Image from 'next/image';
 import { getStrapiURL } from '../lib/api';
@@ -34,7 +33,7 @@ const ArticleCard = ({ article }) => {
         </div>
         <div className={styles.articleCardText}>
           <span className='text-sm'>{article.category.data.attributes.name}</span>
-          <h3 className='text-lg'>{article.title}</h3>
+          <h3 className='text-xl font-serif'>{article.title}</h3>
           <p className='line-clamp-6'>{article.description}</p>
           <div className="flex gap-4"  style={{marginTop: '1.5rem'}} data-uk-grid="true">
             <div style={{alignSelf: 'center'}} className='pl-zero'>
