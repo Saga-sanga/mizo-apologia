@@ -20,7 +20,7 @@ const ArticleCard = ({ article }) => {
   }
 
   return (
-    (<Link as={`/article/${article.slug}`} href="/article/[id]">
+    <Link as={`/article/${article.slug}`} href="/article/[id]">
 
       <div className={`${styles.articleCard} nav-shadow`}>
         <div className='relative'>
@@ -63,7 +63,7 @@ const ArticleCard = ({ article }) => {
         </div>
       </div>
 
-    </Link>)
+    </Link>
   );
 }
 

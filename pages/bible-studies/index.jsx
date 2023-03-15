@@ -3,15 +3,15 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import PaginationPage from "../../components/paginationPage";
 import Link from "next/link";
+import CardList from "../../components/cardList";
+import BibleStudyCard from "../../components/bibleStudyCard";
 
 
 const BibleStudy = ({ bibleStudies, bibleStudiesMeta }) => {
   const seo = {
     metaTitle: 'Bible Studies',
-    metaDescription: `Bible Studies om te in list chhuak`,
+    metaDescription: `Bible Study list`,
   };
-
-  // const answer = true;
 
   return (
     <Layout>
@@ -37,7 +37,9 @@ const BibleStudy = ({ bibleStudies, bibleStudiesMeta }) => {
               </Link> */}
             </div>
             <PaginationPage meta={bibleStudiesMeta} link={'bible-studies'}>
-              <p>Hello Everywan!</p>
+              <CardList>
+                {bibleStudies.map(study => <BibleStudyCard study={study} key={study.attributes.slug}/>)}
+              </CardList>
             </PaginationPage>
           </div>
         </div>
@@ -49,6 +51,9 @@ const BibleStudy = ({ bibleStudies, bibleStudiesMeta }) => {
 export async function getStaticProps() {
   const { data, meta} = await fetchAPI('/bible-studies', {
     sort: ['id:desc'],
+    populate: {
+      image: "*"
+    },
     pagination:{
       page: 1,
       pageSize: 12

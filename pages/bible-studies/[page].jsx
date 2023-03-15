@@ -11,8 +11,6 @@ const BibleStudies = ({ bibleStudies, bibleStudiesMeta }) => {
     metaDescription: `Bible Studies om te in list chhuak`,
   };
 
-  console.log(bibleStudies)
-
   return (
     <Layout>
       <Seo seo={seo} />
@@ -50,6 +48,9 @@ export async function getStaticProps({params}) {
   const page = Number(params.page) || 1;
   const { data, meta} = await fetchAPI('/bible-studies', {
     sort: ['id:desc'],
+    populate: {
+      image: "*"
+    },
     pagination:{
       page,
       pageSize: 12
