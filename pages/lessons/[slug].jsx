@@ -9,7 +9,7 @@ import { getStrapiMedia } from "../../lib/media";
 import Link from "next/link";
 
 const Article = ({ lesson }) => {
-  const pdfUrl = getStrapiMedia(lesson.attributes.download);
+  const pdfUrl = lesson.attributes.download.data && getStrapiMedia(lesson.attributes.download);
 
   const seo = {
     metaTitle: `${lesson.attributes.title} | Bible Study`,
@@ -37,11 +37,15 @@ const Article = ({ lesson }) => {
             <ReactMarkdown rehypePlugins={[rehypeRaw]} children={lesson.attributes.content}/>
             
             <hr className="uk-divider-small" />
-            <Link href={pdfUrl} target='_blank' download>Download</Link>
+            {
+              pdfUrl ? 
+                <Link href={pdfUrl} target='_blank' download>Download</Link> : 
+                ''
+            }
             <div className="uk-grid-small flex" data-uk-grid="true">
               <div className="uk-width-expand">
                 <p className="uk-text-meta uk-margin-remove-top">
-                  <Moment format="MMM Do YYYY">{lesson.attributes.published_at}</Moment>
+                  {/* <Moment format="MMM Do YYYY">{lesson.attributes.published_at}</Moment> */}
                 </p>
               </div>
             </div>
