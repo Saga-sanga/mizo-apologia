@@ -1,15 +1,16 @@
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from 'rehype-raw';
-import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
-import Image from 'next/image';
 import Seo from "../../components/seo";
 import { getStrapiMedia } from "../../lib/media";
 import Link from "next/link";
+import LessonList from "../../components/lessonList";
 
-const Article = ({ lesson }) => {
+const Article = ({ lesson, bibleStudy }) => {
   const pdfUrl = lesson.attributes.download.data && getStrapiMedia(lesson.attributes.download);
+
+  // console.log(lesson);
 
   const seo = {
     metaTitle: `${lesson.attributes.title} | Bible Study`,
@@ -42,13 +43,12 @@ const Article = ({ lesson }) => {
                 <Link href={pdfUrl} target='_blank' download>Download</Link> : 
                 ''
             }
-            <div className="uk-grid-small flex" data-uk-grid="true">
-              <div className="uk-width-expand">
-                <p className="uk-text-meta uk-margin-remove-top">
-                  {/* <Moment format="MMM Do YYYY">{lesson.attributes.published_at}</Moment> */}
-                </p>
-              </div>
-            </div>
+           
+           <div className="mt-6">
+             {/* <hr className="mt-6"/> */}
+             <h3 className="text-center">Lessons</h3>
+             <LessonList study={bibleStudy} activeSlug={lesson.attributes.slug}/>
+           </div>
           </div>
         </div>
       </main>
@@ -81,8 +81,23 @@ export async function getStaticProps({ params }) {
     }
   );
 
+  const bibleStudySlug = lessons.data[0].attributes.bible_study.data.attributes.slug;
+
+  const bibleStudy = await fetchAPI("/bible-studies", {
+    filters: {
+      slug: {
+        $eq: bibleStudySlug
+      }
+    },
+    populate: {
+      lessons: {
+        fields: ['slug', 'title']
+      }
+    }
+  });
+
   return {
-    props: { lesson: lessons.data[0] },
+    props: { lesson: lessons.data[0], bibleStudy: bibleStudy.data[0]},
     revalidate: 20
   };
 }

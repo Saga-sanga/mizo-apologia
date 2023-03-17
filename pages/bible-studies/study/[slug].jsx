@@ -15,7 +15,7 @@ const BibleStudy = ({ study }) => {
       <Seo seo={seo} />
       <section>
         <div className="answerSection">
-          <div className="uk-container uk-container-large">
+          <div className="uk-container uk-container-large min-h-[38vh]">
             <Link href="/" legacyBehavior>
               <a className="homeLink flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
@@ -51,7 +51,7 @@ export async function getStaticProps({ params }) {
     },
     populate: {
       lessons: {
-        fields: ['slug']
+        fields: ['slug', 'title']
       }
     }
   });
