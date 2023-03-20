@@ -25,7 +25,15 @@ const Article = ({ article }) => {
     <Layout >
       <Seo seo={seo} />
       <main>
-        <div className="uk-section" style={{padding: '55px 12px'}}>
+        <div className="text-sm breadcrumbs pt-8">
+          <ul>
+            <li><Link href='/'>Home</Link></li> 
+            <li><Link href='/articles'>Thuziakte</Link></li>
+            <li>{article.attributes.title}</li>
+          </ul>
+        </div>
+
+        <div className="uk-section pt-4">
           <div className="bannerTitle">
             <h1>{article.attributes.title}</h1>
             <Image 

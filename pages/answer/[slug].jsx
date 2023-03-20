@@ -23,21 +23,21 @@ const Answer = ({ answer }) => {
     <Layout >
       <Seo seo={seo} />
       <main>
-        <div className="uk-section" style={{padding: '55px 12px'}}>
+        <div className="text-sm breadcrumbs pt-8">
+          <ul>
+            <li><Link href='/'>Home</Link></li> 
+            <li><Link href='/answers'>Chhannate</Link></li>
+            <li>{answer.attributes.title}</li>
+          </ul>
+        </div>
+
+        <div className="uk-section pt-4">
           <div className="bannerTitle">
             <h1>{answer.attributes.title}</h1>
             <Image src={answer.attributes.image.data.attributes.hasOwnProperty("url") ? imageUrl : placeholder.src} alt="title image" width='1400' height='700' objectFit="cover"/>
           </div>
           <div className='uk-container textAreaContainer'>
-            <div>
-              <Link href="/answers"  legacyBehavior>
-                <a className="articleLink">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                  </svg>Chhannate
-                </a>
-              </Link>
-            </div>
+            
             <ReactMarkdown rehypePlugins={[rehypeRaw]} children={answer.attributes.content}/>
             {
               (answer.attributes.endNote === null || answer.attributes.endNote == '') ? '' 
