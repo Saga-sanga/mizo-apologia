@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 
 const CardList = ({ children }) => {
   return (
-    <div className={styles.answerGrid}>
+    <div className={styles.articleGrid}>
       {children}
     </div>
   )

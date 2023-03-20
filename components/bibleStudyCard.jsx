@@ -2,6 +2,7 @@ import placeholder from "../public/placeholder.png";
 import Image from "next/image";
 import Link from 'next/link';
 import { getStrapiURL } from '../lib/api';
+import styles from '../styles/Home.module.css';
 
 function BibleStudyCard({study}) {
   const articleImage = study.attributes.image.data.attributes;
@@ -15,11 +16,21 @@ function BibleStudyCard({study}) {
 
   return (
     <Link as={`/bible-studies/study/${study.attributes.slug}`} href="/bible-studies/study/[id]">
-      <div className="card w-96 bg-base-100 shadow-lg hover:shadow-2xl">
-        <figure><Image src={displayImage} alt={study.attributes.image.alternativeText} width={600} height={600}/></figure>
-        <div className="card-body">
-          <h2 className="card-title">{study.attributes.title}</h2>
-          <p className="text-black">{study.attributes.description}</p>
+      <div className={`${styles.articleCard} nav-shadow`}>
+        <div>
+          <Image
+            className='w-full h-auto'
+            src={displayImage} 
+            alt={study.attributes.image.alternativeText}
+            height={300}
+            width={600}
+          />
+        </div>
+        <div className={styles.articleCardText}>
+          {/* <span className='text-sm'>{article.category.data.attributes.name}</span> */}
+          <h3 className='text-xl font-serif'>{study.attributes.title}</h3>
+          <p className='line-clamp-6'>{study.attributes.description}</p>
+          
         </div>
       </div>
     </Link>

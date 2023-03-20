@@ -40,16 +40,18 @@ const Article = ({ lesson, bibleStudy }) => {
             <hr className="uk-divider-small" />
             {
               pdfUrl ? 
-                <Link href={pdfUrl} target='_blank' download>Download</Link> : 
+                <Link className="btn btn-primary hover:text-white" href={pdfUrl} target='_blank' download>Download</Link> : 
                 ''
             }
            
-           <div className="mt-6">
+           <div className="mt-14">
              {/* <hr className="mt-6"/> */}
-             <h3 className="text-center">Lessons</h3>
+             <div className="divider"><h3>Lessons</h3></div>
+             
              <LessonList study={bibleStudy} activeSlug={lesson.attributes.slug}/>
            </div>
           </div>
+
         </div>
       </main>
     </Layout>
