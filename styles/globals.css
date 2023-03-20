@@ -100,7 +100,6 @@ figcaption {
 }
 
 .bannerTitle > h1 {
-  align-self: flex-start;
   font-weight: bold;
   font-size: 3rem;
   margin-bottom: 2.5rem;
@@ -536,6 +535,7 @@ a:active { text-decoration: none; }
   .bannerTitle > h1,
   .textAreaContainer > h1  {
     font-size: 1.75rem !important;
+    padding-inline: 1.25rem;
   }
 
   .textAreaContainer > h2 {

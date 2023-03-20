@@ -33,7 +33,19 @@ const Answer = ({ answer }) => {
 
         <div className="uk-section pt-4">
           <div className="bannerTitle">
-            <h1>{answer.attributes.title}</h1>
+            <h1 className="text-center self-center">{answer.attributes.title}</h1>
+
+            <div className="mb-10">
+              <hr className="uk-divider-small" />
+              <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
+                <div className="uk-width-expand">
+                  <p className="uk-text-meta uk-margin-remove-top">
+                    <Moment format="MMM Do YYYY">{answer.attributes.publishedAt}</Moment>
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <Image src={answer.attributes.image.data.attributes.hasOwnProperty("url") ? imageUrl : placeholder.src} alt="title image" width='1400' height='700' objectFit="cover"/>
           </div>
           <div className='uk-container textAreaContainer'>
@@ -46,14 +58,7 @@ const Answer = ({ answer }) => {
                   <ReactMarkdown rehypePlugins={[rehypeRaw]} children={answer.attributes.endNote}/>
                 </div>
             }
-            <hr className="uk-divider-small" />
-            <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
-              <div className="uk-width-expand">
-                <p className="uk-text-meta uk-margin-remove-top">
-                  <Moment format="MMM Do YYYY">{answer.attributes.publishedAt}</Moment>
-                </p>
-              </div>
-            </div>
+            
           </div>
         </div>
       </main>
