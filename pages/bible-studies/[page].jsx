@@ -3,6 +3,8 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import PaginationPage from "../../components/paginationPage";
 import Link from "next/link";
+import CardList from "../../components/cardList";
+import BibleStudyCard from "../../components/bibleStudyCard";
 
 
 const BibleStudies = ({ bibleStudies, bibleStudiesMeta }) => {
@@ -35,7 +37,9 @@ const BibleStudies = ({ bibleStudies, bibleStudiesMeta }) => {
               </Link> */}
             </div>
             <PaginationPage meta={bibleStudiesMeta} link={'bible-studies'}>
-              <p>Hello Everywan!</p>
+              <CardList>
+                {bibleStudies.map(study => <BibleStudyCard study={study} key={study.attributes.slug}/>)}
+              </CardList>
             </PaginationPage>
           </div>
         </div>

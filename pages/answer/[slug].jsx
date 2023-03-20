@@ -35,7 +35,7 @@ const Answer = ({ answer }) => {
           <div className="bannerTitle">
             <h1 className="text-center self-center">{answer.attributes.title}</h1>
 
-            <div className="mb-10">
+            <div className="mb-10 flex flex-col items-center">
               <hr className="uk-divider-small" />
               <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
                 <div className="uk-width-expand">

@@ -4,6 +4,7 @@ import LessonList from "../../../components/lessonList";
 import { fetchAPI } from "../../../lib/api";
 import Link from "next/link";
 
+// TODO: Add image content
 const BibleStudy = ({ study }) => {
   const seo = {
     metaTitle: `${study.attributes.title}`,
@@ -60,7 +61,8 @@ export async function getStaticProps({ params }) {
     populate: {
       lessons: {
         fields: ['slug', 'title']
-      }
+      },
+      image: '*'
     }
   });
 
@@ -73,7 +75,7 @@ export async function getStaticProps({ params }) {
 // Get Bible-study slugs as the paths
 export async function getStaticPaths() {
   const { data } = await fetchAPI("/bible-studies", {
-    fields: ["slug"]
+    fields: ["slug"],
   });
 
   return {
