@@ -28,7 +28,7 @@ const BibleStudy = ({ study }) => {
                 <li>
                   <Link href='/bible-studies'>Bible Studies</Link>
                 </li> 
-                <li>Lessons</li>
+                <li>{study.attributes.title}</li>
               </ul>
             </div>
             <div className='indexTitleContainer'>

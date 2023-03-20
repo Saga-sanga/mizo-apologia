@@ -22,7 +22,28 @@ const Article = ({ lesson, bibleStudy }) => {
     <Layout >
       <Seo seo={seo} />
       <main>
-        <div className="uk-section" style={{padding: '55px 12px'}}>
+       <div className="text-sm breadcrumbs max-w-4xl">
+          <ul>
+            <li>
+              <Link href="/" legacyBehavior>
+                <a>
+                  Home
+                </a>
+              </Link>
+            </li> 
+            <li>
+              <Link href='/bible-studies'>Bible Studies</Link>
+            </li> 
+            <li>
+              <Link href={`/bible-studies/study/${bibleStudy.attributes.slug}`}>
+                {bibleStudy.attributes.title}
+              </Link>
+            </li>
+            <li>{lesson.attributes.title}</li>
+          </ul>
+        </div>
+
+        <div className="uk-section pt-4">
           <div className="bannerTitle">
           </div>
           <div className="uk-container textAreaContainer">
