@@ -23,7 +23,7 @@ const BibleStudy = ({ study }) => {
           <div className="uk-container uk-container-large min-h-[38vh]">
             
             <div className="text-sm breadcrumbs">
-              <ul className="pl-6 max-w-5xl mx-auto">
+              <ul className="pl-0 max-w-5xl mx-auto">
                 <li>
                   <Link href="/" legacyBehavior>
                     <a>
