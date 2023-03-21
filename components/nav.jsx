@@ -5,14 +5,14 @@ import ModalMenu from './modalMenu';
 const Nav = () => {
   return (
     <div className="nav-shadow nav-sticky">
-      <nav className="nav-style _large-nav-container">
+      <nav className="nav-style _large-nav-container uppercase">
         <div>
           <Link href="/" className="logo-container">
 
             <h1 className="logo whitespace-nowrap">
               Mizo Apologia
             </h1>
-            <span className="logo-sub-text whitespace-nowrap">I Zawhna te. Bible Atanga Chhanna.</span>
+            <span className="logo-sub-text whitespace-nowrap font-light capitalize">I Zawhna te. Bible Atanga Chhanna.</span>
 
           </Link>
         </div>
@@ -35,7 +35,7 @@ const Nav = () => {
         </div>
         
         {/* Navigation Links */}
-        <div className="nav-style nav-links whitespace-nowrap">
+        <div className="nav-style nav-links whitespace-nowrap gap-2 text-sm">
          <div className="wrapper-nav nav-link nav-link-hover">
             <Link href="/">
               Home

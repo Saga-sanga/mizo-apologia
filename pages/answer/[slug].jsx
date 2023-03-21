@@ -23,21 +23,33 @@ const Answer = ({ answer }) => {
     <Layout >
       <Seo seo={seo} />
       <main>
-        <div className="uk-section" style={{padding: '55px 12px'}}>
+        <div className="text-sm breadcrumbs pt-8">
+          <ul>
+            <li><Link href='/'>Home</Link></li> 
+            <li><Link href='/answers'>Chhannate</Link></li>
+            <li>{answer.attributes.title}</li>
+          </ul>
+        </div>
+
+        <div className="uk-section pt-4 pb-20">
           <div className="bannerTitle">
-            <h1>{answer.attributes.title}</h1>
+            <h1 className="text-center self-center">{answer.attributes.title}</h1>
+
+            <div className="mb-10 flex flex-col items-center">
+              <hr className="uk-divider-small" />
+              <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
+                <div className="uk-width-expand">
+                  <p className="uk-text-meta uk-margin-remove-top">
+                    <Moment format="MMM Do YYYY">{answer.attributes.publishedAt}</Moment>
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <Image src={answer.attributes.image.data.attributes.hasOwnProperty("url") ? imageUrl : placeholder.src} alt="title image" width='1400' height='700' objectFit="cover"/>
           </div>
           <div className='uk-container textAreaContainer'>
-            <div>
-              <Link href="/answers"  legacyBehavior>
-                <a className="articleLink">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                  </svg>Chhannate
-                </a>
-              </Link>
-            </div>
+            
             <ReactMarkdown rehypePlugins={[rehypeRaw]} children={answer.attributes.content}/>
             {
               (answer.attributes.endNote === null || answer.attributes.endNote == '') ? '' 
@@ -46,14 +58,7 @@ const Answer = ({ answer }) => {
                   <ReactMarkdown rehypePlugins={[rehypeRaw]} children={answer.attributes.endNote}/>
                 </div>
             }
-            <hr className="uk-divider-small" />
-            <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
-              <div className="uk-width-expand">
-                <p className="uk-text-meta uk-margin-remove-top">
-                  <Moment format="MMM Do YYYY">{answer.attributes.publishedAt}</Moment>
-                </p>
-              </div>
-            </div>
+            
           </div>
         </div>
       </main>

@@ -3,29 +3,28 @@ import PaginationPage from "../../components/paginationPage";
 import Seo from "../../components/seo";
 import { fetchAPI } from "../../lib/api";
 import Link from "next/link";
+import AnswerList from "../../components/answerList";
 
 function PaginatedPage({answers, answersMeta}) {
   const seo = {
     metaTitle: 'Chhanna',
-    metaDescription: `Chhanna te`,
-    shareImage: null
+    metaDescription: `Chhanna te`
   };
-
-  const answer = true;
   
   return (
     <Layout>
       <Seo seo={seo}/>
       <section>
-        <div className="answerSection">
+        <div className="answerSection sectionPaddingTop">
           <div className="uk-container uk-container-large">
-            <Link href="/" legacyBehavior>
-              <a className="homeLink flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>Home
-              </a>
-            </Link>
+            
+            <div className="text-sm breadcrumbs">
+              <ul className="pl-0">
+                <li><Link href='/'>Home</Link></li> 
+                <li>Chhannate</li>
+              </ul>
+            </div>
+
             <div className='indexTitleContainer'>
               <h1 className="mt-0 px-2 text-4xl">Chhannate</h1>
               <Link href='/topic' legacyBehavior>
@@ -36,7 +35,9 @@ function PaginatedPage({answers, answersMeta}) {
                 </a>
               </Link>
             </div>
-            <PaginationPage items={answers} meta={answersMeta} answer={answer}/>
+            <PaginationPage meta={answersMeta} link={'answers'}>
+              <AnswerList answers={answers}/>
+            </PaginationPage>
           </div>
         </div>
       </section>
@@ -76,7 +77,7 @@ export async function getStaticProps({params}) {
 
   return {
     props: { answers: data, answersMeta: meta},
-    revalidate: 60 * 60 * 12, // <--- ISR cache: twice a day
+    revalidate: 60 * 60 * 1, // <--- ISR cache: once an hour
   };
 }
 

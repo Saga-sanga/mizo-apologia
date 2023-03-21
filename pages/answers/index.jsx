@@ -3,30 +3,29 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import PaginationPage from "../../components/paginationPage";
 import Link from "next/link";
+import AnswerList from "../../components/answerList";
 
 
 const Topic = ({ answers, answersMeta }) => {
   const seo = {
     metaTitle: 'Chhanna',
-    metaDescription: `Chhanna te`,
-    shareImage: null
+    metaDescription: `Chhanna te`
   };
-
-  const answer = true;
 
   return (
     <Layout>
       <Seo seo={seo} />
       <section>
-        <div className="answerSection">
+        <div className="answerSection sectionPaddingTop">
           <div className="uk-container uk-container-large">
-            <Link href="/" legacyBehavior>
-              <a className="homeLink flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>Home
-              </a>
-            </Link>
+
+            <div className="text-sm breadcrumbs">
+              <ul className="pl-0">
+                <li><Link href='/'>Home</Link></li> 
+                <li>Chhannate</li>
+              </ul>
+            </div>
+
             <div className='indexTitleContainer'>
               <h1 className="mt-0 px-2 font-semibold text-2xl md:text-4xl">Chhannate</h1>
               <Link href='/topic' legacyBehavior>
@@ -37,7 +36,9 @@ const Topic = ({ answers, answersMeta }) => {
                 </a>
               </Link>
             </div>
-            <PaginationPage items={answers} meta={answersMeta} answer={answer}/>
+            <PaginationPage meta={answersMeta} link={'answers'}>
+              <AnswerList answers={answers}/>
+            </PaginationPage>
           </div>
         </div>
       </section>

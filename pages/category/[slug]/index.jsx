@@ -13,15 +13,16 @@ const Category = ({ category, articles }) => {
   return (
     <Layout>
       <Seo seo={seo} />
-      <main className="articleSection">
+      <main className="articleSection sectionPaddingTop">
         <div className="uk-container uk-container-large">
-          <Link href="/category" className="homeLink" legacyBehavior>
-            <a className="flex relative -top-5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>Categories
-            </a>
-          </Link>
+          <div className="text-sm breadcrumbs">
+            <ul className="pl-0">
+              <li><Link href='/'>Home</Link></li> 
+              <li><Link href='/articles'>Thuziakte</Link></li>
+              <li><Link href='/category'>Categories</Link></li>
+              <li>{category.attributes.name}</li>
+            </ul>
+          </div>
           <h1 className="mt-0 px-5 text-4xl">{category.attributes.name}</h1>
           <ArticleList articles={articles} />
         </div>
