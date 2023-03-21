@@ -26,7 +26,7 @@ const Article = ({ article }) => {
       <Seo seo={seo} />
       <main>
         <div className="text-sm breadcrumbs pt-8">
-          <ul>
+          <ul className="pl-4 max-w-5xl mx-auto">
             <li><Link href='/'>Home</Link></li> 
             <li><Link href='/articles'>Thuziakte</Link></li>
             <li>{article.attributes.title}</li>
@@ -39,7 +39,7 @@ const Article = ({ article }) => {
             
             <div className="mb-10 flex flex-col items-center">
               <hr className="uk-divider-small" />
-              <div className="uk-grid-small flex px-4" data-uk-grid="true">
+              <div className="uk-grid-small flex px-8" data-uk-grid="true">
                 <div className="self-center">
                   {article.attributes.author.data.attributes.picture && (
                     <Image

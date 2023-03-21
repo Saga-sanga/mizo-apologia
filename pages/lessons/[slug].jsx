@@ -10,8 +10,6 @@ import LessonList from "../../components/lessonList";
 const Article = ({ lesson, bibleStudy }) => {
   const pdfUrl = lesson.attributes.download.data && getStrapiMedia(lesson.attributes.download);
 
-  // console.log(lesson);
-
   const seo = {
     metaTitle: `${lesson.attributes.title} | Bible Study`,
     metaDescription: lesson.attributes.description,

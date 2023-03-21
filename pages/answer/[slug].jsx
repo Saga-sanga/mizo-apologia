@@ -24,7 +24,7 @@ const Answer = ({ answer }) => {
       <Seo seo={seo} />
       <main>
         <div className="text-sm breadcrumbs pt-8">
-          <ul>
+          <ul className="pl-4 max-w-7xl mx-auto">
             <li><Link href='/'>Home</Link></li> 
             <li><Link href='/answers'>Chhannate</Link></li>
             <li>{answer.attributes.title}</li>
