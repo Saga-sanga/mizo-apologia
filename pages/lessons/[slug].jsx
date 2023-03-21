@@ -21,7 +21,7 @@ const Article = ({ lesson, bibleStudy }) => {
       <Seo seo={seo} />
       <main>
        <div className="text-sm breadcrumbs">
-          <ul className="pl-0 max-w-5xl mx-auto">
+          <ul className="pl-0 max-w-6xl mx-auto">
             <li>
               <Link href="/" legacyBehavior>
                 <a>
