@@ -66,7 +66,6 @@ const Article = ({ lesson, bibleStudy }) => {
             }
            
            <div className="mt-14">
-             {/* <hr className="mt-6"/> */}
              <div className="divider"><h3>Lessons</h3></div>
              
              <LessonList study={bibleStudy} activeSlug={lesson.attributes.slug}/>

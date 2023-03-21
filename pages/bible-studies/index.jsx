@@ -17,7 +17,7 @@ const BibleStudy = ({ bibleStudies, bibleStudiesMeta }) => {
     <Layout>
       <Seo seo={seo} />
       <section>
-        <div className="answerSection">
+        <div className="answerSection sectionPaddingTop">
           <div className="uk-container uk-container-large">
 
             <div className="text-sm breadcrumbs">

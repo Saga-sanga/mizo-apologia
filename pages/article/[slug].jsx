@@ -33,13 +33,13 @@ const Article = ({ article }) => {
           </ul>
         </div>
 
-        <div className="uk-section pt-4">
+        <div className="uk-section pt-4 pb-20">
           <div className="bannerTitle">
             <h1 className="text-center self-center">{article.attributes.title}</h1>
             
             <div className="mb-10 flex flex-col items-center">
               <hr className="uk-divider-small" />
-              <div className="uk-grid-small flex" data-uk-grid="true">
+              <div className="uk-grid-small flex px-4" data-uk-grid="true">
                 <div className="self-center">
                   {article.attributes.author.data.attributes.picture && (
                     <Image

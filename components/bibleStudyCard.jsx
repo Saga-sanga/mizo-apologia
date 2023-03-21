@@ -19,7 +19,7 @@ function BibleStudyCard({study}) {
       <div className={`${styles.articleCard} nav-shadow`}>
         <div>
           <Image
-            className='w-full h-auto'
+            className='h-auto'
             src={displayImage} 
             alt={study.attributes.image.alternativeText}
             height={300}

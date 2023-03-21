@@ -10,6 +10,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import BibleStudyCard from '../components/bibleStudyCard'
 
+// TODO: Figure out why biblestudy card is not occupying all the available space
 export default function Home({ answers, articles, bibleStudies, hero }) {
   const imageUrl = getStrapiMedia(hero.attributes.heroImage);
   return (

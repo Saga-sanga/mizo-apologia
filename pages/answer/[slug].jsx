@@ -31,7 +31,7 @@ const Answer = ({ answer }) => {
           </ul>
         </div>
 
-        <div className="uk-section pt-4">
+        <div className="uk-section pt-4 pb-20">
           <div className="bannerTitle">
             <h1 className="text-center self-center">{answer.attributes.title}</h1>
 
