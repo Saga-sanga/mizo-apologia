@@ -1,5 +1,5 @@
 import React from 'react';
-import AnswerCard from './answerCard.js'
+import AnswerCard from './answerCard.jsx'
 import styles from '../styles/Home.module.css'
 
 const AnswerList = ({ answers }) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import ArticleCard from './articleCard.js'
+import ArticleCard from './articleCard.jsx'
 import styles from '../styles/Home.module.css'
 
 const ArticleList = ({ articles }) => {

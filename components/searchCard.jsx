@@ -20,7 +20,7 @@ const SearchCard = ({ result }) => {
           </div>
           <div className={styles.answerCardText}>
             {/* <span>{answer.topic.name}</span> */}
-            <p style={{color: 'black', marginBottom: 0}}>{result.attributes.title}</p>
+            <p style={{color: 'black', marginBottom: 0}} className='text-lg font-serif'>{result.attributes.title}</p>
             <div
               className="uk-flex-left"
               style={{marginTop: '0.8rem'}}

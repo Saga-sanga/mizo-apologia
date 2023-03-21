@@ -15,13 +15,13 @@ function Home({categories}) {
       <Seo seo={seo}/>
       <div className='flex items-center justify-center'>
         <section className="topic-body flex flex-col gap-5 max-w-4xl">
-          <Link href="/articles" className="homeLink" legacyBehavior>
-            <a className='flex -ml-6'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>Thuziakte
-            </a>
-          </Link>
+          <div className="text-sm breadcrumbs">
+            <ul className="pl-0">
+              <li><Link href='/'>Home</Link></li> 
+              <li><Link href='/articles'>Thuziakte</Link></li>
+              <li>Categories</li>
+            </ul>
+          </div>
           <h2 className='text-4xl'>Categories</h2>
           <ul className="flex flex-wrap gap-8 mb-5 pl-2">
             {
