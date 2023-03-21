@@ -26,7 +26,7 @@ const Article = ({ article }) => {
       <Seo seo={seo} />
       <main>
         <div className="text-sm breadcrumbs pt-8">
-          <ul className="pl-4 max-w-5xl mx-auto">
+          <ul className="pl-4 max-w-7xl mx-auto">
             <li><Link href='/'>Home</Link></li> 
             <li><Link href='/articles'>Thuziakte</Link></li>
             <li>{article.attributes.title}</li>
