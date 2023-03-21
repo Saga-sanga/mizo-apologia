@@ -14,7 +14,6 @@ const BibleStudy = ({ study }) => {
   };
 
   const bannerImage = study.attributes.image && getStrapiMedia(study.attributes.image);
-  console.log(bannerImage)
 
   return (
     <Layout>

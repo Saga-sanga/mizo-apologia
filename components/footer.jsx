@@ -29,6 +29,9 @@ function Footer() {
           <Link href="/category" className={styles.footerText}>
             Thuziak
           </Link>
+          <Link href="/bible-studies" className={styles.footerText}>
+            Bible Study
+          </Link>
           <Link href="/aboutus" className={styles.footerText}>
             About Us
           </Link>
