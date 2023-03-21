@@ -43,7 +43,7 @@ const BibleStudy = ({ study }) => {
                 <h1 className="mt-0 font-semibold text-2xl md:text-4xl">{study.attributes.title}</h1>
               </div>
               <Image className="w-auto h-auto" src={bannerImage} alt={study.attributes.image.data.attributes.alternativeText} width={720} height={500} priority/>
-              <div className="mt-8">
+              <div className="mt-2">
                 <div className="divider"><h3>Lessons</h3></div>
                 <LessonList study={study}/>
               </div>

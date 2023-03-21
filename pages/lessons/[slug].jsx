@@ -20,8 +20,8 @@ const Article = ({ lesson, bibleStudy }) => {
     <Layout >
       <Seo seo={seo} />
       <main>
-       <div className="text-sm breadcrumbs max-w-4xl">
-          <ul>
+       <div className="text-sm breadcrumbs">
+          <ul className="pl-0 max-w-6xl mx-auto">
             <li>
               <Link href="/" legacyBehavior>
                 <a>
@@ -41,7 +41,7 @@ const Article = ({ lesson, bibleStudy }) => {
           </ul>
         </div>
 
-        <div className="uk-section pt-4">
+        <div className="uk-section pt-0">
           <div className="bannerTitle">
           </div>
           <div className="uk-container textAreaContainer">
