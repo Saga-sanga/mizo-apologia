@@ -10,7 +10,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import BibleStudyCard from '../components/bibleStudyCard'
 
-// TODO: Figure out why biblestudy card is not occupying all the available space
 export default function Home({ answers, articles, bibleStudies, hero }) {
   const imageUrl = getStrapiMedia(hero.attributes.heroImage);
   return (
@@ -36,6 +35,7 @@ export default function Home({ answers, articles, bibleStudies, hero }) {
               </div>
             </section>
           </header>
+
           <section className='answerSection'>
             <div className='answerContentFlex gap-5'>
               <div className='indexTitleContainer'>
@@ -56,6 +56,7 @@ export default function Home({ answers, articles, bibleStudies, hero }) {
               </div>
             </div>
           </section>
+
           <section className='articleSection'>
             <div className='flex flex-col gap-5'>
               <div className='indexTitleContainer'>
@@ -76,28 +77,30 @@ export default function Home({ answers, articles, bibleStudies, hero }) {
               </div>
             </div>
           </section>
-          <section className='answerSection'>
-          <div className='flex flex-col gap-5'>
-              <div className='indexTitleContainer'>
-                <h1 className='text-2xl md:text-4xl'>
-                    Bible Studies
-                </h1>
-                <Link href='/bible-studies' passHref  legacyBehavior>
-                  <a className='flex'>
-                    More<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                  </a>
-                </Link>  
-              </div>
-              <CardList>
-                {bibleStudies.map(study => <BibleStudyCard study={study} key={study.attributes.slug}/>)}
-              </CardList>
-            </div>
-            
-          </section>
+
+          { bibleStudies.length < 2 ? '' :
+            <section className='answerSection'>
+              <div className='flex flex-col gap-5'>
+                <div className='indexTitleContainer'>
+                  <h1 className='text-2xl md:text-4xl'>
+                      Bible Studies
+                  </h1>
+                  <Link href='/bible-studies' passHref  legacyBehavior>
+                    <a className='flex'>
+                      More<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </a>
+                  </Link>  
+                </div>
+                <CardList>
+                  {bibleStudies.map(study => <BibleStudyCard study={study} key={study.attributes.slug}/>)}
+                </CardList>
+              </div>          
+            </section>
+          }
+
         </main>
-        {/* <a href={church.src} download={'church Pic'}>Download</a> */}
       </Layout>
     </div>
   );
