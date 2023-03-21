@@ -13,16 +13,18 @@ const Category = ({ category, articles }) => {
   return (
     <Layout>
       <Seo seo={seo} />
+
+      <div className="text-sm breadcrumbs">
+        <ul className="pl-4 max-w-5xl mx-auto">
+          <li><Link href='/'>Home</Link></li> 
+          <li><Link href='/articles'>Thuziakte</Link></li>
+          <li><Link href='/category'>Categories</Link></li>
+          <li>{category.attributes.name}</li>
+        </ul>
+      </div>
+
       <main className="articleSection sectionPaddingTop">
         <div className="uk-container uk-container-large">
-          <div className="text-sm breadcrumbs">
-            <ul className="pl-0">
-              <li><Link href='/'>Home</Link></li> 
-              <li><Link href='/articles'>Thuziakte</Link></li>
-              <li><Link href='/category'>Categories</Link></li>
-              <li>{category.attributes.name}</li>
-            </ul>
-          </div>
           <h1 className="mt-0 px-5 text-4xl">{category.attributes.name}</h1>
           <ArticleList articles={articles} />
         </div>

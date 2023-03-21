@@ -13,16 +13,18 @@ const Topic = ({ topic, answers}) => {
   return (
     <Layout>
       <Seo seo={seo} />
+
+      <div className="text-sm breadcrumbs">
+        <ul className="pl-4 max-w-5xl mx-auto">
+          <li><Link href='/'>Home</Link></li> 
+          <li><Link href='/answers'>Chhannate</Link></li>
+          <li><Link href='/topic'>Topics</Link></li>
+          <li>{topic.attributes.name}</li>
+        </ul>
+      </div>
+
       <main className="answerSection sectionPaddingTop">
         <div className="uk-container uk-container-large">
-          <div className="text-sm breadcrumbs">
-            <ul className="pl-0">
-              <li><Link href='/'>Home</Link></li> 
-              <li><Link href='/answers'>Chhannate</Link></li>
-              <li><Link href='/topic'>Topics</Link></li>
-              <li>{topic.attributes.name}</li>
-            </ul>
-          </div>
           <h1 className="mt-0 px-5 text-4xl">{topic.attributes.name}</h1>
           <AnswerList answers={answers} />
         </div>
