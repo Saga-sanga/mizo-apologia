@@ -58,10 +58,13 @@ const Article = ({ lesson, bibleStudy }) => {
             </div>
             <ReactMarkdown rehypePlugins={[rehypeRaw]} children={lesson.attributes.content}/>
             
-            <hr className="uk-divider-small" />
+            
             {
               pdfUrl ? 
-                <Link className="btn btn-primary hover:text-white" href={pdfUrl} target='_blank' download>Download</Link> : 
+              <>
+                <hr className="uk-divider-small" />
+                <Link className="btn btn-primary hover:text-white" href={pdfUrl} target='_blank' download>Download</Link>
+              </> :
                 ''
             }
            
