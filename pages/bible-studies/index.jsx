@@ -60,7 +60,7 @@ export async function getStaticProps() {
 
   return {
     props: { bibleStudies: data, bibleStudiesMeta: meta },
-    revalidate: 60 * 60 * 0.5,
+    revalidate: 1,
   };
 }
 
