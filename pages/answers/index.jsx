@@ -75,7 +75,7 @@ export async function getStaticProps() {
 
   return {
     props: { answers: data, answersMeta: meta },
-    revalidate: 60 * 60 * 0.5, // <--- ISR cache: twice an hour
+    revalidate: 1, // <--- ISR cache
   };
 }
 
