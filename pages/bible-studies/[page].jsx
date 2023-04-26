@@ -87,7 +87,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { bibleStudies: data, bibleStudiesMeta: meta },
-    revalidate: 60 * 60 * 1, // <--- ISR cache: once an hour
+    revalidate: 1, // <--- ISR cache: once an hour
   };
 }
 
