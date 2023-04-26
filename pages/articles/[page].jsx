@@ -7,8 +7,8 @@ import ArticleList from "../../components/articleList";
 
 const Topic = ({ articles, articlesMeta }) => {
   const seo = {
-    metaTitle: 'Thuziak',
-    metaDescription: `Thuziak zawng zawng te`
+    metaTitle: "Thuziak",
+    metaDescription: `Thuziak zawng zawng te`,
   };
 
   return (
@@ -17,26 +17,39 @@ const Topic = ({ articles, articlesMeta }) => {
       <main>
         <div className="articleSection sectionPaddingTop">
           <div className="uk-container uk-container-large">
-          
             <div className="text-sm breadcrumbs">
               <ul className="pl-0">
-                <li><Link href='/'>Home</Link></li> 
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
                 <li>Thuziakte</li>
               </ul>
             </div>
-            
-            <div className='indexTitleContainer'>
+
+            <div className="indexTitleContainer">
               <h1 className="mt-0 px-2 text-4xl">Thuziakte</h1>
-              <Link href='/category' legacyBehavior>
+              <Link href="/category" legacyBehavior>
                 <a className="flex">
-                  Categories<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right">
+                  Categories
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="feather feather-chevron-right"
+                  >
                     <polyline points="9 18 15 12 9 6"></polyline>
                   </svg>
                 </a>
               </Link>
-            </div>  
-            <PaginationPage meta={articlesMeta} link={'articles'}>
-              <ArticleList articles={articles}/>
+            </div>
+            <PaginationPage meta={articlesMeta} link={"articles"}>
+              <ArticleList articles={articles} />
             </PaginationPage>
           </div>
         </div>
@@ -45,42 +58,42 @@ const Topic = ({ articles, articlesMeta }) => {
   );
 };
 
-export async function getStaticProps({params}) {
+export async function getStaticProps({ params }) {
   const page = Number(params.page) || 1;
-  const { data, meta } = await fetchAPI('/articles', {
-    sort: ['id:desc'],
-    pagination:{
+  const { data, meta } = await fetchAPI("/articles", {
+    sort: ["id:desc"],
+    pagination: {
       page: page,
-      pageSize: 6
+      pageSize: 6,
     },
     populate: {
       image: "*",
       category: "*",
       author: {
-        populate: ['picture']
-      }
-    }
+        populate: ["picture"],
+      },
+    },
   });
 
   if (!data.length) {
     return {
-      notFound: true
-    }
+      notFound: true,
+    };
   }
 
   // Redirect the first page to `/articles` to avoid duplicated content
   if (page === 1) {
     return {
       redirect: {
-        destination: '/articles',
+        destination: "/articles",
         permanent: false,
       },
-    }
+    };
   }
 
   return {
-    props: { articles: data, articlesMeta: meta},
-    revalidate: 60 * 60 * 1, // <--- ISR cache: once an hour
+    props: { articles: data, articlesMeta: meta },
+    revalidate: 60 * 60 * 0.5, // <--- ISR cache: twice an hour
   };
 }
 
@@ -90,8 +103,8 @@ export async function getStaticPaths() {
     // Other pages will be prerendered at runtime.
     paths: Array.from({ length: 5 }).map((_, i) => `/articles/${i + 2}`),
     // Block the request for non-generated pages and cache them in the background
-    fallback: 'blocking',
-  }
+    fallback: "blocking",
+  };
 }
 
 export default Topic;
